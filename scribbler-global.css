@@ -266,7 +266,7 @@ table td:first-child {
     grid-template-columns: 70px auto;
   }
 
-  .menu__item{
+  .menu__item {
     display: none;
   }
 
