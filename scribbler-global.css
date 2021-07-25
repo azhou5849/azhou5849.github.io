@@ -176,6 +176,7 @@ nav {
 
 .menu {
   margin: 0;
+  margin-right: 10px;
   text-align: right;
   overflow: hidden;
   list-style: none;
