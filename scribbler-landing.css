@@ -1,22 +1,14 @@
-/* nav specialized to landing page */
-/* .logo {
-  background: url('logo.svg') no-repeat;
-  background-size: contain;
-  margin: 1rem 0 0 1rem;
-} */
-
-nav {
+body {
   background-color: var(--bg-color);
 }
 
-/* hero section */
-.hero {
+/* proj section */
+.proj {
   text-align: center;
-  background-color: var(--bg-color);
   padding: 2rem 0 10rem 0;
 }
 
-.hero__title {
+.proj__title {
   font-weight: 900;
   color: var(--primary-color);
 }
