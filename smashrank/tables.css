@@ -1,0 +1,36 @@
+/* table */
+table {
+  border-collapse: collapse;
+  transition: color .3s ease-out;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+table.top10 {
+  width: 600px;
+}
+
+table td {
+  border: 1px solid var(--code-bg-color);
+  padding: 0.8rem;
+  font-weight: 300;
+}
+
+table th {
+  text-align: left;
+  background-color: white;
+  border-color: white;
+  border-bottom-color: var(--code-bg-color);
+  padding: 0.8rem;
+}
+
+table.top10 td:first-child {
+  text-align: center;
+  font-weight: 600;
+  background-color: var(--bg-color);
+  width: 50px;
+}
+
+table.top10 th.p_name {
+  width: 350px;
+}

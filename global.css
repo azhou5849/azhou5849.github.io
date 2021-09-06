@@ -254,32 +254,6 @@ nav {
   display: block;
 }
 
-/* table */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  transition: color .3s ease-out;
-  margin-bottom: 2rem;
-}
-
-table td, table th {
-  border: 1px solid var(--code-bg-color);
-  padding: 0.8rem;
-  font-weight: 300;
-}
-
-table th {
-  text-align: left;
-  background-color: white;
-  border-color: white;
-  border-bottom-color: var(--code-bg-color);
-}
-
-table td:first-child {
-  background-color: var(--bg-color);
-  font-weight: 600;
-}
-
 @media screen and (max-width: 600px) {
   nav {
     grid-template-columns: 70px auto;
