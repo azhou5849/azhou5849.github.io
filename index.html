@@ -1,35 +1,39 @@
 <!doctype html>
 <html>
   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Testing page...</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
-      <link rel="stylesheet" href="scribbler-global.css">
-      <link rel="stylesheet" href="scribbler-landing.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>azhou5849 projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="scribbler-landing.css">
   </head>
   <body>
     <nav>
       <div></div>
       <ul class="menu">
         <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="" class="link link--dark">Home</a></li>
+        <li class="menu__item menu__dropdown">
+          <a href="" class="link link--dark" id="proj__link">Projects</a>
+          <ul class="proj__list">
+            <li><a href="smashrank/index.html" class="link link--dark">Ranking</a></li>
+            <li><a href="" class="link link--dark">TBA</a></li>
+          </ul>
+        </li>
         <li class="menu__item"><a href="" class="link link--dark">About</a></li>
       </ul>
     </nav>
-    <div class="hero">
-      <h1 class="hero__title">Rankings</h1>
-      <p class="hero__description">An attempt at applying rating systems to SSBM</p>
+    <div class="proj">
+      <h1 class="proj__title">SSBM Rankings</h1>
     </div>
-    <div class="hero__terminal">
-      <pre>
-        <!-- Place your demo code here -->
-        <code class="shell-session demo"></code>
-      </pre>
+    <div class="proj__button" onclick="window.location='smashrank/index.html'">Click Me!</div>
+    <div class="proj">
+      <h1 class="proj__title">TBA</h1>
+      <p class="proj__description">TBA</p>
     </div>
-    <footer class="footer">Scribbler is a free HTML template created exclusively for <a href="https://tympanus.net/codrops/" target="_blank" class="link link--light">Codrops</a>.</footer>
+    <footer class="footer">This website uses the free <a href="https://github.com/amiechen/codrops-scribbler" target="_blink" class="link link--light">Scribbler</a> template.</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="scribbler.js"></script>

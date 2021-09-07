@@ -1,46 +1,41 @@
-/* nav specialized to landing page */
-/* .logo {
-  background: url('logo.svg') no-repeat;
-  background-size: contain;
-  margin: 1rem 0 0 1rem;
-} */
-
-nav {
+body {
   background-color: var(--bg-color);
 }
 
-/* hero section */
-.hero {
+/* proj section */
+.proj {
   text-align: center;
-  background-color: var(--bg-color);
   padding: 2rem 0 10rem 0;
 }
 
-.hero__title {
+.proj__title {
   font-weight: 900;
   color: var(--primary-color);
 }
 
-.hero__description {
+.proj__description {
   margin: -1rem auto 2rem auto;
 }
 
-.hero__terminal {
+.proj__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 60%;
   margin: -11rem auto 3rem auto;
-  text-align: left;
-  color: white;
   padding: 0 1rem;
   border-radius: 4px;
   background-color: #232323;
   min-height: 285px;
-  animation: fadeUp 2s;
   box-shadow: 0px 12px 36.8px 9.2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: white;
+  font-size: xx-large;
 }
 
-.hero__terminal pre {
+.proj__button pre {
   white-space: pre-line;
-  padding-top: 1rem;
+/*  padding-top: 1rem;*/
 }
 
 /* feature section */
@@ -156,7 +151,7 @@ nav {
 }
 
 @media (max-width: 750px) {
-  .hero__terminal {
+  .proj__button {
     width: 70%;
   }
   .tab__container > ul {
