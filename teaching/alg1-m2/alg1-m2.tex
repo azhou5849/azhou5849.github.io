@@ -1,7 +1,7 @@
 \documentclass{article}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{graphicx} % Required for inserting images
-\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
 \usepackage[letterpaper]{geometry}
 \usepackage[colorlinks]{hyperref}
 
@@ -17,23 +17,53 @@
 \begin{document}
 
 \maketitle
+\tableofcontents
 
+
+\newpage
 \section{Graphing}
+
+\subsection{Review}
 
 \begin{enumerate}
 \item Draw a coordinate plane and label the origin and the four quadrants.
 \item Let $A = (3,1)$. Find the coordinates of each of the following:
 \begin{enumerate}
-\item the reflection of $A$ across the $x$-axis
-\item the rotation of $A$ around the origin by $180^{\circ}$
-\item the rotation of $A$ around the origin by $90^{\circ}$ counterclockwise
+\item the \href{https://en.wikipedia.org/wiki/Reflection_(mathematics)}{reflection} of $A$ across the $x$-axis
 \item the reflection of $A$ across the $y$-axis
 \item the reflection of $A$ across the line $y = x$
+\item the \href{https://en.wikipedia.org/wiki/Rotation_(mathematics)}{rotation} of $A$ around the origin by $180^{\circ}$
+\item the rotation of $A$ around the origin by $90^{\circ}$ counterclockwise
 \item the rotation of $A$ around the point $(2,2)$ by $90^{\circ}$ clockwise
 \end{enumerate}
-\item The points $(5,7)$ and $(8,-1)$ lie on the line with equation $y = mx + b$, where $m$ and $b$ are constants. Find $m$ and $b$.
+\item Quadrilateral $ABCD$ is positioned in the coordinate plane so that its vertices have coordinates
+\begin{equation*}
+A = (5, 7);\quad B = (5, 6);\quad C = (3, 1);\quad D = (-4, -5).
+\end{equation*}
+Points $E, F, G, H$ are the midpoints of segments $\overline{AB}, \overline{BC}, \overline{CD}, \overline{DA}$, respectively.
+\begin{enumerate}
+\item Find the coordinates of $E$, $F$, $G$, and $H$.
+\item Compute the midpoints of segments $\overline{EG}$ and $\overline{FH}$.
+\end{enumerate}
+To check your work, the two midpoints computed in part (b) should be the same. Doing this calculation in general (rather than with specific numbers) proves the following:
+\begin{quote}
+\textit{The midpoints of the sides of any quadrilateral form a parallelogram.}
+\end{quote}
+\item Maurine needs to get from $(2,3)$ to $(17,11)$.
+\begin{enumerate}
+\item If they take the shortest path possible, how much distance would they cover?
+\item Suppose Maurine gets distracted while pondering the meaning of life and goes from $(2,3)$ to $(6,6)$, then to $(11, 18)$, then to $(17,10)$, and finally to $(17,11)$. What is the minimum distance Maurine can cover which is consistent with this information? 
+\end{enumerate}
 \item Which of the following expressions correctly finds the slope between the points $(-1,7)$ and $(3,-4)$? Circle all that apply.
-% write some expressions here
+\begin{equation*}
+\frac{3 - (-1)}{-4 - 7}\quad\frac{7 - (-4)}{-1 - 3}\quad\frac{-4 - 7}{3 - (-1)}\quad\frac{7 - (-4)}{3 - (-1)}\quad\frac{-4 - 3}{7 - (-1)}
+\end{equation*}
+
+
+
+
+
+\item The points $(5,7)$ and $(8,-1)$ lie on the line with equation $y = mx + b$, where $m$ and $b$ are constants. Find $m$ and $b$.
 \item Let $A = (1,1)$, $B = (5,2)$, and $C = (-4,3)$. In this problem, we will find the coordinates of the point $D$ for which quadrilateral $ABCD$ is a parallelogram.
 \begin{enumerate}
 \item Find the slopes of lines $AB$ and $BC$.
@@ -54,9 +84,12 @@ which one is an equation for the blue line below?
 which one is an equation for the red curve below?
 \end{enumerate}
 \begin{center}
-\includegraphics[scale=0.5]{03.png}
+\includegraphics[scale=0.5]{graphing-line-ellipse.png}
 \end{center}
 \end{enumerate}
+
+
+\section{Linear Inequalities}
 
 
 
