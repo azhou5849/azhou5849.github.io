@@ -103,14 +103,150 @@ As a check of your answers, rearranging either of the point-slope equations from
 \subsection{Challenge}
 
 \begin{enumerate}[resume]
-\item Let $A = (1,1)$, $B = (5,2)$, and $C = (-4,3)$. In this problem, we will find the coordinates of the point $D$ for which quadrilateral $ABCD$ is a parallelogram.
+\item (Perpendicular bisector) Given any two points $A$ and $B$, the \emph{perpendicular bisector} of segment $\overline{AB}$ is the line passing through the midpoint of $\overline{AB}$ which is perpendicular to $\overline{AB}$.
 \begin{enumerate}
-\item Find the slopes of lines $AB$ and $BC$.
-\item Write down an equation for the line through $C$ parallel to $AB$.
-\item Write down an equation for the line through $A$ parallel to $BC$.
-\item Since $AB\parallel CD$ and $AD\parallel BC$, point $D$ must be the intersection of the lines you found in parts (b) and (c). Use this to find the coordinates of point $D$.
+\item Suppose $B = (14,0)$ and $C = (5,12)$. Find an equation for the perpendicular bisector of segment $\overline{BC}$.
+\item Show that for any point $P$ on the perpendicular bisector of $\overline{BC}$, we have $BP = PC$.
+\item Conversely, show that if $Q$ is a point in the plane for which $BQ = QC$, then $Q$ lies on the perpendicular bisector of $\overline{BC}$.
 \end{enumerate}
+\item (Circumcenter) Given any triangle $ABC$, the perpendicular bisectors of the sides of $ABC$ all pass through a single point $O$, called the \emph{circumcenter} of triangle $ABC$. It is the center of the unique circle passing through all three of $A$, $B$, and $C$ (called the \emph{circumcircle} of $ABC$).
+\begin{enumerate}
+\item Let $A = (0,0)$, $B = (14,0)$, and $C = (5,12)$. Find the circumcenter of $ABC$.
+\item Find the radius of the circumcircle of $ABC$ (i.e. the \emph{circumradius} of $ABC$).
+\end{enumerate}
+\item (Median and centroid) Given any triangle $ABC$, the \emph{medians} are the lines that pass through one vertex and the midpoint of the side opposite that vertex. For example, the $A$-median is the line that passes through $A$ and the midpoint of side $\overline{BC}$. The three medians of a triangle all pass through a single point $G$, called the \emph{centroid} of triangle $ABC$.
+\begin{enumerate}
+\item Let $A = (0,0)$, $B = (14,0)$, and $C = (5,12)$. Let $D$, $E$, and $F$ be the midpoints of sides $\overline{BC}$, $\overline{CA}$, and $\overline{AB}$, respectively. Find the coordinates of $D$, $E$, and $F$.
+\item Find the coordinates of the centroid $G$ of $ABC$. How do they relate to the coordinates of $A$, $B$, and $C$?
+\item Compute the ratios $AG/GD$, $BG/GE$, and $CG/GF$.
+\end{enumerate}
+\item (Altitude and orthocenter) Given any triangle $ABC$, the \emph{altitudes} are the lines that pass through one vertex which are perpendicular to the opposite side. For example, the $A$-altitude is the line that passes through $A$ and is perpendicular to line $\overline{BC}$. The three altitudes of a triangle all pass through a single point $H$, called the \emph{orthocenter} of triangle $ABC$.
+\begin{enumerate}
+\item Let $A = (0,0)$, $B = (14,0)$, and $C = (5,12)$. Find equations for the altitudes of $ABC$.
+\item Find the coordinates of the orthocenter $H$ of $ABC$.
+\end{enumerate}
+\item Let $A = (1,1)$, $B = (5,2)$, and $C = (-4,3)$. There are three parallelograms in the plane for which $A$, $B$, and $C$ are three of the four vertices. What are the possible coordinates for the fourth vertex?
 \end{enumerate}
 
 \newpage
-\subsection{Solutions}
+\subsection{Answers}
+
+\begin{enumerate}
+\item In your drawing, the origin should be at $(0,0)$, where the coordinate axes intersect. Quadrant I is in the upper right, quadrant II is in the upper left, quadrant III is in the lower left, and quadrant IV is in the lower right.
+\item \begin{enumerate}
+\item $(3,-1)$
+\item $(-3,1)$
+\item $(1,3)$
+\item $(-3,-1)$
+\item $(-1,3)$
+\item $(1,1)$
+\end{enumerate}
+\item \begin{enumerate}
+\item $E = (5, 13/2)$; $F = (4, 7/2)$; $G = (-1/2, -2)$; $H = (1/2,1)$
+\item The midpoint of $\overline{EG}$ is $(9/4, 9/4)$, which is also the midpoint of $\overline{FH}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item $\boxed{17}$
+\item $5 + 13 + 10 + 1 = \boxed{29}$
+\end{enumerate}
+\item The second and third expressions are valid.
+\item \begin{enumerate}
+\item The slope is $\boxed{1/4}$, and one of the points on the line is $\boxed{(-1,4)}$.
+\item Distributing the right hand side gives us 
+\begin{equation*}
+y - 4 = \frac{1}{4}x + \frac{1}{4}.
+\end{equation*}
+Adding 4 to both sides gives us the slope-intercept form
+\begin{equation*}
+\boxed{y = \frac{1}{4}x + \frac{17}{4}}.
+\end{equation*}
+The $y$-intercept is $\boxed{(0, 17/4)}$.
+\item Subtracting $y$ from both sides, then subtracting $17/4$ from both sides,
+\begin{equation*}
+\frac{1}{4}x - y = -\frac{17}{4}.
+\end{equation*}
+To clear denominators, we multiply both sides by $4$ to get the standard form 
+\begin{equation*}
+\boxed{x - 4y = -17}.
+\end{equation*}
+When $y = 0$, we have $x = -17$, so the $x$-intercept is $\boxed{(-17, 0)}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item The blue line passes through $(0, 3.5)$, which only satisfies the equation $\boxed{x - 2y = -7}$.
+\item The first and last equation describe lines, so the answer cannot be those. Of the remaining two equations, the point $(7,0)$ on the red curve only satisfies $\boxed{x^2 + xy + y^2 = 49}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item The slope is $\boxed{-1/4}$ and the $y$-intercept is $\boxed{(0,-3)}$.
+\item To get standard form, we start by moving all of the variables to one side so that $x$ has a positive coefficient and moving all of the constants to the other. Adding $\frac{1}{4}x$ to both sides gives us 
+\begin{equation*}
+\frac{1}{4}x + y = -3.
+\end{equation*}
+Multiplying both sides by $4$ gives the standard form 
+\begin{equation*}
+\boxed{x + 4y = -12}.
+\end{equation*}
+To get the $x$-intercept, we plug in $y = 0$ to get $x = -12$, so the $x$-intercept is $\boxed{(-12,0)}$.
+\item Substituting $x = 2024$ into the slope-intercept form given to us,
+\begin{equation*}
+y = \left(-\frac{1}{4}\right)\cdot 2024 - 3 = -509.
+\end{equation*}
+The point-slope form with slope $-1/4$ and point $(2024, -509)$ is
+\begin{equation*}
+\boxed{y + 509 = -\frac{1}{4}(x - 2024)}.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item Letting $x = 0$, the $y$-intercept is $\boxed{(0, -4)}$.\par
+Letting $y = 0$, the $x$-intercept is $\boxed{(-4/3, 0)}$.
+\item Solving for $y$ in terms of $x$, the slope-intercept form is 
+\begin{equation*}
+\boxed{y = -3x - 4}.
+\end{equation*}
+The slope of the line is $\boxed{-3}$.
+\item We want the point $(x,y)$ to lie on the line, i.e. to satisfy $3x + y = -4$, and to have sum of coordinates 10, i.e. $x + y = 10$. Solving the system of equations, $(x,y) = \boxed{(-7,17)}$. The desired point-slope form is then
+\begin{equation*}
+\boxed{y - 17 = -3(x + 7)}.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item $y - 2 = \frac{1}{2}(x + 5)$
+\item Slope-intercept form: $y = \frac{1}{2}x + \frac{9}{2}$\par
+Standard form: $x - 2y = -9$
+\end{enumerate}
+\item The line through the two points is the vertical line $\boxed{x = -3}$.
+\item \begin{enumerate}
+\item $\dfrac{3 - (-4)}{(-3) - 0} = \boxed{-\frac{7}{3}}$
+\item Using $(-3,3)$, we get $\boxed{y - 3 = -\frac{7}{3}(x + 3)}$.\par 
+Using $(0, -4)$, we get $\boxed{y + 4 = -\frac{7}{3}(x - 0)}$.
+\item Slope-intercept form: $\boxed{y = -\frac{7}{3}x - 4}$\par 
+Standard form: $\boxed{7x + 3y = -12}$
+\end{enumerate}
+\item Substituting the two given points, we get the system of equations
+\begin{equation*}
+5m + b = 7\qquad\text{and}\qquad 8m + b = -1.
+\end{equation*}
+Solving yields $\boxed{(m,b) = \left(-\frac{8}{3}, \frac{61}{3}\right)}$.
+\item The point of intersection is given by the solution to the system of equations
+\begin{align*}
+2023x + 2022y &= 2021, \tag{1} \\
+2024x + 2023y &= 2022. \tag{2}
+\end{align*}
+Taking the difference of equations $(2) - (1)$ gives us 
+\begin{equation*}
+x + y = 1 \tag{3}.
+\end{equation*}
+Then, $(1) - 2022\cdot (3)$ gives us $x = -1$. Substituting back into $(3)$ gives us $y = 2$, so the point of intersection is $\boxed{(-1,2)}$.
+\item \begin{enumerate}
+\item Given a line with slope $m\neq 0$, the slope of any line perpendicular to it is given by $-1/m$. Applying this formula with $m = -4$, the slope of $\ell$, tells us the slope of $\ell'$ must be $\boxed{1/4}$.
+\item Using point-slope form, since $\ell'$ passes through $P$, one equation for $\ell'$ is 
+\begin{equation*}
+\boxed{y - 2 = \frac{1}{4}(x + 4)}.
+\end{equation*}
+\item Solving the system of equations
+\begin{equation*}
+y = -4x - 2\qquad\text{and}\qquad y - 2 = \frac{1}{4}(x + 4),
+\end{equation*}
+we find that $Q = \boxed{(-20/17, 46/17)}$.
+\end{enumerate}
+\item 
+\end{enumerate}
