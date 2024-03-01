@@ -109,7 +109,7 @@ Given a complex number $z = x + yi$, the \emph{magnitude} of $z$, denoted $\lver
 &= a\bar{r}^2 + b\bar{r} + c.
 \end{align*}
 Thus when we plug $x = \bar{r}$ into the quadratic, we get $0$, so $\bar{r}$ is a root.
-\item Suppose $a + bi$ is a square root of $-15 - 8i$, so that $(a + bi)^2 = -15 - 8i$. Expanding the left hand side, we get
+\item Suppose $a + bi$ is a square root of $-15 - 8i$, so that $(a + bi)^2 = -15 - 8i$. (Here $a$ and $b$ are real.) Expanding the left hand side, we get
 \begin{equation*}
 (a^2 - b^2) + (2ab)\cdot i = -15 - 8i,
 \end{equation*}
@@ -117,4 +117,13 @@ so we have the system of equations
 \begin{equation*}
 a^2 - b^2 = -15\quad\text{and}\quad 2ab = -8.
 \end{equation*}
+From the second equation, neither $a$ nor $b$ are zero, so we can safely divide by $2a$ to get $b = -4/a$. Substituting into the first equation yields
+\begin{equation*}
+a^2 - \left(-\frac{4}{a}\right)^2 = -15\implies a^2 - \frac{16}{a^2} = -15.
+\end{equation*}
+Letting $x = a^2$ and multiplying both sides by $x$, we get $x^2 - 16 = -15x$, so 
+\begin{equation*}
+x^2 + 15x - 16 = 0\implies (x + 16)(x - 1) = 0.
+\end{equation*}
+The two solutions to this quadratic are $x = -16$ and $x = 1$, but since $x = a^2$ where $a$ is a real number, the only valid solution is $x = 1$. This means that $a = 1$ or $a = -1$. When $a = 1$, we get $b = -4$, and when $a = -1$, we get $b = 4$, so the two square roots of $-15 - 8i$ are $\boxed{1 - 4i}$ and $\boxed{-1 + 4i}$.
 \end{enumerate}
