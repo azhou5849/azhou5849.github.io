@@ -29,7 +29,7 @@
 \item \begin{enumerate}
 \item A parabola is given by $y = x^2 + 18x + 81$. Find the intercepts and the vertex.
 \item A parabola has $x$-intercepts $(-8,0)$ and $(10,0)$ and $y$-intercept $(0, 560)$. Find an equation for the parabola and find the vertex.
-\item A parabola has vertex $(-8,-4)$ and passes through the point $(6,8)$. Find an equation for the parabola and find the intercepts.
+\item A parabola has vertex $(-8,-4)$ and passes through the point $(6, 192)$. Find an equation for the parabola and find the intercepts.
 \end{enumerate}
 \item When Linda sells boxes of cookies, she finds that when she prices each box at $\$x$, she manages to sell $56 - 4x$ boxes.
 \begin{enumerate}
@@ -104,5 +104,72 @@
 64 - 4c = 36 & \implies c = \boxed{7}.
 \end{align*}
 \end{enumerate}
-\item 
+\item \begin{enumerate}
+\item $x$-intercept $(-9,0)$; $y$-intercept $(0,81)$; vertex $(-9,0)$
+\item equation $y = -7(x + 8)(x - 10)$; vertex $(1, 567)$
+\item equation $y = (x + 8)^2 - 4$; $x$-intercepts $(-10,0)$ and $(-6,0)$; $y$-intercept $(0,60)$
+\end{enumerate}
+\item \begin{enumerate}
+\item Linda's revenue, in dollars, is $x(56 - 4x)$. This is maximised when the value of $x$ is the vertex of the parabola $y = x(56 - 4x)$. The quadratic here has roots $x = 0$ and $x = 14$, so the vertex has $x$-coordinate $(0 + 14)/2 = \boxed{7}$.
+\item Linda's profit, in dollars, is $(x - 2)(56 - 4x)$, as we profit $x - 2$ from each box. This time, the vertex has $x$-coordinate $(2 + 14)/2 = \boxed{8}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item $(x + 5)^2 + (y - 1)^2 = 49$
+\item center $(-3, -5)$; radius $\sqrt{31}$
+\item Completing the square, the equation becomes
+\begin{equation*}
+(x - 2)^2 + (y - 2)^2 = E + 8.
+\end{equation*}
+This has exactly one solution precisely when $E + 8 = 0$, in which case $\boxed{E = -8}$. The lone solution in that case is the point $\boxed{(2,2)}$.
+\end{enumerate}
+\item Subtracting the two given equations from each other yields
+\begin{equation*}
+16x + 12y = 100, \tag{$\dagger$}
+\end{equation*}
+or $y = -\frac{4}{3}x + \frac{25}{3}$. Substituting this into the first given equation,
+\begin{align*} 
+x^2 + \left(-\frac{4}{3}x + \frac{25}{3}\right)^2 &= 125, \\
+9x^2 + (-4x + 25)^2 &= 1125, \\
+9x^2 + 16x^2 - 200x + 625 &= 1125, \\
+25x^2 - 200x &= 500, \\
+x^2 - 8x - 20 &= 0, \\
+(x - 10)(x + 2) &= 0.
+\end{align*}
+Thus the two possible $x$-coordinates for a point of intersection are $x = 10$ and $x = -2$. Substituting $x = 10$ into $(\dagger)$ yields $y = -5$, while substituting $x = -2$ yields $y = 11$, so the two points of intersection are $\boxed{(10, -5)}$ and $\boxed{(-2, 11)}$.
+\item \begin{enumerate}
+\item $x^2 - 2\sqrt{2}x + 1$
+\item $ix^2 - i$
+\end{enumerate}
+\item \begin{enumerate}
+\item The line perpendicular to $\ell$ through $F$ is $x = 1$, so it hits $\ell$ at the point $A = (1,-1)$. The vertex is then the midpoint of $F$ and $A$, which is $\boxed{(1,1)}$.
+\item Let $P = (x,3)$ be a point on the parabola. Then the distance from $P$ to $\ell$ is $3 - (-1) = 4$, while $PF = \lvert x - 1\rvert$, so we have
+\begin{equation*}
+\lvert x - 1\rvert = 4.
+\end{equation*}
+The two solutions are $x = -3$ and $x = 5$, so the points are $\boxed{(-3,3)}$ and $\boxed{(5,3)}$.
+\item Since the vertex is $(1,1)$, we can write down an equation
+\begin{equation*}
+y = a(x - 1)^2 - 1
+\end{equation*}
+for some constant $a$. Plugging in the point $(5,3)$ gives us
+\begin{equation*}
+3 = a(5 - 1)^2 - 1,
+\end{equation*}
+from which it follows that $a = 1/4$. Hence our equation is $\boxed{y = \frac{1}{4}(x - 1)^2 - 1}$.
+\end{enumerate}
+\item Squaring both sides,
+\begin{equation*}
+5 - x = 5^2 - 2\cdot 5\cdot x^2 + x^4,
+\end{equation*}
+which rearranges to
+\begin{equation*}
+5^2 - (2x^2 + 1)\cdot 5 + (x^4 + x) = 0.
+\end{equation*}
+Using the quadratic formula to solve for $5$ (?!?!),
+\begin{align*}
+5 &= \frac{(2x^2 + 1)\pm\sqrt{(2x^2 + 1)^2 - 4\cdot 1\cdot (x^4 + x)}}{2} \\
+&= \frac{(2x^2 + 1)\pm\sqrt{(4x^4 + 4x^2 + 1) - (4x^4 + 4x)}}{2} \\
+&= \frac{(2x^2 + 1)\pm\sqrt{4x^2 - 4x + 1}}{2} \\
+&= \frac{(2x^2 + 1)\pm (2x - 1)}{2}.
+\end{align*}
 \end{enumerate}
