@@ -70,5 +70,97 @@ a^2 + ab + b^2 = 9,\quad a^2 + ac + c^2 = 16,\quad b^2 + bc + c^2 = 64?
 \subsection{Answers}
 
 \begin{enumerate}
-\item 
+\item \begin{enumerate}
+\item $(-\infty, -3)\cup (3, +\infty)$
+\item $[-9,3]$
+\item $(-\infty, -5]\cup [1/2, +\infty)$
+\item no solutions ($\emptyset$)
+\end{enumerate}
+\item \begin{enumerate}
+\item $[0, 5)$
+\item $(1,2)\cup (3, +\infty)$
+\item The discriminant of $x^2 + x + 1$ is $1^2 - 4\cdot 1\cdot 1 = -3 < 0$, so $x^2 + x + 1$ is always positive or always negative. At $x = 0$, the numerator evaluates to $1$, so it must always be positive. Therefore, we are looking for when the denominator is negative,
+\begin{equation*}
+2x^2 + x - 15 < 0.
+\end{equation*}
+Factoring, we have $(2x - 5)(x + 3) < 0$, and the solution set is $\boxed{(-3, 5/2)}$.
+\item Expanding both sides,
+\begin{align*} 
+x^4 + 10x^3 + 35x^2 + 40x + 24 &\geq x^4 - 10x^3 + 35x^2 - 40x + 24, \\
+20x^3 + 80x &\geq 0, \\
+x^3 + 4x &\geq 0, \\
+x(x^2 + 4) &\geq 0.
+\end{align*}
+Since $x^2 + 4 > 0$, this is satisfied precisely when $x\geq 0$, so the solution set is $\boxed{[0, +\infty)}$.
+\end{enumerate}
+\item Completing the square in the second inequality yields
+\begin{equation*}
+(x - 2)^2 + (y - 3)^2\leq 16.
+\end{equation*}
+Therefore, taking the two inequalities together, the region satisfying both is the region between two concentric circles centered at $(2,3)$, one with radius $1$ and one with radius $4$. The area of this region (an \href{https://en.wikipedia.org/wiki/Annulus_(mathematics)}{annulus}) is $\pi\cdot 4^2 - \pi\cdot 1^2 = \boxed{15\pi}$.
+\item If the two numbers are $x$ and $y$, then by AM-GM,
+\begin{equation*}
+\sqrt{xy}\leq\frac{x + y}{2} = 11.
+\end{equation*}
+Hence $xy\leq\boxed{121}$, and equality is attained when $x = y = 11$.
+\item Let $x$ be the length of the pen parallel to the barn and let $y$ be the width perpendicular to the barn. From the given conditions, $x + 2y = 20$. Then, by AM-GM,
+\begin{equation*}
+\sqrt{x\cdot 2y}\leq\frac{x + 2y}{2} = 10.
+\end{equation*}
+This means $2xy\leq 100$, so $xy\leq\boxed{50}$. Equality is attained when $x = 2y$, in which case we have $x = 10$ and $y = 5$.
+\item Completing the square,
+\begin{align*} 
+4x^2 + 3y^2 - 32x + 30y - 8 &= 4[x^2 - 8x + {\color{red}\boxed{\phantom{16}}}] + 3[y^2 + 10y + {\color{blue}\boxed{\phantom{25}}}] - 4{\color{red}\boxed{\phantom{16}}} - 3{\color{blue}\boxed{\phantom{25}}} - 8 \\
+&= 4(x - 4)^2 + 3(y + 5)^2 - 4\cdot {\color{red}16} - 3\cdot {\color{blue}25} - 8 \\
+&= 4(x - 4)^2 + 3(y + 5)^2 - 147.
+\end{align*}
+Since the perfect squares are always non-negative, the minimum possible value of the given expression is $\boxed{-147}$, attained when $x = 4$ and $y = -5$.
+\item \begin{enumerate} 
+\item $48$
+\item $48$ mph
+\end{enumerate}
+\item \begin{enumerate}
+\item Expanding the left hand side,
+\begin{equation*}
+x - 2\sqrt{xy} + y\geq 0,
+\end{equation*}
+so $x + y\geq 2\sqrt{xy}$. Dividing by $2$ on both sides yields AM-GM for two variables.
+\item Let $a = (w + x)/2$ and $b = (y + z)/2$. Then using AM-GM for two variables,
+\begin{align*}
+\frac{w + x + y + z}{4} &= \frac{a + b}{2} \\
+&\geq\sqrt{ab} \\
+&=\sqrt{\frac{w + x}{2}\cdot\frac{y + z}{2}} \\
+&\geq\sqrt{\sqrt{wx}\sqrt{yz}} \\
+&= \sqrt[4]{wxyz}.
+\end{align*}
+\item Using AM-GM for four variables,
+\begin{align*} 
+\frac{x + y + z}{3} &= \frac{x + y + z + \frac{x + y + z}{3}}{4} \\
+&\geq\sqrt[4]{xyz\cdot\frac{x + y + z}{3}} \\
+&= (xyz)^{1/4}\left(\frac{x + y + z}{3}\right)^{1/4}.
+\end{align*}
+This gives us
+\begin{equation*}
+\left(\frac{x + y + z}{3}\right)^{3/4}\geq (xyz)^{1/4},
+\end{equation*}
+and raising both sides to the $4/3$ power proves three-variable AM-GM.
+\end{enumerate}
+\item Let $\ell$ be the length, $w$ be the width, and $h$ be the height of this box, and suppose the open face is one of the $\ell\times w$ faces. Then 
+\begin{equation*}
+\ell w + 2\ell h + 2wh = 18.
+\end{equation*}
+By three-variable AM-GM,
+\begin{equation*}
+\sqrt[3]{(\ell w)(2\ell h)(2wh)}\leq\frac{\ell w + 2\ell h + 2wh}{3} = 6.
+\end{equation*}
+Cubing both sides gives us $4\ell^2 w^2h^2\leq 216$, so $\ell^2 w^2h^2\leq 54$ and $\ell wh\leq\sqrt{54} = \boxed{3\sqrt{6}}$.
+\item From the third equation,
+\begin{equation*}
+b + c = \sqrt{b^2 + 2bc + c^2}\geq\sqrt{b^2 + bc + c^2} = 8.
+\end{equation*}
+However, from the first and second equations,
+\begin{equation*}
+b\leq\sqrt{a^2 + ab + b^2} = 3\quad\text{and}\quad c\leq\sqrt{a^2 + ac + c^2} = 4.
+\end{equation*}
+We cannot simultaneously have $b\leq 3$, $c\leq 4$, and $b + c\geq 8$, so there are no solutions in positive real numbers to the given system of equations.
 \end{enumerate}
