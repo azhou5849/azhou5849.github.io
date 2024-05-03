@@ -42,9 +42,9 @@ Throughout, the notation $f:D\to\mathbb{R}$ means that $f$ is a function whose d
 \begin{enumerate}
 \item $x^2$
 \item $x^2$ with domain $(-2,3]$
-\item $x^2 - 6x + 8$ with domain $(3, +\infty)$
 \item $\frac{1}{x - 1} + 4$
 \item $\sqrt{x + 3} - 2$
+\item $x^2 - 6x + 8$ with domain $(3, +\infty)$
 \item $\frac{2x}{x^2 + 1}$ with domain $[-1,1]$
 \end{enumerate}
 \item Let $f:\mathbb{R}\to\mathbb{R}$ be a function. Describe a sequence of transformations that would transform the graph of $f$ into the graph of the given equation.
@@ -74,10 +74,93 @@ f(1) &= 6, & f(2) &= 4, & f(3) &= 2, & f(4) &= 3, \\
 f(5) &= 7, & f(6) &= 8, & f(7) &= 1, & f(8) &= 5.
 \end{align*}
 Find the smallest positive integer $n$ such that $f^n(k) = k$ for all $k\in\{1, 2, 3, 4, 5, 6, 7, 8\}$.
-\item (\textbf{Very challenging}) Describe a function $f:\mathbb{R}\to\mathbb{R}$ with the property that for any $a$, $b$, and $c$ with $a < b$, there exists $x$ between $a$ and $b$ such that $f(x) = c$.\par
-\emph{Hint: Decimal digits and \href{https://en.wikipedia.org/wiki/Binary_number}{binary}. If you're familiar with general base number systems, using something other than binary may be a little nicer.}
+\item (Thomae's function) For any rational number $q$, let $\operatorname{denom}(q)$ be the least positive integer $k$ for which $kq$ is an integer. (In other words, $\operatorname{denom}(q)$ is the denominator of $q$ when written as a fraction in lowest terms.) Sketch the graph of the function with domain $(0,1)$
+\begin{equation*}
+T(x) = \begin{cases} \tfrac{1}{\operatorname{denom}(x)} & \text{if }x\text{ is rational}, \\ 0 & \text{if }x\text{ is irrational}. \end{cases}
+\end{equation*}
 \end{enumerate}
 
 
 \newpage
 \subsection{Answers}
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item $f(0) = -6$
+\item $f(f(1)) = f(-5) = 19$
+\item Since $f(3) = 3$, the function $f$ doesn't do anything to $3$, so $f^6(3) = 3$ as well.
+\item $(f(3))^6 = 3^6 = 729$
+\item $f(3 + 4) - (f(3) + f(4)) = f(7) - f(3) - f(4) = 43 - 3 - 10 = 30$
+\end{enumerate}
+\item \begin{enumerate}
+\item $(f + g)(2) = f(2) + g(2) = -2 + 4 = 2$
+\item $(f\cdot g)(2) = f(2)\cdot g(2) = (-2)\cdot 4 = -8$
+\item $(f\circ g)(2) = f(g(2)) = f(4) = 10$
+\item $(g\circ f)(2) = g(f(2)) = g(-2) = -4$
+\item $f(g(f(2))) = f(-4) = 10$
+\item $(f^2\circ g)(2) = f^2(g(2)) = f(f(g(2))) = f(10) = 94$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\mathbb{R}$, or equivalently, $(-\infty, +\infty)$
+\item $(-\infty,2)\cup (2,3)\cup (3, +\infty)$, or equivalently, $\mathbb{R}\backslash\{2,3\}$
+\item $[4, +\infty)$
+\item We need $x^2 - 5x - 14\geq 0$. The left hand side factors as $(x + 2)(x - 7)$, and this is non-negative when $x\leq -2$ (when both factors are non-positive) and when $x\geq 7$ (when both factors are non-negative). The domain is $(-\infty, -2]\cup [7, +\infty)$.
+\end{enumerate}
+\item \begin{enumerate}
+\item $[0, +\infty)$
+\item $\mathbb{R}$, or equivalently, $(-\infty, +\infty)$
+\item $(-\infty, 4)\cup (4, +\infty)$, or equivalently, $\mathbb{R}\backslash\{4\}$
+\item $[-2, +\infty)$
+\item $[0,9]$
+\item Let $y$ be in the range, so there is a real number $x$ satisfying
+\begin{equation*}
+y = \frac{2x}{x^2 + 1}.
+\end{equation*}
+Clearing denominators (which is reversible since $x^2 + 1\neq 0$ for real $x$) and rearranging,
+\begin{equation*}
+yx^2 - 2x + y = 0. \tag{$\dagger$}
+\end{equation*}
+This has a real solution for $x$ if and only if the discriminant
+\begin{equation*}
+(-2)^2 - 4\cdot y\cdot y = 4 - 4y^2
+\end{equation*}
+is non-negative. This occurs when $-1\leq y\leq 1$, and when this condition is met, real solutions for $x$ are given by the quadratic formula. Thus the range is $[-1,1]$.
+\end{enumerate}
+\item \begin{enumerate}
+\item No inverse, e.g. $(-1)^2 = 1^2$
+\item No inverse, e.g. $(-1)^2 = 1^2$
+\item Inverse given by $y\mapsto 1 + \tfrac{1}{y - 4}$
+\item Inverse given by $y\mapsto (y + 2)^2 - 3$ with domain $[-2, +\infty)$
+\item Inverse given by $y\mapsto\sqrt{y + 1} + 3$ with domain $(-1, +\infty)$
+\item Solving $(\dagger)$ for $x$ yields, when $y\neq 0$,
+\begin{equation*}
+x = \frac{2\pm\sqrt{4 - 4y^2}}{2y}.
+\end{equation*}
+The solution which falls within the required domain $[-1,1]$ of the original function uses the $-$ sign in the $\pm$. When $y = 0$, we get $x = 0$, so the inverse function is
+\begin{equation*}
+y\longmapsto\begin{cases} \frac{2 - \sqrt{4 - 4y^2}}{2y} & y\neq 0, \\ 0 & y = 0. \end{cases}
+\end{equation*}
+\end{enumerate}
+\item We can swap the order in which we perform horizontal and vertical transformations (perhaps even intersperse them), but we have to keep horizontal transformations in the same order relative to each other, and similarly for vertical transformations.
+\begin{enumerate}
+\item Vertical translation by 3 down
+\item Vertical dilation by $-2$ (i.e. reflect across $x$-axis and vertical dilation by $2$)
+\item Horizontal translation by 5 right
+\item Horizontal dilation by 4
+\item For the horizontal, (i) translate right by 1, then (ii) dilate by a factor of $1/2$.\par
+For the vertical, (i) dilate by a factor of 3, then (ii) translate up by 4.
+\item For the horizontal, (i) translate left by 6, then (ii) reflect across the $y$-axis.\par 
+For the vertical, (i) dilate by a factor of 2, then (ii) translate down by 1.
+\end{enumerate}
+\item \begin{enumerate}
+\item $(-2, 17)$ and $(2, 17)$
+\item The horizontal line $y = 17$ meets the graph of $g$ in at least two points, namely the ones from part (a), so $g$ has no inverse.
+\end{enumerate}
+\item Let $y = f^5(2024)$. Then $f(y) = f^6(2024) = 2024$, so we need to solve the equation
+\begin{equation*}
+\frac{-1}{1 + y} = 2024.
+\end{equation*}
+The solution is $y = -\tfrac{2025}{2024}$.
+\item The numbers $\{2, 4, 3\}$ cycle every $3$ iterations of $f$ while the numbers $\{1, 6, 8, 5, 7\}$ cycle every $5$ iterations of $f$. To get all of the numbers to cycle, we need $\operatorname{lcm}(3,5) = \boxed{15}$ iterations.
+\item \href{https://en.wikipedia.org/wiki/Thomae\%27s_function}{Wikipedia page}.
+\end{enumerate}
