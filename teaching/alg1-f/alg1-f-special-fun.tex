@@ -22,16 +22,12 @@ Find all \underline{real} roots of $p(x)$.
 \item $9^{1 + x} = 27^{1 + 1/x}$
 \item $4^x - 2^x = 56$
 \end{enumerate}
-\item (Calculator allowed) Janelle puts \$10,000 into an account that earns $4\%$ interest compounded annually. Using the ``rule of 72,'' she estimates that it will take roughly $72/4 = 18$ years for the amount of money in the account to double.
-\begin{enumerate}
-\item How much money will there be in the account after $17$ years?
-\item How much money will there be in the account after $18$ years?
-\end{enumerate}
+\item (Calculator allowed) Janelle puts \$10,000 into an account that earns $4\%$ interest compounded annually. How much money will there be in the account after $18$ years?
 \item Compute each of the following logarithms without a calculator (some are undefined).
 \begin{enumerate}
 \item $\log_7(49)$
 \item $\log_2(64)$
-\item $\log_27(9)$
+\item $\log_{27}(9)$
 \item $\log_5(1)$
 \item $\log_4(0)$
 \item $\log_6(-6)$
@@ -41,7 +37,7 @@ Find all \underline{real} roots of $p(x)$.
 \item Find the domain and range of the function $f(x) = \log_{10}\left(\sqrt{100 - x^2}\right)$.
 \item Find the values of $a$, $b$, and $c$ which make the following function continuous:
 \begin{equation*}
-f(x) = \begin{cases} x^2 - 3 & x\leq -1; \\ ax + b & -1 < x\leq 2; \\ \frac{2x^2 - 3x - 9}{x^2 - 4x + 3} & x > 2. \end{cases}
+f(x) = \begin{cases} x^2 - 3 & x\leq -1; \\ ax + b & -1 < x\leq 2; \\ \frac{2x^2 - 3x - 9}{x^2 - 4x + 3} & x > 2\text{ and }x\neq 3; \\ c & x = 3. \end{cases}
 \end{equation*}
 \end{enumerate}
 
@@ -67,3 +63,40 @@ f(x) = \begin{cases} x^2 - 3 & x\leq -1; \\ ax + b & -1 < x\leq 2; \\ \frac{2x^2
 
 \newpage
 \subsection{Answers}
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item $f$ and $g$ are polynomials, $h$ is not 
+\item $f(0) = -1$ and $g(1) = 13$
+\item \begin{align*}
+f(x) + g(x) &= -3x^4 + 4x^3 + x^2 + 2x + 8 \\
+f(x)\cdot g(x) &= -18x^8 + 12x^7 - 6x^6 + 10x^5 - 57x^4 + 38x^3 - x^2 + 18x - 9
+\end{align*}
+\item $\deg f(x) = \deg g(x) = 4$
+\item When $a = 2$,
+\begin{equation*}
+f(x) + a\cdot g(x) = 4x^3 + 2x^2 + 2x + 17
+\end{equation*}
+so $\deg (f(x) + a\cdot g(x)) = 3$.
+\end{enumerate}
+\item We can suppose that $b\leq d$, as otherwise we simply swap the two factors of $p(x)$. Expanding,
+\begin{align*}
+a + c &= 9, \\
+b + ac + d &= 28, \\
+ad + bc &= 39, \\
+bd &= 21.
+\end{align*}
+Since $a,b,c,d$ are positive integers, either $b = 1$ and $d = 21$ or $b = 3$ and $d = 7$. In the first case, we have $a + c = 9$ and $21a + b = 39$, but this is not satisfied by positive integers. Thus we are in the second case, so $a + c = 9$ and $7a + 3b = 39$. This system has solution $a = 3$ and $c = 6$, and we can check the other equations (or by expanding from scratch) to see that
+\begin{equation*}
+p(x) = (x^2 + 3x + 3)(x^2 + 6x + 7).
+\end{equation*}
+If $r$ is a root of $p(x)$, then $p(r) = 0$, so either $r^2 + 3r + 3 = 0$ or $r^2 + 6r + 7 = 0$. By the quadratic formula, the first case gives us
+\begin{equation*}
+r = \frac{-3\pm\sqrt{-3}}{2},
+\end{equation*}
+which are non-real roots, while the second case gives us
+\begin{equation*}
+r = \frac{-6\pm\sqrt{8}}{2} = \boxed{-3\pm\sqrt{2}}.
+\end{equation*}
+\item 
+\end{enumerate}
