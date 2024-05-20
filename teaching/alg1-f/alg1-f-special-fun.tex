@@ -16,7 +16,7 @@
 p(x) = (x^2 + ax + b)(x^2 + cx + d).
 \end{equation*}
 Find all \underline{real} roots of $p(x)$.
-\item Solve each of the following equations for $x$.
+\item Solve each of the following equations for real solutions for $x$.
 \begin{enumerate}
 \item $\sqrt[6]{625} = 5^x$
 \item $9^{1 + x} = 27^{1 + 1/x}$
@@ -48,14 +48,14 @@ f(x) = \begin{cases} x^2 - 3 & x\leq -1; \\ ax + b & -1 < x\leq 2; \\ \frac{2x^2
 \item Let $p(x) = (1 + x)^{20}$.
 \begin{enumerate}
 \item Find the sum of the coefficients of $p(x)$.
-\item Find the sum of the coefficients of $p(x - 1)$.
+\item Find the sum of the coefficients of $p(x^2 - 3x + 2)$.
 \item (Very challenging) Find the sum of the coefficients of the terms of $p(x)$ whose degrees are multiples of $4$.
 \end{enumerate}
-\item (Calculator allowed)
+\item (Calculator allowed) In this problem, $i$ is \emph{not} the imaginary unit.
 \begin{enumerate}
 \item Let $E(i,m)$ denote the \emph{effective annual interest rate} for a nominal annual interest rate $i$ compounded $m$ times per year. That is, for any whole number of years, compounding annually at a rate of $E(i,m)$ results in the same balance as compounding $m$ times per year with a nominal annual interest rate $i$.\par Write down a formula for $E(i,m)$ in terms of $i$ and $m$, then compute $E(4\%, 12)$.
 \item Let $F(i,m)$ be the solution to the equation $E(F(i,m),m) = i$. Compute $F(4\%, 12)$.
-\item If we hold $i$ fixed, then as $m$ gets larger and larger, $F(i,m)$ approaches a value called the \emph{force of interest}. For the interest rate $i = 4\%$, compute the force of interest to three decimal places.
+\item If we hold $i$ fixed, then as $m$ gets larger and larger, $F(i,m)$ approaches a value called the \emph{force of interest}. For the interest rate $i = 4\%$, compute the force of interest as a percentage to one decimal place.
 \end{enumerate}
 \item Compute $(\log_4 5)(\log_5 6)(\log_6 7)(\log_7 8)$ without a calculator.
 \end{enumerate}
@@ -98,5 +98,86 @@ which are non-real roots, while the second case gives us
 \begin{equation*}
 r = \frac{-6\pm\sqrt{8}}{2} = \boxed{-3\pm\sqrt{2}}.
 \end{equation*}
-\item 
+\item \begin{enumerate}
+\item $\sqrt[6]{625} = (5^4)^{1/6} = 5^{4/6} = 5^{2/3}\implies x = 2/3$
+\item We have $9^{1 + x} = (3^2)^{1 + x} = 3^{2x + 2}$ and $27^{1 + 1/x} = (3^3)^{1 + 1/x} = 3 + 3/x$, so
+\begin{equation*}
+2x + 2 = 3 + \frac{3}{x}.
+\end{equation*}
+Multiplying through by $x$ gives $2x^2 + 2x = 3x + 3$, or $2x^2 - x - 3 = 0$. Factoring the left hand side yields
+\begin{equation*}
+(2x - 3)(x + 1) = 0,
+\end{equation*}
+so the possible solutions are $x = 3/2$ and $x = -1$. Both solutions work.
+\item If $y = 2^x$, then $y^2 - y = 56$. This has solutions $y = 8$ and $y = -7$. There is no real $x$ for which $2^x = -7$, while $2^x = 8$ is satisfied for $x = 3$.
+\end{enumerate}
+\item $\displaystyle\$10{,}000\cdot\left(1 + 0.04\right)^{18}\approx\$20{,}258.17$
+\item \begin{enumerate}
+\item $2$
+\item $6$
+\item $2/3$
+\item $0$
+\item Undefined
+\item Undefined 
+\item $-2/3$
+\item $2/3$
+\end{enumerate}
+\item Domain: For the logarithm to be defined, we need $\sqrt{100 - x^2}$ to be defined and positive. This occurs for $-10 < x < 10$, or $x\in\boxed{(-10,10)}$.\par
+Range: For $x\in\boxed{(-10,10)}$, the quantity $\sqrt{100 - x^2}$ can take any value in the interval $(0, 10]$, and no value outside this interval. Applying the base $10$ logarithm to this, the interval of possible outputs is $\boxed{(-\infty, 1]}$.
+\item First, we find that
+\begin{equation*}
+\frac{2x^2 - 3x - 9}{x^2 - 4x + 3} = \frac{(x - 3)(2x + 3)}{(x - 3)(x - 1)} = \frac{2x + 3}{x - 1}
+\end{equation*}
+for $x\neq 3$, so the third line of the function definition simplifies. With this, to ensure continuity,
+\begin{align*}
+x^2 - 3 &= ax + b & \text{at }x &= -1, \\
+ax + b &= \frac{2x + 3}{x - 1} & \text{at }x &= 2, \\
+\frac{2x + 3}{x - 1} &= c & \text{at }x = 3.
+\end{align*}
+The last equation gives us $c = 9/2$, while the first two equations give us the system
+\begin{align*}
+-a + b &= -2, \\
+2a + b &= 7.
+\end{align*}
+This system is solved by $a = 3$ and $b = 1$.
+\item \begin{enumerate}
+\item The sum of the coefficients of $p(x)$ is $p(1) = \boxed{2^{20}} = 1\,048\,576$.
+\item The sum of the coefficients of $q(x) = p(x^2 - 3x + 2)$ is $q(1) = p(0) = \boxed{1}$.
+\item Let $p(x) = a_{20}x^{20} + a_{19}x^{19} + \cdots + a_1x + a_0$. Since the powers of $i$ go in the cycle $1, i, -1, -i$, it turns out that
+\begin{equation*}
+a_0 + a_4 + a_8 + a_{12} + a_{16} + a_{20} = \frac{p(1) + p(i) + p(-1) + p(-i)}{4}.
+\end{equation*}
+We found $p(1) = 2^{20}$ before, while $p(-1) = (1 + (-1))^{20} = 0$. For the other two terms,
+\begin{equation*}
+p(\pm i) = (1\pm i)^{20} = (\pm 2i)^{10} = 2^{10}i^{10} = -2^{10},
+\end{equation*}
+so our final answer is 
+\begin{equation*}
+\frac{2^{20} - 2^{10} + 0 - 2^{10}}{4} = \boxed{2^{18} - 2^9} = 261\,632.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item $\displaystyle E(i, m) = \left(1 + \frac{i}{m}\right)^m - 1$ and $\displaystyle E(4\%, 12)\approx 4.074\%$
+\item For ease of notation, let $j = F(i,m)$, so that we need $E(j,m) = i$, or
+\begin{equation*}
+\left(1 + \frac{j}{m}\right)^m - 1 = i.
+\end{equation*}
+This is solved by $j = m\left[(1 + i)^{1/m} - 1\right]$. Then $F(4\%, 12)\approx 3.928\%$.
+\item Trying larger and larger values of $m$, we find $F(4\%, m)$ approaches $\approx 3.9\%$.
+\end{enumerate}
+\item We will first prove that for all $a,b,c$ (for which the involved logarithms are defined),
+\begin{equation*}
+(\log_a b)(\log_b c) = \log_a c. \tag{$\star$}
+\end{equation*}
+Let $x = \log_a b$ and $y = \log_b c$. Then $a^x = b$ and $b^y = c$, so
+\begin{equation*}
+c = b^y = (a^x)^y = a^{xy}.
+\end{equation*}
+This means $\log_a c = xy$, as required.\par
+Applying $(\star)$ repeatedly to the given problem,
+\begin{align*}
+(\log_4 5)(\log_5 6)(\log_6 7)(\log_7 8) &= (\log_4 6)(\log_6 7)(\log_7 8) \\
+&= (\log_4 7)(\log_7 8) \\
+&= \log_4 8 = \boxed{\frac{3}{2}}.
+\end{align*}
 \end{enumerate}
