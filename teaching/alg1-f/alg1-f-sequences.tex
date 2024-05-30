@@ -3,14 +3,92 @@
 \subsection{Review problems}
 
 \begin{enumerate}
-\item 
+\item Identify, for each of the following sequences, whether they could be arithmetic, geometric, both, or neither. For any arithmetic sequence, identify the common difference. For any geometric sequence, identify the common ratio. 
+\begin{enumerate}
+\item $1, 1, 1, 1, 1, \ldots$
+\item $2, -2, 2, -2, 2, \ldots$
+\item $1, 1, 2, 3, 5, \ldots$
+\item $5, 11, 17, 23, 29, \ldots$
+\item $\frac{1}{\sqrt{2}}, \sqrt{2}, \frac{3}{2}\sqrt{2}, \sqrt{8}, \frac{5\sqrt{2}}{2}, \ldots$
+\end{enumerate}
+\item Compute the arithmetic series
+\begin{equation*}
+3 + 5 + 7 + 9 + \cdots + 89.
+\end{equation*}
+\item The sum of the first $6$ terms of an arithmetic sequence is $114$, and the sum of the next $5$ terms is $-15$. What is the least positive integer $N$ for which the sum of the first $N$ terms of the series is (strictly) negative?
+\item (Calculator permitted) Jo puts $\$1000$ into a savings account at the beginning of every year starting at the beginning of 2024. The account earns $2\%$ nominal annual interest, compounded quarterly. How much money will there be in her account at the end of 2050?
+\item When
+\begin{equation*}
+0.304\,878\,048\,780\,487\,804\,878\,\ldots = 0.3\overline{04878}
+\end{equation*}
+is expressed as a fraction in lowest terms, the numerator is $25$. What is the denominator?
+\item \begin{enumerate}
+\item Find constants $A$ and $B$ such that
+\begin{equation*}
+\frac{1}{n(n + 2)} = \frac{A}{n} + \frac{B}{n + 2}
+\end{equation*}
+for all positive integers $n$.
+\item Evaluate the series
+\begin{equation*}
+\frac{1}{3} + \frac{1}{8} + \frac{1}{15} + \frac{1}{24} + \frac{1}{35} + \frac{1}{48} + \cdots + \frac{1}{9800}.
+\end{equation*}
+\end{enumerate}
+\item For each positive integer $n$, we define $n!$ (read as: ``$n$ factorial'') to be the product of the first $n$ positive integers. The first few factorials are
+\begin{equation*}
+1! = 1,\quad 2! = 2\cdot 1 = 2,\quad 3! = 3\cdot 2\cdot 1 = 6,\quad 4! = 4\cdot 3\cdot 2\cdot 1 = 24.
+\end{equation*}
+\begin{enumerate}
+\item For which positive integers $n$ is it true that $n! > 2^n$?
+\item When the infinite series
+\begin{equation*}
+\frac{10}{1!} + \frac{10}{2!} + \frac{10}{3!} + \frac{10}{4!} + \frac{10}{5!} + \frac{10}{6!} + \cdots
+\end{equation*}
+is computed, between what two consecutive positive integers does the value lie?
+\end{enumerate}
 \end{enumerate}
 
 
 \subsection{Challenge problems}
 
 \begin{enumerate}[resume]
-\item 
+\item Let $0 < x < 1$ be a real number.
+\begin{enumerate}
+\item Evaluate the infinite series
+\begin{equation*}
+1 - x + x^2 - x^3 + x^4 - x^5 + x^6 - x^7 + \cdots \tag{$\dagger$}
+\end{equation*}
+in terms of $x$.
+\item As $x$ gets closer and closer to $1$, what value does the infinite series $(\dagger)$ approach?
+\item When we compute the sum of the first $n$ terms of
+\begin{equation*}
+1 - 1 + 1 - 1 + 1 - 1 + 1 - 1 + \cdots
+\end{equation*}
+for larger and larger values of $n$, do these sums approach your answer to part (b)?
+\end{enumerate}
+\item For each positive integer $n$, let $A_n$ be the sum of the first $n$ squares and let $T_n$ be the sum of the first $n$ positive integers.
+\begin{enumerate}
+\item Show that $T_n = \frac{n(n + 1)}{2}$.
+\item Show that for each positive integer $n$,
+\begin{equation*}
+(n + 1)^3 - 1 = 3A_n + 3T_n + n.
+\end{equation*}
+\emph{Hint: Expand $(k + 1)^3 - k^3$.}
+\item Evaluate $A_{100}$.
+\end{enumerate}
+\item (Basel problem and related sums) It was found by Leonhard Euler in 1734 that
+\begin{equation*}
+\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \cdots = \frac{\pi^2}{6}.
+\end{equation*}
+\begin{enumerate}
+\item Compute
+\begin{equation*}
+\frac{1}{2^2} + \frac{1}{4^2} + \frac{1}{6^2} + \frac{1}{8^2} + \frac{1}{10^2} + \cdots.
+\end{equation*}
+\item Compute
+\begin{equation*}
+\frac{1}{1^2} + \frac{1}{3^2} + \frac{1}{5^2} + \frac{1}{7^2} + \frac{1}{9^2} + \cdots.
+\end{equation*}
+\end{enumerate}
 \end{enumerate}
 
 
@@ -18,5 +96,52 @@
 \subsection{Answers}
 
 \begin{enumerate}
-\item 
+\item \begin{enumerate}
+\item Arithmetic (common difference 0) and geometric (common difference 1)
+\item Geometric with common ratio $-1$
+\item Neither arithmetic nor geometric
+\item Arithmetic with common difference 6
+\item Arithmetic with common difference $\sqrt{2}/2$
+\end{enumerate}
+\item Let $n$ be the number of terms in the series. The common difference is 2, so since there are $n - 1$ ``steps'' from the first term to the last term,
+\begin{equation*}
+3 + 2(n - 1) = 89\implies n = 44.
+\end{equation*}
+Using the formula from class, the value of the series is 
+\begin{equation*}
+\frac{1}{2}\cdot 44\cdot (3 + 89) = \boxed{2024}.
+\end{equation*}
+\item Let $a$ be the first term and $d$ be the common difference. Denoting the $n$-th term of the sequence by $a_n$, the relevant terms for the two given series are
+\begin{align*}
+a_1 &= a, & a_6 &= a + 5d; \\
+a_7 &= a + 6d, & a_{11} &= a + 10d.
+\end{align*}
+The sum of the first $6$ terms gives us the equation
+\begin{equation*}
+114 = \frac{1}{2}\cdot 6\cdot (a_1 + a_6) = 6a + 15d,
+\end{equation*}
+while the sum of the next $5$ terms gives us the equation 
+\begin{equation*}
+-15 = \frac{1}{2}\cdot 5\cdot (a_7 + a_{11}) = 5a + 40d.
+\end{equation*}
+Solving this system, we get $a = 29$ and $d = -3$.\par 
+From here, we want to find the least $N$ for which the sum of the first $N$ terms,
+\begin{equation*}
+\frac{1}{2}\cdot N\cdot (29 + [29 - 3(N - 1)]),
+\end{equation*}
+is negative. Simplifying, we have the inequality
+\begin{equation*}
+\frac{N}{2}(61 - 3N) < 0,
+\end{equation*}
+which is first satisfied when $N = \boxed{21}$.
+\item After a year passes, the amount of money in the account is multiplied by
+\begin{equation*}
+r = \left(1 + \frac{0.02}{4}\right)^4 = 1.005^4.
+\end{equation*}
+The first $\$1000$ is multiplied by $r^{27}$, since its contribution to the account is present for $27$ years (the \emph{beginning} of 2024 to the \emph{end} of 2050). The next $\$1000$ is multiplied by $r^{26}$, then the next $\$1000$ is multiplied by $r^{25}$, and so on. We stop at the last deposit of $\$1000$, which is multiplied by $r^1$. The total in the account by the end of 2050 is then 
+\begin{align*} 
+\$1000\cdot r^{27} + \$1000\cdot r^{26} + \cdots + \$1000\cdot r^1 &= \$1000\cdot (r^1 + r^2 + \cdots + r^{27}) \\
+&= \$1000\cdot\frac{r^{28} - r^1}{r - 1} \\
+&\approx \$36\,132.
+\end{align*} 
 \end{enumerate}
