@@ -149,4 +149,26 @@ The first $\$1000$ is multiplied by $r^{27}$, since its contribution to the acco
 0.\overline{04878} &= \frac{4878}{10^5} + \frac{4878}{10^{10}} + \frac{4878}{10^{15}} + \cdots = \frac{4878}{10^5}\cdot\frac{1}{1 - \tfrac{1}{10^5}} \\
 &= \frac{4878}{10^5 - 1} = \frac{4878}{99999} = \frac{542}{11111}.
 \end{align*}
+(If you are familiar with the Euclidean algorithm, then instead of what follows, it is recommended to use it to find the greatest common divisor and simplify the fraction further that way.) This means that
+\begin{align*}
+ 0.3\overline{04878} &= 0.3 + 0.0\overline{04878} = \frac{3}{10} + \frac{1}{10}\cdot\frac{542}{11111} \\
+ &= \frac{33333 + 542}{111110} = \frac{33875}{111110}.
+\end{align*}
+The problem tells us that when this fraction is fully simplified, the numerator is $25$. This means the greatest common divisor of the numerator and denominator is $33875/25 = 1355$, and the denominator is
+\begin{equation*}
+\frac{111110}{1355} = \frac{22222}{271} = \boxed{82}.
+\end{equation*}
+\item \begin{enumerate}
+\item Clearing denominators by multiplying both sides by $n(n + 2)$, we need
+\begin{equation*}
+1 = A(n + 2) + Bn = (A + B)n + 2A
+\end{equation*}
+for all $n$. This means $2A = 1$, so $A = 1/2$, and $A + B = 0$, so $B = -1/2$.
+\item The $n$-th term of the series is $\tfrac{1}{n(n + 2)}$, so 
+\begin{align*} 
+\frac{1}{3} + \frac{1}{8} + \cdots + \frac{1}{9800} &= \frac{1}{2}\left[\left(\frac{1}{1} - \frac{1}{3}\right) + \left(\frac{1}{2} - \frac{1}{4}\right) + \cdots + \left(\frac{1}{98} - \frac{1}{100}\right)\right] \\
+&= \frac{1}{2}\left[\frac{1}{1} + \frac{1}{2} - \frac{1}{99} - \frac{1}{100}\right] \\
+&= \frac{1}{2}\cdot\frac{9900 + 4950 - 100 - 99}{9900} = \frac{14651}{19800}.
+\end{align*} 
+\end{enumerate}
 \end{enumerate}
