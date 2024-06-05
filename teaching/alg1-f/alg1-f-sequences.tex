@@ -73,7 +73,7 @@ for larger and larger values of $n$, do these sums approach your answer to part 
 (n + 1)^3 - 1 = 3A_n + 3T_n + n.
 \end{equation*}
 \emph{Hint: Expand $(k + 1)^3 - k^3$.}
-\item Evaluate $A_{100}$.
+\item Evaluate $T_{100}$ and $A_{100}$.
 \end{enumerate}
 \item (Basel problem and related sums) It was found by Leonhard Euler in 1734 that
 \begin{equation*}
@@ -170,5 +170,61 @@ for all $n$. This means $2A = 1$, so $A = 1/2$, and $A + B = 0$, so $B = -1/2$.
 &= \frac{1}{2}\left[\frac{1}{1} + \frac{1}{2} - \frac{1}{99} - \frac{1}{100}\right] \\
 &= \frac{1}{2}\cdot\frac{9900 + 4950 - 100 - 99}{9900} = \frac{14651}{19800}.
 \end{align*} 
+\end{enumerate}
+\item \begin{enumerate}
+\item We have $n! > 2^n$ for $n\geq 4$.
+\item For an upper bound,
+\begin{align*}
+\frac{10}{1!} &+ \frac{10}{2!} + \frac{10}{3!} + \frac{10}{4!} + \frac{10}{5!} + \frac{10}{6!} + \cdots \\
+&\qquad = 10\left(\frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \frac{1}{5!} + \frac{1}{6!} + \cdots\right) \\
+&\qquad < 10\left(1 + \frac{1}{2} + \frac{1}{6} + \left[\frac{1}{2^4} + \frac{1}{2^5} + \frac{1}{2^6} + \cdots\right]\right) \\
+&\qquad = 10\left(\frac{5}{3} + \frac{1/2^4}{1 - 1/2}\right) \\
+&\qquad = 17\frac{11}{12}.
+\end{align*}
+For a lower bound, we can compute partial sums, and eventually we find that
+\begin{equation*} 
+10\left(\frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \frac{1}{4!} + \frac{1}{5!} + \frac{1}{6!} + \cdots\right) > 10\left(1 + \frac{1}{2} + \frac{1}{6} + \frac{1}{24}\right) = 17\frac{1}{12}.
+\end{equation*}
+Thus the value of the series lies between $\boxed{\text{17 and 18}}$.\par
+\emph{The actual value is roughly $17.182\,818$.}
+\end{enumerate}
+\item \begin{enumerate}
+\item This is an infinite geometric series with common ratio $r = -x$. Since $\lvert r\vert < 1$, the series has a finite value, which is $\dfrac{1}{1 - r} = \boxed{\frac{1}{1 + x}}$.
+\item $1/2$
+\item The partial sums go $1, 0, 1, 0, 1, 0, \ldots$, alternating without actually getting closer to $1/2$.
+\end{enumerate}
+\item \begin{enumerate}
+\item The series $1 + 2 + \cdots + n$ is arithmetic with $n$ terms, first term $1$, and last term $n$, so
+\begin{equation*}
+T_n = \frac{1}{2}\cdot n\cdot (1 + n) = \frac{n(n + 1)}{2}.
+\end{equation*}
+\item Following the hint, we can ``open'' a telescoping series and write
+\begin{equation*} 
+(n + 1)^3 - 1 = [(n + 1)^3 - n^3] + [n^3 - (n - 1)^3] + \cdots + [2^3 - 1^3].
+\end{equation*}
+For each positive integer $k$, we have $(k + 1)^3 - k^3 = 3k^2 + 3k + 1$, so the above sum is
+\begin{equation*}
+[3n^2 + 3n + 1] + [3(n - 1)^2 + 3(n - 1) + 1] + \cdots + [3\cdot 1^2 + 3\cdot 1 + 1].
+\end{equation*}
+Regrouping, we get
+\begin{equation*}
+3[n^2 + (n - 1)^2 + \cdots + 1^2] + 3[n + (n - 1) + \cdots + 1] + [1 + 1 + \cdots + 1] = 3A_n + 3T_n + n.
+\end{equation*}
+\item For $n = 100$, we get $T_{100} = 5050$ and $A_n = 338\,350$.\par
+\emph{In general, $A_n = \frac{n(n + 1)(2n + 1)}{6}$.}
+\end{enumerate}
+\item \begin{enumerate}
+\item For each $k$,
+\begin{equation*}
+\frac{1}{(2k)^2} = \frac{1}{4k^2} = \frac{1}{4}\cdot\frac{1}{k^2}.
+\end{equation*}
+Therefore,
+\begin{equation*}
+\frac{1}{2^2} + \frac{1}{4^2} + \frac{1}{6^2} + \frac{1}{8^2} + \frac{1}{10^2} + \cdots = \frac{1}{4}\left(\frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \frac{1}{4^2} + \frac{1}{5^2} + \cdots\right) = \boxed{\frac{\pi^2}{24}}.
+\end{equation*}
+\item The two series in parts (a) and (b) add up to form the original series given to us, so
+\begin{equation*}
+\frac{1}{1^2} + \frac{1}{3^2} + \frac{1}{5^2} + \frac{1}{7^2} + \frac{1}{9^2} + \cdots = \frac{\pi^2}{6} - \frac{\pi^2}{24} = \boxed{\frac{\pi^2}{8}}.
+\end{equation*}
 \end{enumerate}
 \end{enumerate}
