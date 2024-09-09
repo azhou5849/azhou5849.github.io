@@ -6,10 +6,10 @@ The \textbf{fundamental theorem of arithmetic} (FTA) states that every positive 
 \end{equation*}
 For a given positive integer, the corresponding product of primes is its \emph{prime factorization}.
 
-This handout develops the number theory needed to prove the FTA from (more-or-less) first principles. Along the way, we will encounter some other useful tools, in particular the \emph{euclidean algorithm} for calculating the greatest common divisor (GCD).
+This handout discusses the number theory needed to prove the FTA. Knowledge of the material that is already in the textbook (AoPS Volume 1) is assumed.
 
 \begin{convention}
-Unless otherwise specified, ``number'' means ``non-negative integer.''
+Unless otherwise specified, ``number'' means ``non-negative integer'' in this chapter.
 \end{convention}
 
 \textit{These notes are also available at \url{https://azhou5849.github.io/teaching/}.}
@@ -17,31 +17,47 @@ Unless otherwise specified, ``number'' means ``non-negative integer.''
 
 \subsection{Divisibility}
 
-Given two numbers $a$ and $b$, we say that \emph{$a$ is divisible by $b$}, or that \emph{$b$ divides $a$}, if there is a number $c$ such that $a = bc$. If this is the case, we can write $b\mid a$. For example:
-\begin{equation*} 
-3\mid 6,\quad 17\mid 51,\quad 13\mid 91,\quad 23\mid 2024,\quad 1\mid 7,\quad 7\mid 7,\quad 6\mid 0.
-\end{equation*}
+Given two numbers $a$ and $b$, we say that \emph{$a$ is divisible by $b$} if there is a number $c$ such that $a = bc$. When $b\neq 0$, this is equivalent to saying that $a/b$ is an integer. Synonymously, we say that \emph{$a$ is a multiple of $b$}, that \emph{$b$ divides $a$}, and that \emph{$b$ is a divisor of $a$}. This can be written as $b\mid a$.
 
-
-
-
-\subsection{The division algorithm}
-
-Integers can be added, subtracted, and multiplied without issue, but division does not always produce an integer result. However, we can stay within the integers by introducing remainders.
-
-\begin{proposition}[Division algorithm]
-Let $a$ and $b$ be positive integers, with $b\neq 0$. There are unique non-negative integers $q$ and $r$, with $0\leq r < b$, such that $a = bq + r$.
+When $a$ is divisible by $b$, we can calculate $c = a/b$ using the usual division method(s) taught in school. Even when $a$ is not divisible by $b$, long division gets us
+\begin{proposition}[Division algorithm]\label{prop:div-algo}
+Let $a$ and $b$ be numbers with $b\neq 0$. There are unique numbers $q$ and $r$, with $0\leq r < b$, such that $a = bq + r$.
 \end{proposition}
-Using the notation of the statement, $q$ is the \emph{(integer) quotient} when dividing $a$ by $b$, while $r$ is the \emph{remainder} when dividing $a$ by $b$.
+The numbers $q$ and $r$ are called the \emph{(integer) quotient} and \emph{remainder} when $a$ is divided by $b$.
+
+
+\subsection{Common divisors}
+
+Suppose that $a$ and $b$ are numbers with $a\neq 0$. We know that $1$ divides both $a$ and $b$ and that there are only finitely many numbers which divide $a$, so the set of \emph{common divisors} of $a$ and $b$, i.e.\ the numbers which divide both $a$ and $b$, is non-empty and finite. This means that there is a \emph{greatest} common divisor of $a$ and $b$, which we denote by $\gcd(a,b)$. If $\gcd(a,b) = 1$, we say that $a$ and $b$ are \emph{relatively prime} or \emph{coprime}.
+
+One way to compute $\gcd(a,b)$ is simply to list out all of the divisors of $a$ and $b$ and look for the largest one that appears in both lists. For larger numbers, a better idea uses the following.
+
+\begin{proposition}
+If $a$ and $b$ are numbers, $a\neq 0$, and $a\geq b$, then $\gcd(a,b) = \gcd(a - b, b)$.
+\end{proposition}
 \begin{proof}
-Consider the set $\mathcal{R}$ of \textit{all} non-negative integers that can be written in the form $a - bn$, where $n$ is a non-negative integer. This set is non-empty, as $a - b\cdot 0 = a$ is in $\mathcal{R}$, so it has a minimal element $r\geq 0$, which we can write as $r = a - bq$ for some non-negative integer $q$. We claim that $r < b$ as well. If $r\geq b$, then $r' = r - b\geq 0$, and we can write
-\begin{equation}
-r' = r - b = (a - bq) - b = a - b(q + 1).
-\end{equation}
-This shows that $r'\in\mathcal{R}$, but $r' < r$, contradicting minimality of $r$. Hence we must have $r < b$, so we have shown that the non-negative integers $q$ and $r$ in the proposition must exist.\par
-For uniqueness, suppose we can write $a = bq + r$ and $a = bq' + r'$, with $0\leq r,r' < b$. Then
-\begin{equation}
-b(q - q') = r' - r,
-\end{equation}
-so $r' - r$ is divisible by $b$. Since $0\leq r,r' < b$, the only way this can happen is to have $r' - r = 0$, in which case $r' = r$. Then, since $b\neq 0$, we must have $q - q' = 0$, so $q = q'$.
+We prove the stronger statement that \textit{any} common divisor of $a$ and $b$ is also a common divisor of $b$ and $a - b$, and vice versa. Suppose $d$ is a common divisor of $a$ and $b$, so $a = da'$ and $b = db'$ for some numbers $a'$ and $b'$. Then $a - b = d(a' - b')$, so $d$ is a divisor of $a - b$ as well, hence a common divisor of $b$ and $a - b$. A similar argument shows that any common divisor of $b$ and $a - b$ is also a divisor of $a$; this is left as an exercise.
 \end{proof}
+Repeatedly using this result to calculate GCD is the \emph{euclidean algorithm}. For example:
+\begin{align*}
+\gcd(582\,133, 268\,381) &= \gcd(313\,752, 268\,381) = \gcd(45\,371, 268\,381) \\
+&= \gcd(45\,371, 223\,010) = \gcd(45\,371, 177\,639) = \gcd(45\,371, 132\,268) \\
+&= \gcd(45\,371, 86\,897) = \gcd(45\,371, 41\,526) = \gcd(3845, 41\,526) \\
+&= \gcd(3845, 37\,681) = \gcd(3845, 33\,836) = \cdots \\
+&= \gcd(3845, 3076) = \gcd(769, 3076) = \gcd(769, 2307) \\
+&= \gcd(769, 1538) = \gcd(769, 769) = \boxed{769}.
+\end{align*}
+
+Subtracting the same number over and over again can be done in one line by using division with remainder (Proposition~\ref{prop:div-algo}) instead:
+\begin{align*}
+\gcd(582\,133, 268\,381) &= \gcd(45\,371, 268\,381) & 582\,133 &= 2\cdot 268\,381 + 45\,371 \\
+&= \gcd(45\,371, 41\,526) & 268\,381 &= 5\cdot 45\,371 + 41\,526 \\
+&= \gcd(3845, 41\,526) & 45\,371 &= 1\cdot 41\,526 + 3845 \\
+&= \gcd(3845, 3076) & 41\,526 &= 10\cdot 3845 + 3076 \\
+&= \gcd(769, 3076) & 3845 &= 1\cdot 3076 + 769 \\
+&= \gcd(769, 0) & 3076 &= 4\cdot 769 + 0 \\
+&= \boxed{769}.
+\end{align*}
+
+
+\subsection{B\'{e}zout's lemma}
