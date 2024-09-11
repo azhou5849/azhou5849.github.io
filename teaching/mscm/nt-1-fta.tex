@@ -6,7 +6,7 @@ The \textbf{fundamental theorem of arithmetic} (FTA) states that every positive 
 \end{equation*}
 For a given positive integer, the corresponding product of primes is its \emph{prime factorization}.
 
-This handout discusses the number theory needed to prove the FTA. Knowledge of the material that is already in the textbook (AoPS Volume 1) is assumed.
+This handout discusses the number theory needed to prove the FTA. Knowledge of the material that is already in the textbook (AoPS Volume 1) or class examples is assumed.
 
 \begin{convention}
 Unless otherwise specified, ``number'' means ``non-negative integer'' in this chapter.
@@ -28,8 +28,6 @@ The numbers $q$ and $r$ are called the \emph{(integer) quotient} and \emph{remai
 
 \subsection{Common divisors}
 
-Suppose that $a$ and $b$ are numbers with $a\neq 0$. We know that $1$ divides both $a$ and $b$ and that there are only finitely many numbers which divide $a$, so the set of \emph{common divisors} of $a$ and $b$, i.e.\ the numbers which divide both $a$ and $b$, is non-empty and finite. This means that there is a \emph{greatest} common divisor of $a$ and $b$, which we denote by $\gcd(a,b)$. If $\gcd(a,b) = 1$, we say that $a$ and $b$ are \emph{relatively prime} or \emph{coprime}.
-
 One way to compute $\gcd(a,b)$ is simply to list out all of the divisors of $a$ and $b$ and look for the largest one that appears in both lists. For larger numbers, a better idea uses the following.
 
 \begin{proposition}
@@ -38,22 +36,23 @@ If $a$ and $b$ are numbers, $a\neq 0$, and $a\geq b$, then $\gcd(a,b) = \gcd(a -
 \begin{proof}
 We prove the stronger statement that \textit{any} common divisor of $a$ and $b$ is also a common divisor of $b$ and $a - b$, and vice versa. Suppose $d$ is a common divisor of $a$ and $b$, so $a = da'$ and $b = db'$ for some numbers $a'$ and $b'$. Then $a - b = d(a' - b')$, so $d$ is a divisor of $a - b$ as well, hence a common divisor of $b$ and $a - b$. A similar argument shows that any common divisor of $b$ and $a - b$ is also a divisor of $a$; this is left as an exercise.
 \end{proof}
+
 Repeatedly using this result to calculate GCD is the \emph{euclidean algorithm}. For example:
 \begin{align*}
-\gcd(582\,133, 268\,381) &= \gcd(313\,752, 268\,381) = \gcd(45\,371, 268\,381) \\
-&= \gcd(45\,371, 223\,010) = \gcd(45\,371, 177\,639) = \gcd(45\,371, 132\,268) \\
-&= \gcd(45\,371, 86\,897) = \gcd(45\,371, 41\,526) = \gcd(3845, 41\,526) \\
-&= \gcd(3845, 37\,681) = \gcd(3845, 33\,836) = \cdots \\
+\gcd(582133, 268381) &= \gcd(313752, 268381) = \gcd(45371, 268381) \\
+&= \gcd(45371, 223010) = \gcd(45371, 177639) = \gcd(45371, 132268) \\
+&= \gcd(45371, 86897) = \gcd(45371, 41526) = \gcd(3845, 41526) \\
+&= \gcd(3845, 37681) = \gcd(3845, 33836) = \cdots \\
 &= \gcd(3845, 3076) = \gcd(769, 3076) = \gcd(769, 2307) \\
 &= \gcd(769, 1538) = \gcd(769, 769) = \boxed{769}.
 \end{align*}
 
 Subtracting the same number over and over again can be done in one line by using division with remainder (Proposition~\ref{prop:div-algo}) instead:
 \begin{align*}
-\gcd(582\,133, 268\,381) &= \gcd(45\,371, 268\,381) & 582\,133 &= 2\cdot 268\,381 + 45\,371 \\
-&= \gcd(45\,371, 41\,526) & 268\,381 &= 5\cdot 45\,371 + 41\,526 \\
-&= \gcd(3845, 41\,526) & 45\,371 &= 1\cdot 41\,526 + 3845 \\
-&= \gcd(3845, 3076) & 41\,526 &= 10\cdot 3845 + 3076 \\
+\gcd(582133, 268381) &= \gcd(45371, 268381) & 582133 &= 2\cdot 268381 + 45371 \\
+&= \gcd(45371, 41526) & 268381 &= 5\cdot 45371 + 41526 \\
+&= \gcd(3845, 41526) & 45371 &= 1\cdot 41526 + 3845 \\
+&= \gcd(3845, 3076) & 41526 &= 10\cdot 3845 + 3076 \\
 &= \gcd(769, 3076) & 3845 &= 1\cdot 3076 + 769 \\
 &= \gcd(769, 0) & 3076 &= 4\cdot 769 + 0 \\
 &= \boxed{769}.
@@ -61,3 +60,24 @@ Subtracting the same number over and over again can be done in one line by using
 
 
 \subsection{B\'{e}zout's lemma}
+
+When running the euclidean algorithm by division with remainder, the last non-zero remainder will always be the GCD. We can repeatedly ``back-substitute'' to write, in the previous example,
+\begin{align*}
+769 &= 1\cdot 3845 - 1\cdot 3076 = 1\cdot 3845 - (41526 - 10\cdot 3845) \\
+&= 11\cdot 3845 - 1\cdot 41526 = 11\cdot (45371 - 1\cdot 41526) - 1\cdot 41526 \\
+&= 11\cdot 45371 - 12\cdot 41526 = 11\cdot 45371 - 12\cdot (268381 - 5\cdot 45371) \\
+&= 71\cdot 45371 - 12\cdot 268381 = 71\cdot (582133 - 2\cdot 268381) - 12\cdot 268381 \\
+&= 71\cdot 582133 - 154\cdot 268381.
+\end{align*}
+In general, we can write the GCD as a ``linear combination'' of the original numbers by running this procedure. The fact we can always do this is known as \emph{B\'{e}zout's lemma}.
+\begin{lemma}[B\'{e}zout]
+Let $a,b$ be numbers, not both $0$. There exist integers $m,n$ such that
+\begin{equation*}
+am + bn = \gcd(a,b).
+\end{equation*}
+\end{lemma}
+
+
+\subsection{Prime numbers}
+
+A positive integer $p$ is \emph{prime} if $p\neq 1$ and the equation $p = ab$, where $a$ and $b$ are numbers, implies that $a = 1$ or $b = 1$.
