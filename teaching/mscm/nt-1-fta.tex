@@ -6,13 +6,27 @@ The \textbf{fundamental theorem of arithmetic} (FTA) states that every positive 
 \end{equation*}
 For a given positive integer, the corresponding product of primes is its \emph{prime factorization}.
 
-This handout discusses the number theory needed to prove the FTA. Knowledge of the material that is already in the textbook (AoPS Volume 1) or class examples is assumed.
-
-\begin{convention}
-Unless otherwise specified, ``number'' means ``non-negative integer'' in this chapter.
-\end{convention}
+This handout discusses how to prove the FTA. Knowledge of the material that is already in the textbook (AoPS Volume 1) or in class examples is assumed.
 
 \textit{These notes are also available at \url{https://azhou5849.github.io/teaching/}.}
+
+
+\subsection{Every positive integer is a product of primes}
+
+The fact that there is \textit{a} prime factorization requires no additional theory.
+
+\begin{theorem}
+Every positive integer (greater than 1) is prime or can be written as a product of primes.
+\end{theorem}
+\begin{proof}
+Suppose otherwise, and let $n > 1$ be the smallest counterexample to the statement. Then $n$ cannot be prime itself, so we can write $n = ab$ where neither $a$ nor $b$ is 1. This means that $a,b < n$, so $a$ and $b$ can be written as products of primes. Joining these products together shows $n$ is a product of primes, contradiction.
+\end{proof}
+
+\begin{remark}
+For those familiar with \href{https://en.wikipedia.org/wiki/Mathematical_induction}{mathematical induction}, the proof is a little smoother by using strong induction instead of contradiction.
+\end{remark}
+
+What remains is to prove that there is only one prime factorization (aside from rearrangement), and the rest of the handout is dedicated to this goal.
 
 
 \subsection{Divisibility}
@@ -70,7 +84,7 @@ When running the euclidean algorithm by division with remainder, the last non-ze
 &= 71\cdot 582133 - 154\cdot 268381.
 \end{align*}
 In general, we can write the GCD as a ``linear combination'' of the original numbers by running this procedure. The fact we can always do this is known as \emph{B\'{e}zout's lemma}.
-\begin{lemma}[B\'{e}zout]
+\begin{lemma}[B\'{e}zout]\label{lem:bezout}
 Let $a,b$ be numbers, not both $0$. There exist integers $m,n$ such that
 \begin{equation*}
 am + bn = \gcd(a,b).
@@ -80,4 +94,20 @@ am + bn = \gcd(a,b).
 
 \subsection{Prime numbers}
 
-A positive integer $p$ is \emph{prime} if $p\neq 1$ and the equation $p = ab$, where $a$ and $b$ are numbers, implies that $a = 1$ or $b = 1$.
+A number $p$ is \emph{prime} if $p\neq 1$ and the equation $p = ab$, where $a$ and $b$ are numbers, implies that $a = 1$ or $b = 1$. Equivalently, a prime number has exactly two distinct divisors: 1 and itself.
+
+\begin{proposition}\label{prop:prime}
+Let $p$ be a prime number and let $a,b$ be numbers. If $p\mid ab$, then $p\mid a$ or $p\mid b$.
+\end{proposition}
+\begin{proof}
+It is equivalent to show that if $p\mid ab$ but $p$ does not divide $a$ (written $p\nmid a$), then $p\mid b$. Since the only divisors of $p$ are $1$ and $p$, we must then have $\gcd(a,p) = 1$. By B\'{e}zout's lemma (\ref{lem:bezout}), there exist integers $m,n$ such that $am + pn = 1$. Multiplying through by $b$,
+\begin{equation*}
+(ab)m + p(bn) = b.
+\end{equation*}
+Both terms on the left hand side are divisible by $p$, so the right hand side $b$ is divsible by $p$.
+\end{proof}
+
+
+
+
+\subsection{Prime factorization is unique}
