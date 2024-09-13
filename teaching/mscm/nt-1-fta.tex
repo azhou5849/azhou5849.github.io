@@ -18,50 +18,35 @@ The fact that there is \textit{a} prime factorization requires no additional the
 \begin{theorem}
 Every positive integer (greater than 1) is prime or can be written as a product of primes.
 \end{theorem}
-\begin{proof}
-Suppose otherwise, and let $n > 1$ be the smallest counterexample to the statement. Then $n$ cannot be prime itself, so we can write $n = ab$ where neither $a$ nor $b$ is 1. This means that $a,b < n$, so $a$ and $b$ can be written as products of primes. Joining these products together shows $n$ is a product of primes, contradiction.
-\end{proof}
+A sketch of the proof is as follows: given a positive integer $n > 1$, if $n$ is prime, we are done. Otherwise, we can write $n$ as a product of two positive integers smaller than $n$, say $n = ab$ where $1 < a,b < n$. If $a$ is prime, then we do not need to do any further work with it, and otherwise, we can write $a$ as a product of two positive integers smaller than $n$. Continuing in this way going down all possible branches of the resulting factor tree, we have to stop eventually, and this happens precisely when all of the branches end at primes.
 
 \begin{remark}
-For those familiar with \href{https://en.wikipedia.org/wiki/Mathematical_induction}{mathematical induction}, the proof is a little smoother by using strong induction instead of contradiction.
+To take this sketch and turn it into a rigorous proof, we can use \href{https://en.wikipedia.org/wiki/Mathematical_induction}{mathematical induction} or a proof by contradiction where we consider the minimal counterexample.
 \end{remark}
 
 What remains is to prove that there is only one prime factorization (aside from rearrangement), and the rest of the handout is dedicated to this goal.
 
 
-\subsection{Divisibility}
+\subsection{The euclidean algorithm}
 
-Given two numbers $a$ and $b$, we say that \emph{$a$ is divisible by $b$} if there is a number $c$ such that $a = bc$. When $b\neq 0$, this is equivalent to saying that $a/b$ is an integer. Synonymously, we say that \emph{$a$ is a multiple of $b$}, that \emph{$b$ divides $a$}, and that \emph{$b$ is a divisor of $a$}. This can be written as $b\mid a$.
-
-When $a$ is divisible by $b$, we can calculate $c = a/b$ using the usual division method(s) taught in school. Even when $a$ is not divisible by $b$, long division gets us
-\begin{proposition}[Division algorithm]\label{prop:div-algo}
-Let $a$ and $b$ be numbers with $b\neq 0$. There are unique numbers $q$ and $r$, with $0\leq r < b$, such that $a = bq + r$.
-\end{proposition}
-The numbers $q$ and $r$ are called the \emph{(integer) quotient} and \emph{remainder} when $a$ is divided by $b$.
-
-
-\subsection{Common divisors}
-
-One way to compute $\gcd(a,b)$ is simply to list out all of the divisors of $a$ and $b$ and look for the largest one that appears in both lists. For larger numbers, a better idea uses the following.
-
-\begin{proposition}
-If $a$ and $b$ are numbers, $a\neq 0$, and $a\geq b$, then $\gcd(a,b) = \gcd(a - b, b)$.
-\end{proposition}
-\begin{proof}
-We prove the stronger statement that \textit{any} common divisor of $a$ and $b$ is also a common divisor of $b$ and $a - b$, and vice versa. Suppose $d$ is a common divisor of $a$ and $b$, so $a = da'$ and $b = db'$ for some numbers $a'$ and $b'$. Then $a - b = d(a' - b')$, so $d$ is a divisor of $a - b$ as well, hence a common divisor of $b$ and $a - b$. A similar argument shows that any common divisor of $b$ and $a - b$ is also a divisor of $a$; this is left as an exercise.
-\end{proof}
-
-Repeatedly using this result to calculate GCD is the \emph{euclidean algorithm}. For example:
+Given integers $a$ and $b$, any common divisor $d$ also divides $a + b$ and $a - b$. From this, it follows that we always have $\gcd(a,b) = \gcd(a - b, b)$. For example,
 \begin{align*}
-\gcd(582133, 268381) &= \gcd(313752, 268381) = \gcd(45371, 268381) \\
-&= \gcd(45371, 223010) = \gcd(45371, 177639) = \gcd(45371, 132268) \\
-&= \gcd(45371, 86897) = \gcd(45371, 41526) = \gcd(3845, 41526) \\
-&= \gcd(3845, 37681) = \gcd(3845, 33836) = \cdots \\
-&= \gcd(3845, 3076) = \gcd(769, 3076) = \gcd(769, 2307) \\
-&= \gcd(769, 1538) = \gcd(769, 769) = \boxed{769}.
+\gcd(70,91) &= \gcd(70,21) \\
+&= \gcd(49,21) = \gcd(28,21) = \gcd(7,21) \\
+&= \gcd(7,14) = \gcd(7,7) = \boxed{7}.
+\end{align*}
+This method for calculating GCD is the \emph{euclidean algorithm}.
+
+Instead of repeatedly subtracting the same number over and over again, as in the second line above, we can jump to the end by dividing and extracting the remainder. The same example would then look like
+\begin{align*}
+\gcd(70,91) &= \gcd(70,21) & 91 &= 1\cdot 70 + 21 \\
+&= \gcd(7,21) & 70 &= 3\cdot 21 + 7 \\
+&= \gcd(7,0) & 21 &= 3\cdot 7 + 0 \\
+&= \boxed{7}.
 \end{align*}
 
-Subtracting the same number over and over again can be done in one line by using division with remainder (Proposition~\ref{prop:div-algo}) instead:
+\begin{remark}
+Most GCD calculations in middle school competitions involve numbers small enough that we could use factorization instead. The advantage of the euclidean algorithm emerges when we deal with numbers that are difficult to factor efficiently. For instance,
 \begin{align*}
 \gcd(582133, 268381) &= \gcd(45371, 268381) & 582133 &= 2\cdot 268381 + 45371 \\
 &= \gcd(45371, 41526) & 268381 &= 5\cdot 45371 + 41526 \\
@@ -71,11 +56,33 @@ Subtracting the same number over and over again can be done in one line by using
 &= \gcd(769, 0) & 3076 &= 4\cdot 769 + 0 \\
 &= \boxed{769}.
 \end{align*}
+For reference, the prime factorizations are $582133 = 757\cdot 769$ and $268381 = 349\cdot 769$.
+\end{remark}
 
 
 \subsection{B\'{e}zout's lemma}
 
-When running the euclidean algorithm by division with remainder, the last non-zero remainder will always be the GCD. We can repeatedly ``back-substitute'' to write, in the previous example,
+The euclidean algorithm lets us write the GCD in terms of the original integers. More specifically,
+
+\begin{lemma}[B\'{e}zout]
+Let $a$ and $b$ be positive integers. There exist integers $m$ and $n$ (which are not necessarily positive) such that
+\begin{equation*}
+ma + nb = \gcd(a,b).
+\end{equation*}
+\end{lemma}
+Using the example of $70$ and $91$, we have
+\begin{equation*}
+7 = 70 - 3\cdot 21,
+\end{equation*}
+from the last step of the euclidean algorithm that involves a non-zero remainder. The previous step gives us $21 = 91 - 1\cdot 70$, and we substitute this in to get
+\begin{equation*}
+7 = 70 - 3\cdot (91 - 1\cdot 70) = 4\cdot 70 - 3\cdot 91.
+\end{equation*}
+To match the form of the lemma, this says that
+\begin{equation*}
+4\cdot 70 + (-3)\cdot 91 = \gcd(70,91).
+\end{equation*}
+A more involved example is that
 \begin{align*}
 769 &= 1\cdot 3845 - 1\cdot 3076 = 1\cdot 3845 - (41526 - 10\cdot 3845) \\
 &= 11\cdot 3845 - 1\cdot 41526 = 11\cdot (45371 - 1\cdot 41526) - 1\cdot 41526 \\
@@ -83,31 +90,36 @@ When running the euclidean algorithm by division with remainder, the last non-ze
 &= 71\cdot 45371 - 12\cdot 268381 = 71\cdot (582133 - 2\cdot 268381) - 12\cdot 268381 \\
 &= 71\cdot 582133 - 154\cdot 268381.
 \end{align*}
-In general, we can write the GCD as a ``linear combination'' of the original numbers by running this procedure. The fact we can always do this is known as \emph{B\'{e}zout's lemma}.
-\begin{lemma}[B\'{e}zout]\label{lem:bezout}
-Let $a,b$ be numbers, not both $0$. There exist integers $m,n$ such that
-\begin{equation*}
-am + bn = \gcd(a,b).
-\end{equation*}
-\end{lemma}
 
 
-\subsection{Prime numbers}
+\subsection{Divisibility by a prime}
 
-A number $p$ is \emph{prime} if $p\neq 1$ and the equation $p = ab$, where $a$ and $b$ are numbers, implies that $a = 1$ or $b = 1$. Equivalently, a prime number has exactly two distinct divisors: 1 and itself.
-
-\begin{proposition}\label{prop:prime}
-Let $p$ be a prime number and let $a,b$ be numbers. If $p\mid ab$, then $p\mid a$ or $p\mid b$.
+\begin{proposition}
+Let $p$ be a prime number and let $a$ and $b$ be integers. If $p$ divides $ab$, then $p$ divides $a$ or $p$ divides $b$.
 \end{proposition}
 \begin{proof}
-It is equivalent to show that if $p\mid ab$ but $p$ does not divide $a$ (written $p\nmid a$), then $p\mid b$. Since the only divisors of $p$ are $1$ and $p$, we must then have $\gcd(a,p) = 1$. By B\'{e}zout's lemma (\ref{lem:bezout}), there exist integers $m,n$ such that $am + pn = 1$. Multiplying through by $b$,
+It suffices to show that if $p$ divides $ab$ but $p$ does not divide $a$, then $p$ divides $b$. Since the only divisors of $p$ are $1$ and $p$, we must have $\gcd(a,p) = 1$ or $\gcd(a,p) = p$. The latter implies $p$ divides $a$, so it must be the case that $\gcd(a,p) = 1$. Now, B\'{e}zout's lemma implies that we can find integers $m$ and $n$ such that
 \begin{equation*}
-(ab)m + p(bn) = b.
+ma + np = 1.
 \end{equation*}
-Both terms on the left hand side are divisible by $p$, so the right hand side $b$ is divsible by $p$.
+Multiplying through by $b$,
+\begin{equation*}
+m(ab) + (nb)p = b.
+\end{equation*}
+Both terms of the left hand side are divisible by $p$, so the right hand side $b$ is divisible by $p$.
 \end{proof}
 
-
+It follows that if a prime $p$ divides a product of integers of any length (not necessarily just two factors), then $p$ divides at least one of the integers in the product.
 
 
 \subsection{Prime factorization is unique}
+
+We can now prove that no positive integer can have two genuinely different prime factorizations. Suppose that the positive integer $n$ has prime factorizations
+\begin{equation*}
+n = p_1p_2p_3\cdots p_r = q_1q_2q_3\cdots q_s,
+\end{equation*}
+where $p_1\leq p_2\leq p_3\leq\cdots\leq p_r$ and $q_1\leq q_2\leq q_3\leq\cdots\leq q_s$ are primes. Suppose $p_1\leq q_1$. By the previous section's result, the prime number $p_1$ divides the product $q_1q_2q_3\cdots q_s$, so $p_1$ must divide one of the factors $q_1, q_2, q_3, \ldots, q_s$. Since those factors are all prime, the only way this can happen is for $p_1$ to be equal to one of those factors. Since $p_1\leq q_1$, which is the smallest of the factors, we must have $p_1 = q_1$. If we suppose instead that $q_1\leq p_1$, we reach the same conclusion with the same argument. Thus we have $p_1 = q_1$ in any case, and we can cancel this common factor to get
+\begin{equation*}
+p_2p_3\cdots p_r = q_2q_3\cdots q_s.
+\end{equation*}
+We then continue this process to show $p_2 = q_2$, then $p_3 = q_3$, and so on. If one side ever runs out of factors before the other, then we end up with one side of the equation being 1 and the other side being a product of one or more primes, which is impossible. Thus the two factorizations have the same length and use the same primes.
