@@ -1,0 +1,35 @@
+\section{More on Modular Arithmetic}
+
+\textit{These notes are also available at \url{https://azhou5849.github.io/teaching/}.}
+
+For a positive integer $m$ and integers $a$ and $b$, we say that $a\equiv b\pmod{m}$, read as ``$a$ is congruent to $b$ modulo $m$,'' if $a - b$ is divisible by $m$.
+
+\subsection{Proving that addition, subtraction, and multiplication work}
+
+\begin{proposition}
+Suppose $a\equiv b\pmod{m}$ and $c\equiv d\pmod{m}$.
+\begin{enumerate}
+\item $a + c\equiv b + d\pmod{m}$
+\item $ac\equiv bd\pmod{m}$
+\item $a - c\equiv b - d\pmod{m}$
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Since $a\equiv b\pmod{m}$, we can write $a - b = xm$ and $c - d = ym$ for some integers $x$ and $y$. Then $a = b + xm$ and $c = d + ym$.
+\begin{enumerate}
+\item We compute
+\begin{equation*}
+(a + c) - (b + d) = [(b + xm) + (d + ym)] - (b + d) = (x + y)m.
+\end{equation*}
+This is a multiple of $m$, so $a + c\equiv b + d\pmod{m}$.
+\item We compute 
+\begin{equation*}
+(ac) - (bd) = (b + xm)(d + ym) - bd = (bd + bym + dxm + xym^2) - bd = (by + dx + xym)m.
+\end{equation*}
+This is a multiple of $m$, so $ac\equiv bd\pmod{m}$.
+\item We multiply both sides of $c\equiv d\pmod{m}$ by $-1$ to get $-c\equiv -d\pmod{m}$. Then, adding to $a\equiv b\pmod{m}$ gives us $a - c\equiv b - d\pmod{m}$.
+\end{enumerate}
+\end{proof}
+
+
+\subsection{Division in modular arithmetic}
