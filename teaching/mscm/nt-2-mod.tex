@@ -4,14 +4,15 @@
 
 For a positive integer $m$ and integers $a$ and $b$, we say that $a\equiv b\pmod{m}$, read as ``$a$ is congruent to $b$ modulo $m$,'' if $a - b$ is divisible by $m$.
 
-\subsection{Proving that addition, subtraction, and multiplication work}
+\subsection{Addition and multiplication in modular arithmetic}
+
+We saw in class that we can add and multiply congruences without any issue. Here we write out a proof of this claim.
 
 \begin{proposition}
 Suppose $a\equiv b\pmod{m}$ and $c\equiv d\pmod{m}$.
 \begin{enumerate}
 \item $a + c\equiv b + d\pmod{m}$
 \item $ac\equiv bd\pmod{m}$
-\item $a - c\equiv b - d\pmod{m}$
 \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -27,14 +28,31 @@ This is a multiple of $m$, so $a + c\equiv b + d\pmod{m}$.
 (ac) - (bd) = (b + xm)(d + ym) - bd = (bd + bym + dxm + xym^2) - bd = (by + dx + xym)m.
 \end{equation*}
 This is a multiple of $m$, so $ac\equiv bd\pmod{m}$.
-\item We multiply both sides of $c\equiv d\pmod{m}$ by $-1$ to get $-c\equiv -d\pmod{m}$. Then, adding to $a\equiv b\pmod{m}$ gives us $a - c\equiv b - d\pmod{m}$.
 \end{enumerate}
 \end{proof}
+
+\subsubsection*{Exercises}
+
+\begin{enumerate}
+\item Show that we can subtract congruences: $a - c\equiv b - d\pmod{m}$.
+\end{enumerate}
+
+
+\subsection{Complete residue sets}
+
+A \emph{complete residue set modulo $m$} is a set of integers $S$ with the property that for every integer $a$, there is exactly one $x\in S$ for which $x\equiv a\pmod{m}$. We often use the set of remainders, $\{0, 1, 2, \ldots, m - 1\}$, as a complete residue set, but there are other ones we can use at times. Numerically, another convenient choice is to take values centered at 0, e.g. $\{-3, -2, -1, 0, 1, 2, 3\}$ when working modulo 7.
+
+Closely related is the notion of a \emph{complete multiplicative residue set modulo $m$}, which is a set of integers $S$ with the properties (i) every $x\in S$ satisfies $\gcd(x,m) = 1$, and (ii) for every integer $a$ satisfying $\gcd(a,m) = 1$, there is exactly one $x\in S$ for which $x\equiv a\pmod{m}$.
+
+\begin{enumerate}
+\item How many elements are there in a complete residue set modulo $m$?
+\item Let $S$ be a complete residue set modulo $24$. Is it possible for the sum of the elements of $S$ to be $2024$?
+\end{enumerate}
 
 
 \subsection{Division in modular arithmetic}
 
-In class, we saw an example which shows that $ab\equiv ac\pmod{m}$ does not necessarily imply that $b\equiv c\pmod{m}$ (even when we require $a\not\equiv 0\pmod{m}$). For example, $2\cdot 4\equiv 2\cdot 9\pmod{10}$, but $4\not\equiv 9\pmod{10}$. To derive a variant which does work, we generalize Proposition~\ref{prop:prime} to cover non-prime divisors.
+In class, we saw an example which shows that $ab\equiv ac\pmod{m}$ does not necessarily imply that $b\equiv c\pmod{m}$ (even when we require $a\not\equiv 0\pmod{m}$). To derive a variant which does work, we generalize Proposition~\ref{prop:prime} to cover non-prime divisors.
 
 \begin{lemma}\label{lem:divisibility-product}
 If $m$ divides $ab$, then $m' = \frac{m}{\gcd(a,m)}$ divides $b$.
@@ -57,14 +75,54 @@ b\equiv c\pmod{m'},\qquad m' = \frac{m}{\gcd(a,m)}.
 If $ab\equiv ac\pmod{m}$, then $m$ divides $ab - ac = a(b - c)$. By Lemma~\ref{lem:divisibility-product}, $m'$ divides $b - c$, so $b\equiv c\pmod{m'}$ as required.
 \end{proof}
 
-As an example, to solve $4x\equiv 8\pmod{10}$, we divide both sides by $4$, dividing the modulus by $\gcd(4,10) = 2$, to get $\boxed{x\equiv 2\pmod{5}}$.
+As an example, to solve $9x\equiv 6\pmod{15}$, we can divide both sides by $3$, making sure to divide the modulus by $\gcd(3,15) = 3$ as well, to get $3x\equiv 2\pmod{5}$. Then, we can repeatedly add 5 to the right hand side until we get something divisible by 3. In this case, we successfully find $3x\equiv 12\pmod{5}$. Dividing by 3 again, this time dividing the modulus by $\gcd(3,5) = 1$, we get $x\equiv 4\pmod{5}$. Alternatively, we could have subtracted $5$ once to get $3x\equiv -3\pmod{5}$, so then $x\equiv -1\pmod{5}$. Since $4\equiv -1\pmod{5}$, we found the same solution.
 
 \subsubsection*{Exercises}
 
 \begin{enumerate}
-\item What is the second smallest positive integer satisfying $12n\equiv 30\pmod{126}$
+\item What is the second smallest positive integer satisfying $12n\equiv 30\pmod{126}$?
 \item The last two digits of $15n$ are $25$. If $100\leq n < 200$, what are the possible values of $n$?
 \end{enumerate}
 
 
 \subsection{Multiplicative inverses}
+
+A particularly important case of Proposition~\ref{prop:mod-arith-divide} is that when $\gcd(a,m) = 1$, we can safely cancel $a$ from $ab\equiv ac\pmod{m}$ to get $b\equiv c\pmod{m}$.
+
+\begin{theorem}\label{thm:complete-residue-set}
+If $\gcd(a,m) = 1$, then the multiples
+\begin{equation*}
+0,\quad a,\quad 2a,\quad 3a,\quad \ldots,\quad (m - 1)a
+\end{equation*}
+form a complete residue set modulo $m$, meaning that for every integer $N$, we can find some multiple $ka$ such that $ka\equiv N\pmod{m}$, and the choice of $k\in\{0, 1, \ldots, m - 1\}$ is unique.
+\end{theorem}
+\begin{proof}
+The above note shows that these $m$ multiples of $a$ lie in distinct residue classes. As there are only $m$ residue classes in total, all of the residue classes are represented exactly once.
+\end{proof}
+
+\begin{corollary}
+If $\gcd(a,m) = 1$, then there is an integer $b$ for which $ab\equiv 1\pmod{m}$, and this $b$ is unique modulo $m$. Conversely, if $ab\equiv 1\pmod{m}$, then $\gcd(a,m) = 1$.
+\end{corollary}
+\begin{proof}
+For the forward direction, let $N = 1$ in Theorem~\ref{thm:complete-residue-set}. For the converse, let $d = \gcd(a,m)$. If $ab\equiv 1\pmod{m}$, then $ab - 1 = km$ for some integer $k$. Both $ab$ and $km$ are divisible by $d$, so $d$ divides $1$ and hence $d = 1$.
+\end{proof}
+
+Since the integer $b$ above is unique modulo $m$, we denote any such value by $a^{-1}$ and call it the \emph{multiplicative inverse of $a$ modulo $10$}. For instance, when working modulo $10$, we have $3^{-1}\equiv 7$ because $3\cdot 7\equiv 1\pmod{10}$. Multiplicative inverses have the same role for modular arithmetic that reciprocals do for real numbers: if we want to divide by a number in modular arithmetic, we can multiply by the multiplicative inverse (if it exists).
+
+\subsubsection*{Exercises}
+
+\begin{enumerate}
+\item Given that the multiplicative inverse of 13 modulo 22 is 17, solve the congruence $13x\equiv 18\pmod{22}$ for $x$.
+\item Compute the multiplicative inverse of 4 modulo 9, 27, and 81.
+\item Compute the multiplicative inverses of all non-zero residues modulo 7.
+\end{enumerate}
+
+
+\subsection{Multiplicative groups}
+
+For a positive integer $m$, let $\Phi_m$ denote the set of residue classes which are relatively prime to $m$. (The symbol $\Phi$ is the capital Greek letter ``Phi.'') Equivalently, $\Phi_m$ consists of all residue classes which are invertible modulo $m$. This means that the product of any two elements of $\Phi_m$ is an element of $\Phi_m$, as we can directly check that if $x$ and $y$ have multiplicative inverses, then $x^{-1}y^{-1}$ is the multiplicative inverse of $xy$.
+
+\begin{definition}
+The set $\Phi_m$ with multiplication modulo $m$ is the \emph{multiplicative group modulo $m$}.
+\end{definition}
+
