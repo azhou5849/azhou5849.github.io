@@ -107,22 +107,53 @@ If $\gcd(a,m) = 1$, then there is an integer $b$ for which $ab\equiv 1\pmod{m}$,
 For the forward direction, let $N = 1$ in Theorem~\ref{thm:complete-residue-set}. For the converse, let $d = \gcd(a,m)$. If $ab\equiv 1\pmod{m}$, then $ab - 1 = km$ for some integer $k$. Both $ab$ and $km$ are divisible by $d$, so $d$ divides $1$ and hence $d = 1$.
 \end{proof}
 
-Since the integer $b$ above is unique modulo $m$, we denote any such value by $a^{-1}$ and call it the \emph{multiplicative inverse of $a$ modulo $10$}. For instance, when working modulo $10$, we have $3^{-1}\equiv 7$ because $3\cdot 7\equiv 1\pmod{10}$. Multiplicative inverses have the same role for modular arithmetic that reciprocals do for real numbers: if we want to divide by a number in modular arithmetic, we can multiply by the multiplicative inverse (if it exists).
+Since the integer $b$ above is unique modulo $m$, we denote any such value by $a^{-1}$ and call it a \emph{multiplicative inverse of $a$ modulo $10$}. For instance, when working modulo $10$, we have $3^{-1}\equiv 7$ because $3\cdot 7\equiv 1\pmod{10}$. Multiplicative inverses have the same role for modular arithmetic that reciprocals do for real numbers: if we want to divide by a number in modular arithmetic, we can multiply by a multiplicative inverse (if it exists).
 
 \subsubsection*{Exercises}
 
 \begin{enumerate}
-\item Given that the multiplicative inverse of 13 modulo 22 is 17, solve the congruence $13x\equiv 18\pmod{22}$ for $x$.
-\item Compute the multiplicative inverse of 4 modulo 9, 27, and 81.
-\item Compute the multiplicative inverses of all non-zero residues modulo 7.
+\item Given that 17 is a multiplicative inverse of 13 modulo 22, solve $13x\equiv 18\pmod{22}$.
+\item Compute multiplicative inverses of 1, 2, 3, 4, 5, and 6 modulo 7.
 \end{enumerate}
 
 
-\subsection{Multiplicative groups}
+\subsection{Systems of linear congruences}
 
-For a positive integer $m$, let $\Phi_m$ denote the set of residue classes which are relatively prime to $m$. (The symbol $\Phi$ is the capital Greek letter ``Phi.'') Equivalently, $\Phi_m$ consists of all residue classes which are invertible modulo $m$. This means that the product of any two elements of $\Phi_m$ is an element of $\Phi_m$, as we can directly check that if $x$ and $y$ have multiplicative inverses, then $x^{-1}y^{-1}$ is the multiplicative inverse of $xy$.
+In this section, we consider systems of congruences of the form
+\begin{align*}
+x &\equiv a\pmod{m}, \\
+x &\equiv b\pmod{n}.
+\end{align*}
+For example, suppose we have the system
+\begin{align*}
+x &\equiv 4\pmod{8}, \\
+x &\equiv 2\pmod{21}.
+\end{align*}
+To solve this, we can rewrite one of the congruences as an equation using an extra integer-valued variable. The second congruence states that $x = 21k + 2$ for some integer $k$. Substituting into the first congruence,
+\begin{equation*}
+21k + 2\equiv 4\pmod{8}\implies 5k\equiv 2\pmod{8}.
+\end{equation*}
+Either by finding a multiplicative inverse of $5$ modulo $8$, which is doable since $\gcd(5,8) = 1$, or by adding or subtracting a multiple of $8$ to the right hand side to get something divisible by $5$, we find that $k\equiv 2\pmod{8}$. In turn writing this as $k = 8\ell + 2$ for some integer $\ell$,
+\begin{equation*}
+x = 21(8\ell + 2) + 2 = 168\ell + 44.
+\end{equation*}
+This shows that $\boxed{x\equiv 44\pmod{168}}$. Conversely, $x\equiv 44\pmod{168}$ satisfies the two original congruences, as can be seen by simplify $168\ell + 44$ modulo $8$ and $21$, so we have found the exact solution set. The process generalizes.
 
-\begin{definition}
-The set $\Phi_m$ with multiplication modulo $m$ is the \emph{multiplicative group modulo $m$}.
-\end{definition}
+\begin{theorem}[Chinese remainder theorem]\label{thm:crt}
+If $\gcd(m,n) = 1$, then for any integers $a$ and $b$, the solution set to the system of congruences
+\begin{align*}
+x &\equiv a\pmod{m}, \\
+x &\equiv b\pmod{n}
+\end{align*}
+is a residue class modulo $mn$.
+\end{theorem}
 
+\subsubsection*{Exercises}
+
+\begin{enumerate}
+\item (Week 4 slides) There are several cookies in a jar. Sharing the cookies evenly among $3$ children leaves $2$ cookies left. Sharing the cookies among $7$ children leaves $3$ cookies left. Find all the possible amounts of cookies in the jar.
+\item (Week 4 extensions) The eighth graders are taking buses to visit Sea World today. Each large bus can take $56$ students and each small bus can take $36$ students. If we try to let all students take a large bus, then all will be full except for one bus with only $9$ students. If we try to let all students take a small bus, then all will be full except for one bus with $21$ students. What are the possible amounts of eighth graders?
+\end{enumerate}
+
+
+\subsection{Euler's Totient Theorem}
