@@ -1,41 +1,54 @@
 \section{More on Modular Arithmetic}
 
+For a positive integer $m$ and integers $a$ and $b$, we say that $a\equiv b\pmod{m}$, read as ``$a$ is congruent to $b$ modulo $m$,'' if $a$ and $b$ have the same remainder when dividing by $m$. Equivalently, $a\equiv b\pmod{m}$ if and only if $a - b$ is divisible by $m$. From the latter, we can prove that ``congruence modulo $m$'' is an equivalence relation on the integers, meaning that
+\begin{enumerate}[label=(\alph*)]
+\item (reflexive) $a\equiv a\pmod{m}$ for all integers $a$,
+\item (symmetric) if $a\equiv b\pmod{m}$, then $b\equiv a\pmod{m}$,
+\item (transitive) if $a\equiv b\pmod{m}$ and $b\equiv c\pmod{m}$, then $a\equiv c\pmod{m}$.
+\end{enumerate}
+What makes congruence useful, beyond just keeping track of remainders, is that we can still do arithmetic. More specifically, if $a\equiv b\pmod{m}$, then for any integer $c$,
+\begin{enumerate}[label=(\alph*)]\setcounter{enumi}{3}
+\item $a + c\equiv b + c\pmod{m}$,
+\item $a - c\equiv b - c\pmod{m}$,
+\item $ac\equiv bc\pmod{m}$.
+\end{enumerate}
+Combining some of the above properties allows us to show more generally that if $a\equiv b\pmod{m}$ and $c\equiv d\pmod{m}$, then
+\begin{enumerate}[label=(\alph*)]\setcounter{enumi}{6}
+\item $a + c\equiv b + d\pmod{m}$,
+\item $a - c\equiv b - d\pmod{m}$,
+\item $ac\equiv bd\pmod{m}$.
+\end{enumerate}
+
+In what follows, we develop some further important results in modular arithmetic, both for contest math and for continued studies of number theory.
+
 \textit{These notes are also available at \url{https://azhou5849.github.io/teaching/}.}
 
-For a positive integer $m$ and integers $a$ and $b$, we say that $a\equiv b\pmod{m}$, read as ``$a$ is congruent to $b$ modulo $m$,'' if $a - b$ is divisible by $m$.
 
-\subsection{Addition and multiplication in modular arithmetic}
+\subsection{Multiplicative inverses}
 
-We saw in class that we can add and multiply congruences without any issue. Here we write out a proof of this claim.
+In the rational and real number systems, division is formally defined as multiplication by the reciprocal. In modular arithmetic, we are limited to integers, but we can look for integers which fulfill the same role.
 
-\begin{proposition}
-Suppose $a\equiv b\pmod{m}$ and $c\equiv d\pmod{m}$.
-\begin{enumerate}
-\item $a + c\equiv b + d\pmod{m}$
-\item $ac\equiv bd\pmod{m}$
-\end{enumerate}
-\end{proposition}
-\begin{proof}
-Since $a\equiv b\pmod{m}$, we can write $a - b = xm$ and $c - d = ym$ for some integers $x$ and $y$. Then $a = b + xm$ and $c = d + ym$.
-\begin{enumerate}
-\item We compute
+\begin{definition}[Multiplicative inverse]
+Let $m$ be a positive integer and $a$ be an integer. A \emph{(multiplicative) inverse of $a$ modulo $m$} is an integer $b$ with the property that $ab\equiv 1\pmod{m}$.
+\end{definition}
+
+Inverses are unique modulo $m$, meaning that if $b$ and $c$ are both inverses of $a$ modulo $m$, then $b\equiv c\pmod{m}$. To prove this, we compute
 \begin{equation*}
-(a + c) - (b + d) = [(b + xm) + (d + ym)] - (b + d) = (x + y)m.
+b\equiv b\cdot 1\equiv b\cdot (ac)\equiv (ba)\cdot c\equiv 1\cdot c\equiv c\pmod{m}.
 \end{equation*}
-This is a multiple of $m$, so $a + c\equiv b + d\pmod{m}$.
-\item We compute 
-\begin{equation*}
-(ac) - (bd) = (b + xm)(d + ym) - bd = (bd + bym + dxm + xym^2) - bd = (by + dx + xym)m.
-\end{equation*}
-This is a multiple of $m$, so $ac\equiv bd\pmod{m}$.
-\end{enumerate}
-\end{proof}
+This means that when an inverse of $a$ modulo $m$ exists, we can use the notation $a^{-1}$ for any such inverse (while we work modulo $m$).
 
-\subsubsection*{Exercises}
+The matter of existence is less straightforward than with reciprocals of rational or real numbers, however. For example, suppose $x$ is an inverse to 2 modulo 6. This means that $2x\equiv 1\pmod{6}$, so there is an integer $k$ such that $2x = 6k + 1$. However, this is impossible: the left hand side is divisible by 2 while the right hand side is not.
 
-\begin{enumerate}
-\item Show that we can subtract congruences: $a - c\equiv b - d\pmod{m}$.
-\end{enumerate}
+The key issue here is that 2 and 6 share a common factor greater than 1. More generally, if $\gcd(a,m) = d > 1$, then $ax\equiv 1\pmod{m}$ has no solutions, as in the corresponding integer equation $ax = km + 1$, both $ax$ and $km$ are divisible by $d$ while 1 is not.
+
+On the other hand, if $\gcd(a,m) = 1$, then by B\'{e}zout's lemma (Lemma~\ref{lem:bezout}), there exist integers $x$ and $y$ such that $ax + my = 1$. This means that $ax\equiv 1\pmod{m}$, so the integer $x$ that comes from B\'{e}zout's lemma is an inverse of $a$ modulo $m$.
+
+Putting this together, we have
+\begin{theorem}\label{thm:existence-of-inverses}
+Let $m$ be a positive integer and $a$ be an integer. An inverse of $a$ modulo $m$ exists if and only if $\gcd(a,m) = 1$.
+\end{theorem}
+
 
 
 \subsection{Complete residue sets}
@@ -100,7 +113,7 @@ form a complete residue set modulo $m$, meaning that for every integer $N$, we c
 The above note shows that these $m$ multiples of $a$ lie in distinct residue classes. As there are only $m$ residue classes in total, all of the residue classes are represented exactly once.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}\label{cor:invertible-mod-m}
 If $\gcd(a,m) = 1$, then there is an integer $b$ for which $ab\equiv 1\pmod{m}$, and this $b$ is unique modulo $m$. Conversely, if $ab\equiv 1\pmod{m}$, then $\gcd(a,m) = 1$.
 \end{corollary}
 \begin{proof}
@@ -157,3 +170,20 @@ is a residue class modulo $mn$.
 
 
 \subsection{Euler's Totient Theorem}
+
+By Corollary~\ref{cor:invertible-mod-m}, the integers relatively prime to $m$ are precisely those that have multiplicative inverses modulo $m$. As we can compute $(xy)^{-1}\equiv x^{-1}y^{-1}\pmod{m}$ whenever $x$ and $y$ are invertible modulo $m$, this tells us (with an admittedly roundabout proof) that the product of any two integers relatively prime to $m$ is also relatively prime to $m$.
+
+Now consider the complete multiplicative residue set modulo $m$
+\begin{equation*}
+\Phi_m = \{a\mid 1\leq a\leq m\text{ and }\gcd(a,m) = 1\}.
+\end{equation*}
+(Here $\Phi$ is the capital Greek letter Phi. The notation is non-standard.) The number of elements of $\Phi_m$ is the \emph{Euler totient function} evaluated at $m$, and this function is denoted $\phi$ or $\varphi$ (the lowercase Greek letter phi).
+
+Analogously to Theorem~\ref{thm:complete-residue-set}, we have 
+\begin{theorem}\label{thm:complete-multiplicative-residue-set}
+If $\gcd(a,m) = 1$, then
+\begin{equation*}
+a\cdot\Phi_m = \{ab\mid b\in\Phi_m\}
+\end{equation*}
+is also a complete multiplicative residue set modulo $m$.
+\end{theorem}
