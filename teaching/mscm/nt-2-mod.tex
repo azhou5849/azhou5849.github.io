@@ -29,7 +29,7 @@ In what follows, we develop some further important results in modular arithmetic
 In the rational and real number systems, division is formally defined as multiplication by the reciprocal. In modular arithmetic, we are limited to integers, but we can look for integers which fulfill the same role.
 
 \begin{definition}[Multiplicative inverse]
-Let $m$ be a positive integer and $a$ be an integer. A \emph{(multiplicative) inverse of $a$ modulo $m$} is an integer $b$ with the property that $ab\equiv 1\pmod{m}$.
+Let $m$ be a positive integer and $a$ be an integer. A \emph{(multiplicative) inverse of $a$ (modulo $m$)} is an integer $b$ with the property that $ab\equiv 1\pmod{m}$.
 \end{definition}
 
 Inverses are unique modulo $m$, meaning that if $b$ and $c$ are both inverses of $a$ modulo $m$, then $b\equiv c\pmod{m}$. To prove this, we compute
@@ -42,7 +42,7 @@ The matter of existence is less straightforward than with reciprocals of rationa
 
 The key issue here is that 2 and 6 share a common factor greater than 1. More generally, if $\gcd(a,m) = d > 1$, then $ax\equiv 1\pmod{m}$ has no solutions, as in the corresponding integer equation $ax = km + 1$, both $ax$ and $km$ are divisible by $d$ while 1 is not.
 
-On the other hand, if $\gcd(a,m) = 1$, then by B\'{e}zout's lemma (Lemma~\ref{lem:bezout}), there exist integers $x$ and $y$ such that $ax + my = 1$. This means that $ax\equiv 1\pmod{m}$, so the integer $x$ that comes from B\'{e}zout's lemma is an inverse of $a$ modulo $m$.
+On the other hand, if $\gcd(a,m) = 1$, then by B\'{e}zout's lemma (Lemma~\ref{lem:bezout}), there exist integers $x$ and $y$ such that $ax + my = 1$. This means that $ax\equiv 1\pmod{m}$, so $x$ is an inverse of $a$.
 
 Putting this together, we have
 \begin{theorem}\label{thm:existence-of-inverses}
@@ -50,140 +50,180 @@ Let $m$ be a positive integer and $a$ be an integer. An inverse of $a$ modulo $m
 \end{theorem}
 
 
+\subsection{Linear congruences}
 
-\subsection{Complete residue sets}
+When $\gcd(a,m) = 1$, the congruence $ax\equiv b\pmod{m}$ is solved by $x\equiv a^{-1}b\pmod{m}$. For an example, consider the congruence $3x\equiv 4\pmod{10}$. Given that $7$ is an inverse of $3$ modulo $10$, we can multiply the given congruence by $7$ to get $21x\equiv 28\pmod{10}$, or $x\equiv 8\pmod{10}$.
 
-A \emph{complete residue set modulo $m$} is a set of integers $S$ with the property that for every integer $a$, there is exactly one $x\in S$ for which $x\equiv a\pmod{m}$. We often use the set of remainders, $\{0, 1, 2, \ldots, m - 1\}$, as a complete residue set, but there are other ones we can use at times. Numerically, another convenient choice is to take values centered at 0, e.g. $\{-3, -2, -1, 0, 1, 2, 3\}$ when working modulo 7.
-
-Closely related is the notion of a \emph{complete multiplicative residue set modulo $m$}, which is a set of integers $S$ with the properties (i) every $x\in S$ satisfies $\gcd(x,m) = 1$, and (ii) for every integer $a$ satisfying $\gcd(a,m) = 1$, there is exactly one $x\in S$ for which $x\equiv a\pmod{m}$.
-
-\begin{enumerate}
-\item How many elements are there in a complete residue set modulo $m$?
-\item Let $S$ be a complete residue set modulo $24$. Is it possible for the sum of the elements of $S$ to be $2024$?
-\end{enumerate}
-
-
-\subsection{Division in modular arithmetic}
-
-In class, we saw an example which shows that $ab\equiv ac\pmod{m}$ does not necessarily imply that $b\equiv c\pmod{m}$ (even when we require $a\not\equiv 0\pmod{m}$). To derive a variant which does work, we generalize Proposition~\ref{prop:prime} to cover non-prime divisors.
-
-\begin{lemma}\label{lem:divisibility-product}
-If $m$ divides $ab$, then $m' = \frac{m}{\gcd(a,m)}$ divides $b$.
-\end{lemma}
-\begin{proof}
-Let $d = \gcd(a,m)$, so that $m = dm'$. By B\'{e}zout's lemma, there exist integers $x$ and $y$ such that $xa + ym = d$. Multiplying through by $b/m$,
+This method requires us to find an inverse of $3$ modulo $10$ first. While an inverse can be found algorithmically (see section 1.3), in contest situations it is usually faster to take a slightly different approach to solve the original congruence. For the above example, $3x\equiv 4\equiv 24\pmod{10}$, and ``dividing'' the congruence $3x\equiv 24\pmod{10}$ by $3$, we get $x\equiv 8\pmod{10}$. To justify this, note that in the background, dividing is multiplying by $3^{-1}$, and whatever the value of $3^{-1}$ is,
 \begin{equation*}
-\frac{bd}{m} = \frac{xab}{m} + yb = x\cdot\frac{ab}{m} + yb
+3^{-1}\cdot 24\equiv 3^{-1}\cdot 3\cdot 8\equiv 8\pmod{10}.
 \end{equation*}
-is an integer. Therefore, $bd/m = b/m'$ is an integer and $b$ is divisible by $m'$.
-\end{proof}
 
-\begin{proposition}[Division in modular arithmetic]\label{prop:mod-arith-divide}
-If $ab\equiv ac\pmod{m}$, then
-\begin{equation*}
-b\equiv c\pmod{m'},\qquad m' = \frac{m}{\gcd(a,m)}.
-\end{equation*}
+Even when $\gcd(a,m) > 1$, we can still use the method of converting congruences to equations. Consider the congruence $6x\equiv 8\pmod{10}$, which is equivalent to the equation $6x = 10k + 8$ with integer-valued variables. Dividing through by the common factor of 2, we get $3x = 5k + 4$, which we convert back to modular arithmetic by reducing modulo $5$ to get $3x\equiv 4\pmod{5}$. Now, the coefficient of $x$ is relatively prime to the modulus, so we can use our earlier methods. We have $3x\equiv 4\equiv 9\pmod{5}$, so $x\equiv 3\pmod{5}$ is the solution to $6x\equiv 8\pmod{10}$. (In the original modulus, $x\equiv 3\pmod{10}$ or $x\equiv 8\pmod{10}$.)
+
+In general, we get the following result.
+\begin{proposition}
+The congruence $ax\equiv b\pmod{m}$ has no solution if $d = \gcd(a,m)$ does not divide $b$. If $d$ does divide $b$, then the solution to the congruence is $x\equiv (a')^{-1}b'\pmod{m'}$, where $a' = a/d$, $b' = b/d$, and $m' = m/d$. (The inverse is computed modulo $m'$.)
 \end{proposition}
-\begin{proof}
-If $ab\equiv ac\pmod{m}$, then $m$ divides $ab - ac = a(b - c)$. By Lemma~\ref{lem:divisibility-product}, $m'$ divides $b - c$, so $b\equiv c\pmod{m'}$ as required.
-\end{proof}
-
-As an example, to solve $9x\equiv 6\pmod{15}$, we can divide both sides by $3$, making sure to divide the modulus by $\gcd(3,15) = 3$ as well, to get $3x\equiv 2\pmod{5}$. Then, we can repeatedly add 5 to the right hand side until we get something divisible by 3. In this case, we successfully find $3x\equiv 12\pmod{5}$. Dividing by 3 again, this time dividing the modulus by $\gcd(3,5) = 1$, we get $x\equiv 4\pmod{5}$. Alternatively, we could have subtracted $5$ once to get $3x\equiv -3\pmod{5}$, so then $x\equiv -1\pmod{5}$. Since $4\equiv -1\pmod{5}$, we found the same solution.
-
-\subsubsection*{Exercises}
-
-\begin{enumerate}
-\item What is the second smallest positive integer satisfying $12n\equiv 30\pmod{126}$?
-\item The last two digits of $15n$ are $25$. If $100\leq n < 200$, what are the possible values of $n$?
-\end{enumerate}
 
 
-\subsection{Multiplicative inverses}
+\subsection{The Chinese remainder theorem}
 
-A particularly important case of Proposition~\ref{prop:mod-arith-divide} is that when $\gcd(a,m) = 1$, we can safely cancel $a$ from $ab\equiv ac\pmod{m}$ to get $b\equiv c\pmod{m}$.
-
-\begin{theorem}\label{thm:complete-residue-set}
-If $\gcd(a,m) = 1$, then the multiples
-\begin{equation*}
-0,\quad a,\quad 2a,\quad 3a,\quad \ldots,\quad (m - 1)a
-\end{equation*}
-form a complete residue set modulo $m$, meaning that for every integer $N$, we can find some multiple $ka$ such that $ka\equiv N\pmod{m}$, and the choice of $k\in\{0, 1, \ldots, m - 1\}$ is unique.
-\end{theorem}
-\begin{proof}
-The above note shows that these $m$ multiples of $a$ lie in distinct residue classes. As there are only $m$ residue classes in total, all of the residue classes are represented exactly once.
-\end{proof}
-
-\begin{corollary}\label{cor:invertible-mod-m}
-If $\gcd(a,m) = 1$, then there is an integer $b$ for which $ab\equiv 1\pmod{m}$, and this $b$ is unique modulo $m$. Conversely, if $ab\equiv 1\pmod{m}$, then $\gcd(a,m) = 1$.
-\end{corollary}
-\begin{proof}
-For the forward direction, let $N = 1$ in Theorem~\ref{thm:complete-residue-set}. For the converse, let $d = \gcd(a,m)$. If $ab\equiv 1\pmod{m}$, then $ab - 1 = km$ for some integer $k$. Both $ab$ and $km$ are divisible by $d$, so $d$ divides $1$ and hence $d = 1$.
-\end{proof}
-
-Since the integer $b$ above is unique modulo $m$, we denote any such value by $a^{-1}$ and call it a \emph{multiplicative inverse of $a$ modulo $10$}. For instance, when working modulo $10$, we have $3^{-1}\equiv 7$ because $3\cdot 7\equiv 1\pmod{10}$. Multiplicative inverses have the same role for modular arithmetic that reciprocals do for real numbers: if we want to divide by a number in modular arithmetic, we can multiply by a multiplicative inverse (if it exists).
-
-\subsubsection*{Exercises}
-
-\begin{enumerate}
-\item Given that 17 is a multiplicative inverse of 13 modulo 22, solve $13x\equiv 18\pmod{22}$.
-\item Compute multiplicative inverses of 1, 2, 3, 4, 5, and 6 modulo 7.
-\end{enumerate}
-
-
-\subsection{Systems of linear congruences}
-
-In this section, we consider systems of congruences of the form
+Suppose instead of a single congruence, we have a system of linear congruences such as
 \begin{align*}
-x &\equiv a\pmod{m}, \\
-x &\equiv b\pmod{n}.
+x &\equiv 5\pmod{8}, \\
+x &\equiv 9\pmod{13}.
 \end{align*}
-For example, suppose we have the system
-\begin{align*}
-x &\equiv 4\pmod{8}, \\
-x &\equiv 2\pmod{21}.
-\end{align*}
-To solve this, we can rewrite one of the congruences as an equation using an extra integer-valued variable. The second congruence states that $x = 21k + 2$ for some integer $k$. Substituting into the first congruence,
+To solve this system, we once again create equations. If $x$ is a solution, then there are integers $a$ and $b$ for which
 \begin{equation*}
-21k + 2\equiv 4\pmod{8}\implies 5k\equiv 2\pmod{8}.
+x = 8a + 5 = 13b + 9.
 \end{equation*}
-Either by finding a multiplicative inverse of $5$ modulo $8$, which is doable since $\gcd(5,8) = 1$, or by adding or subtracting a multiple of $8$ to the right hand side to get something divisible by $5$, we find that $k\equiv 2\pmod{8}$. In turn writing this as $k = 8\ell + 2$ for some integer $\ell$,
+Focusing on the latter two expressions, we can reduce the equation $8a + 5 = 13b + 9$ modulo $8$ to $5\equiv 5b + 1\pmod{8}$, or $5b\equiv 4\pmod{8}$. Solving this congruence for $b$ gives us $b\equiv 4\pmod{8}$, so $b = 8k + 4$ for some integer $k$. Substituting this back in,
 \begin{equation*}
-x = 21(8\ell + 2) + 2 = 168\ell + 44.
+x = 13(8k + 4) + 9 = 104k + 61.
 \end{equation*}
-This shows that $\boxed{x\equiv 44\pmod{168}}$. Conversely, $x\equiv 44\pmod{168}$ satisfies the two original congruences, as can be seen by simplify $168\ell + 44$ modulo $8$ and $21$, so we have found the exact solution set. The process generalizes.
+Thus every solution must have this form. Conversely, any integer of the form $104k + 61$ satisfies both congruences, so the solution set is the set of all $x\equiv 61\pmod{104}$.
 
-\begin{theorem}[Chinese remainder theorem]\label{thm:crt}
-If $\gcd(m,n) = 1$, then for any integers $a$ and $b$, the solution set to the system of congruences
+\begin{theorem}[Chinese remainder theorem]
+If $\gcd(m,n) = 1$, the solution to the system of linear congruences
 \begin{align*}
 x &\equiv a\pmod{m}, \\
 x &\equiv b\pmod{n}
 \end{align*}
-is a residue class modulo $mn$.
+is of the form $x\equiv c\pmod{mn}$ for some integer $c$ (depending on $a,b,m,n$).
 \end{theorem}
 
-\subsubsection*{Exercises}
-
-\begin{enumerate}
-\item (Week 4 slides) There are several cookies in a jar. Sharing the cookies evenly among $3$ children leaves $2$ cookies left. Sharing the cookies among $7$ children leaves $3$ cookies left. Find all the possible amounts of cookies in the jar.
-\item (Week 4 extensions) The eighth graders are taking buses to visit Sea World today. Each large bus can take $56$ students and each small bus can take $36$ students. If we try to let all students take a large bus, then all will be full except for one bus with only $9$ students. If we try to let all students take a small bus, then all will be full except for one bus with $21$ students. What are the possible amounts of eighth graders?
-\end{enumerate}
-
-
-\subsection{Euler's Totient Theorem}
-
-By Corollary~\ref{cor:invertible-mod-m}, the integers relatively prime to $m$ are precisely those that have multiplicative inverses modulo $m$. As we can compute $(xy)^{-1}\equiv x^{-1}y^{-1}\pmod{m}$ whenever $x$ and $y$ are invertible modulo $m$, this tells us (with an admittedly roundabout proof) that the product of any two integers relatively prime to $m$ is also relatively prime to $m$.
-
-Now consider the complete multiplicative residue set modulo $m$
+For an example where $\gcd(m,n) > 1$, consider Problem 6 from the Week 4 extensions, which amounts to solving the system of congruences
+\begin{align*}
+x &\equiv 9\pmod{56}, \\
+x &\equiv 21\pmod{36}.
+\end{align*}
+If $x$ is a solution, there are integers $a$ and $b$ for which
 \begin{equation*}
-\Phi_m = \{a\mid 1\leq a\leq m\text{ and }\gcd(a,m) = 1\}.
+x = 56a + 9 = 36b + 21.
 \end{equation*}
-(Here $\Phi$ is the capital Greek letter Phi. The notation is non-standard.) The number of elements of $\Phi_m$ is the \emph{Euler totient function} evaluated at $m$, and this function is denoted $\phi$ or $\varphi$ (the lowercase Greek letter phi).
-
-Analogously to Theorem~\ref{thm:complete-residue-set}, we have 
-\begin{theorem}\label{thm:complete-multiplicative-residue-set}
-If $\gcd(a,m) = 1$, then
+Before reducing the equation $56a + 9 = 36b + 21$ with a suitable modulus, we rearrange to get $56a = 36b + 12$, then divide out by the common factor of $4$ to get $14a = 9b + 3$. Now, we reduce this equation modulo $9$ to find $5a\equiv 3\pmod{9}$, or $a\equiv 6\pmod{9}$. Writing $a = 9k + 6$,
 \begin{equation*}
-a\cdot\Phi_m = \{ab\mid b\in\Phi_m\}
+x = 56(9k + 6) + 9 = 504k + 345,
 \end{equation*}
-is also a complete multiplicative residue set modulo $m$.
+and the solution to the system is $x\equiv 345\pmod{504}$. In this case, we got a similar form of solution, but with the final congruence modulo $\lcm(56,36)$ instead of $56\cdot 36$.
+
+However, unlike the case where $\gcd(m,n) = 1$, it is possible that a solution does not exist when $\gcd(m,n) > 1$. Suppose we change the numbers in the previous example slightly, to
+\begin{align*}
+x &\equiv 9\pmod{56}, \\
+x &\equiv 22\pmod{36}.
+\end{align*}
+From the resulting equation $56a + 9 = 36b + 22$, the left hand side is odd while the right hand side is even, so there cannot be any solutions. This means that any extension of the Chinese remainder theorem to cover moduli which are not relatively prime should include a condition for when a solution exists.
+
+\begin{proposition}
+The system of linear congruences
+\begin{align*}
+x &\equiv a\pmod{m}, \\
+x &\equiv b\pmod{n}
+\end{align*}
+has a solution if and only if $a\equiv b\pmod{\gcd(m,n)}$. In this case, the solution is of the form $x\equiv c\pmod{\lcm(m,n)}$ for some integer $c$.
+\end{proposition}
+
+
+\subsection{Euler's totient theorem}
+
+Let $m$ be a positive integer, and consider the set
+\begin{equation*}
+\Phi_m = \{0\leq n < m\mid \gcd(n,m) = 1\}
+\end{equation*}
+of all non-negative integers less than $m$ which are relatively prime to $m$. Every element of $\Phi_m$ is invertible modulo $m$, and for any integer which is invertible modulo $m$, there is exactly one element of $\Phi_m$ which is congruent to it modulo $m$.
+
+Given two integers $a$ and $b$ which are invertible modulo $m$, their product $ab$ is also invertible modulo $m$. The most direct way to see this is to identify that if we pick inverses $a^{-1}$ and $b^{-1}$ of $a$ and $b$, then
+\begin{equation*}
+(ab)(a^{-1}b^{-1})\equiv aa^{-1}\cdot bb^{-1}\equiv 1\cdot 1\equiv 1\pmod{m}.
+\end{equation*}
+This shows that $a^{-1}b^{-1}$ is an inverse to $ab$. Also, if $a,b,c$ are invertible and $ab\equiv ac\pmod{m}$, then $b\equiv c\pmod{m}$. (This only requires $a$ to be invertible.)
+
+Putting the above observations together gives us
+\begin{lemma}
+Suppose $\gcd(a,m) = 1$. The set
+\begin{equation*}
+a\cdot\Phi_m = \{ab\mid 0\leq b < m\text{ and }\gcd(b,m) = 1\}
+\end{equation*}
+has the property that each element is congruent modulo $m$ to exactly one element of $\Phi_m$.
+\end{lemma}
+
+As a consequence of this lemma, when we multiply the elements of $a\cdot\Phi_m$ together, we get the same result modulo $m$ as if we multiplied the elements of $\Phi_m$ together. That is, if $P$ is the product of the elements of $\Phi_m$, then
+\begin{equation*}
+a^{\#(\Phi_m)}P\equiv P\pmod{m}.
+\end{equation*}
+Each element of $\Phi_m$ is invertible, so $P$ is invertible, and we get $a^{\#(\Phi_m)}\equiv 1\pmod{m}$.
+
+\begin{definition}[Euler totient function]
+The number of elements of $\Phi_m$, meaning the number of non-negative integers less than $m$ which are relatively prime to $m$, is the \emph{Euler totient function} evaluated at $m$, denoted $\phi(m)$ or $\varphi(m)$
+\end{definition}
+
+With this notation, we have
+\begin{theorem}[Euler totient theorem]
+If $\gcd(a,m) = 1$,
+\begin{equation*}
+a^{\phi(m)}\equiv 1\pmod{m}.
+\end{equation*}
 \end{theorem}
+
+A particularly important example is that when $p$ is a prime number, $\phi(p) = p - 1$ because every positive integer less than $p$ is relatively prime to $p$. This gives us
+\begin{theorem}[Fermat's little theorem]
+If $p$ is prime and $\gcd(a,p) = 1$, then $a^{p - 1}\equiv 1\pmod{p}$.
+\end{theorem}
+
+
+\subsection{Computing the Euler totient function}
+
+In order for the theorem to be effective, we need a way to compute $\phi(m)$. As an example, consider $\phi(100)$. In order to be relatively prime to $100$, an integer must not be divisible by $2$ or $5$. Of the non-negative integers less than $100$, there are $100/2 = 50$ multiples of $2$ and $100/5 = 20$ multiples of $5$. However, the multiples of $10$ were counted twice, so we need to subtract $100/10 = 10$ from our count to make sure they are only counted once. This gives $50 + 20 - 10 = 60$ non-negative integers less than $100$ which are not relatively prime to $100$, which leaves $\phi(100) = 40$.
+
+In general, doing this counting argument (an example of \href{https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle}{inclusion-exclusion}) gives us
+\begin{theorem}
+Let $N$ be a positive integer and let $p_1, p_2, \ldots, p_k$ be the list of (distinct) primes dividing $N$. Then
+\begin{equation*}
+\phi(N) = N\left(1 - \frac{1}{p_1}\right)\left(1 - \frac{1}{p_2}\right)\cdots\left(1 - \frac{1}{p_k}\right).
+\end{equation*}
+\end{theorem}
+
+
+\subsection{A preview of further number theory}
+
+For odd primes $p$, consider the congruence $x^2\equiv -1\pmod{p}$.
+\begin{center}
+\begin{tabular}{r|l}
+$p$ & smallest positive solution to $x^2\equiv -1\pmod{p}$ \\ \hline
+3 & none \\
+5 & 2 \\
+7 & none \\
+11 & none \\
+13 & 5 \\
+17 & 4 \\
+19 & none \\
+23 & none \\
+29 & 12 \\
+31 & none
+\end{tabular}
+\end{center}
+We may observe that when $p\equiv 3\pmod{4}$, we get no solution. To prove this, suppose $p = 4k + 3$ for an integer $k$. If $x^2\equiv -1\pmod{p}$, then
+\begin{equation*}
+x^{p - 1}\equiv x^{4k + 2}\equiv (x^2)^{2k + 1}\equiv (-1)^{2k + 1}\equiv -1\pmod{p},
+\end{equation*}
+contradicting Fermat's little theorem.
+
+What remains is to investigate $p\equiv 1\pmod{4}$, for which the examples computed above all have solutions. It turns out we can even write down a solution fairly compactly.
+\begin{lemma}[Wilson's theorem]
+If $p$ is prime, then $(p - 1)!\equiv -1\pmod{p}$.
+\end{lemma}
+\begin{proof}
+For $p = 2$, we just get $1\equiv -1\pmod{2}$, which is true. For odd primes $p$, the factorial $(p - 1)!$ is the product of all invertible residues modulo $p$, and we can pair each residue with its inverse modulo $p$. Aside from $1$ and $p - 1\equiv -1$, which are their own inverses, each pair gives us a product of $1$, so the overall product is $-1$ modulo $p$.
+\end{proof}
+Now, we can take the factorial in Wilson's theorem and pair each factor $k$ with $p - k\equiv -k$. For odd $p$, this gives us
+\begin{equation*}
+(-1)^{(p - 1)/2}\left(\frac{p - 1}{2}\right)!\equiv -1\pmod{p}.
+\end{equation*}
+When $p\equiv 1\pmod{4}$, the sign factor is just $1$, so $x = (\frac{p - 1}{2})!$ is a solution to $x^2\equiv -1\pmod{p}$. We have thus shown
+
+\begin{theorem}
+For odd primes $p$, the congruence $x^2\equiv -1\pmod{p}$ has a solution if and only if $p\equiv 1\pmod{4}$.
+\end{theorem}
+
+This is part of the \emph{law of quadratic reciprocity}, one of the major results of number theory. (A full discussion is beyond the scope of this course.)
