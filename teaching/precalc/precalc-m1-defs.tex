@@ -72,9 +72,47 @@ $\theta$ (deg) & $\theta$ (rad) & $\sin\theta$ & $\cos\theta$ & $\tan\theta$ & $
 \subsection{Challenge problems}
 
 \begin{enumerate}\setcounter{enumi}{7}
-\item % chord
-\item % parallax
-\item % unit circle pythagorean triples 
+\item Much of classical trigonometry was done in terms of the \emph{chord function}, which is defined for angles $0 < \theta < 180^{\circ}$ as follows. Let $O$ be the center of a circle of radius 1, and let $A$ and $B$ be points on the circle so that $\angle AOB = \theta$. Then $\chd\theta$ is defined to be the length $AB$.
+\begin{enumerate}
+\item Compute $\chd 90^{\circ}$, $\chd 60^{\circ}$, and $\chd 30^{\circ}$.
+\item Express $\chd\theta$ in terms of the sine function.
+\item Prove that $\chd^2\theta + \chd^2(180^{\circ} - \theta) = 4$.
+\end{enumerate}\newpage
+\item A method for estimating the distances to the Sun and the Moon using measurements of solar and lunar eclipses dates back to the Greek astronomer Hipparchus (c.\~190 BC to c.\~120 BC). In this problem, we work through the relevant geometric argument.
+\begin{center}
+\includegraphics[scale=0.4]{hipparchus-2.png}
+\end{center}
+In the diagram, points $S$, $M$, $E$, and $L$ lie on a line, with $S$, $M$, and $E$ representing the centers of the Sun, Moon, and Earth, respectively. Segments $\overline{AB}$, $\overline{CD}$, and $\overline{PQ}$ are diameters of their respective circles, all perpendicular to $\overline{SL}$. Segment $\overline{JK}$ is also perpendicular to $\overline{SL}$. Points $A, X, P, J$ are collinear, points $B, Y, Q, K$ are collinear, points $X, C, D, Y$ are collinear, points $A, C, E$ are collinear, and points $B, D, E$ are collinear. Finally, $E$ is the midpoint of $\overline{LM}$. Let $PE = 1$ (so lengths are in terms of Earth radii) and define
+\begin{equation*}
+\ell = EM = EL,\quad s = ES,\quad\theta = \angle CEM,\quad\phi = \angle JEL.
+\end{equation*}
+\begin{enumerate}
+\item Show that 
+\begin{equation*}
+s = \frac{\ell}{(\tan\theta + \tan\phi)\ell - 1}
+\end{equation*}
+\item (Calculator recommended) The measurements used by Hipparchus were
+\begin{equation*}
+\ell\approx 67\tfrac{1}{3},\quad\theta\approx 0.277^{\circ},\quad\phi\approx 0.693^{\circ}.
+\end{equation*}
+Given these measurements, what value do we get for $s$?
+\item (Calculator recommended) Currently, our measurements for the same quantities are
+\begin{equation*}
+\ell = 60.268,\quad\theta\approx 0.267^{\circ},\quad\phi\approx 0.746^{\circ}.
+\end{equation*}
+Given these measurements, what value do we get for $s$?\par
+\end{enumerate}
+For reference, the true value of $s$ is $s\approx 23{,}455$, so some of the approximations made in order to set up the diagram turn out to be a substantial source of error.\newpage
+\item A \emph{Pythagorean triple} is a triple $(X,Y,Z)$ of positive integers for which $X^2 + Y^2 = Z^2$. Note that if $(X,Y,Z)$ is a Pythagorean triple, then $(x,y) = (X/Z, Y/Z)$ is a point on the unit circle whose coordinates are rational numbers.
+\begin{enumerate}
+\item Let $O = (-1,0)$. If $P\neq O$ has rational coordinates and lies on the unit circle, then the slope of $\overline{OP}$ is rational. Conversely, show that if $\ell$ is a line passing through $O$ which has rational slope, then the other point $P\neq O$ at which $\ell$ intersects the unit circle must have rational coordinates.
+\item Use part (a) to show that aside from $O$, every point on the unit circle with rational coordinates can be written in the form $\displaystyle\left(\frac{n^2 - m^2}{n^2 + m^2}, \frac{2mn}{n^2 + m^2}\right)$ for integers $m$ and $n$.
+\end{enumerate}
+A result going back to Euclid states that every \emph{primitive} Pythagorean triple, meaning a Pythagorean triple $(X,Y,Z)$ where $\gcd(X,Y,Z) = 1$, can be written as either
+\begin{equation*}
+X = n^2 - m^2,\quad Y = 2mn,\quad Z = n^2 + m^2
+\end{equation*}
+with $\gcd(m,n) = 1$ and $m + n$ odd, or in the same form with $X$ and $Y$ swapped. The result of part (b) gets most of the way to proving this, with a subtle detail or two to fill in.
 \end{enumerate}
 
 
