@@ -1,1 +1,76 @@
 \section{Trig (III): Identities}
+
+\subsection{Review problems}
+
+\begin{enumerate}
+\item \emph{Angle sum and difference identities.}
+\begin{enumerate}
+\item $\sin(\alpha + \beta) = $
+\item $\sin(\alpha - \beta) = $
+\item $\cos(\alpha + \beta) = $
+\item $\cos(\alpha - \beta) = $
+\item $\tan(\alpha + \beta) = $
+\item $\tan(\alpha - \beta) = $
+\end{enumerate}
+\item \emph{Calculation.}
+\begin{enumerate}
+\item Compute $\cos(75^{\circ})$.
+\item Supposing $\sin(\alpha) = 5/13$ and $\sin(\beta) = 3/5$, compute $\sin(\alpha + \beta)$.
+\end{enumerate}
+\item \emph{Double angle identities.} (There are three useful expressions for $\cos(2\theta)$.)
+\begin{enumerate}
+\item $\sin(2\theta) = $
+\item $\cos(2\theta) = $
+\item $\cos(2\theta) = $
+\item $\cos(2\theta) = $
+\item $\tan(2\theta) = $
+\end{enumerate}
+\item \emph{Half angle calculations.}
+\begin{enumerate}
+\item If $\cos\theta = 3/5$, what are the possible values of $\cos(\theta/2)$?
+\item Calculate $\tan(\pi/8)$.
+\end{enumerate}
+\item \emph{The tangent half-angle substitution.} Let $t = \tan(\theta/2)$. Show that
+\begin{equation*}
+\cos\theta = \frac{1 - t^2}{1 + t^2}\quad\text{and}\quad\sin\theta = \frac{2t}{1 + t^2}.
+\end{equation*}
+These are sometimes used in calculus to change expressions involving trig functions into expressions involving rational functions.
+\item \emph{Product-to-sum and sum-to-product identities.}
+\begin{enumerate}
+\item $\cos\alpha\cos\beta = $
+\item $\sin\alpha\sin\beta = $
+\item $\sin\alpha\cos\beta = $
+\item $\sin\theta + \sin\phi = $
+\item $\cos\theta + \cos\phi = $
+\end{enumerate}
+\item \emph{Some equations.} Find all real solutions to the following equations. (These will generally involve an integer parameter and may involve inverse trig functions.) % latter two based on dec 2019 gbml
+\begin{enumerate}
+\item $\sin\alpha = 1$
+\item $2\cos(2t) + 5 = 8\cos t$
+\item $\sin\theta = \cos^2(2\pi/9) - \sin^2(2\pi/9)$
+\item $3\sin x + 5\cos x = 23/4$
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Challenge problems}
+
+\begin{enumerate}\setcounter{enumi}{7}
+\item For each non-negative integer $n$, the \emph{degree-$n$ Chebyshev polynomial of the first kind}, denoted $T_n(X)$, is defined by the property that $T_n(\cos\theta) = \cos(n\theta)$ for all real $\theta$. Thus $T_0(X) = 1$ and $T_1(X) = X$.
+\begin{enumerate}
+\item Compute $T_2(X)$, $T_3(X)$, and $T_4(X)$.
+\item Find the roots of $T_n(X)$ for $n = 0, 1, 2, 3, 4$.
+\item Prove that $T_{n + 1}(X) = 2X\cdot T_n(X) - T_{n - 1}(X)$ for all positive integers $n$.
+\end{enumerate}
+\item Show that for all positive integers $n$,
+\begin{equation*}
+1 + 2\cos\theta + 2\cos(2\theta) + \cdots + 2\cos(n\theta) = \frac{\sin((n + \frac{1}{2})\theta)}{\sin(\frac{1}{2}\theta)}.
+\end{equation*}
+\emph{Remark:} If we denote either side of this equation by $D_n(\theta)$, then the sequence of functions $D_0, D_1, D_2, \ldots$ is known as the \emph{Dirichlet kernel}.
+\item Prove the following for a triangle $ABC$:
+\begin{enumerate}
+\item $\tan A + \tan B + \tan C = \tan A\tan B\tan C$
+\item $\cot(\frac{A}{2}) + \cot(\frac{B}{2}) + \cot(\frac{C}{2}) = \cot(\frac{A}{2})\cot(\frac{B}{2})\cot(\frac{C}{2})$
+\item $\sin(2A) + \sin(2B) + \sin(2C) = 4\sin A\sin B\sin C$
+\end{enumerate}
+\end{enumerate}
