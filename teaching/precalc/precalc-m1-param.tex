@@ -1,0 +1,107 @@
+\section{Parametric and polar equations}
+
+\subsection{Review problems}
+
+\begin{enumerate}
+\item \emph{Graphing parametric curves.} Graph each of the following and write down equivalent equations using $x$ and $y$ only.
+\begin{enumerate}
+\item $x(t) = 2 + 3t$ and $y(t) = 4 - t$
+\item $x(t) = \cos t$ and $y(t) = \sin t$
+\item $x(t) = t$ and $y(t) = t^3$
+\item $x(t) = 1 + 2\sin t$ and $y(t) = 3 - 2\cos t$
+\end{enumerate}
+\item \emph{Parameterizing standard curves.} Write down parametric equations for each of the following curves in the plane.
+\begin{enumerate}
+\item The line passing through $(3,2)$ and $(6,7)$
+\item The circle with center $(-2,3)$ and radius 4
+\item The ray emanating from $(0,1)$ passing through $(-4,-4)$
+\end{enumerate}
+\item \emph{Plane polar coordinates.} Make each of the following conversions.
+\begin{enumerate}
+\item Polar $(3,0)$ to cartesian (rectangular, $(x,y)$)
+\item Polar $(2,2\pi/3)$ to cartesian
+\item Cartesian $(-4,0)$ to polar
+\item Cartesian $(1,1)$ to polar
+\end{enumerate}
+\item \emph{Lines and circles.} Graph each of the following and write down equivalent equations using cartesian coordinates ($x$ and $y$).
+\begin{enumerate}
+\item $r = 5$
+\item $\theta = \arctan(1/4)$, where $r$ is allowed to be any real number
+\item $r = -2\sin\theta$
+\item $r = 2\cos\theta + 4\sin\theta$
+\item $r = \frac{7}{3\cos\theta - 2\sin\theta}$
+\end{enumerate}
+\item \emph{Lima\c{c}ons and roses.} Match each equation with its corresponding graph. (Not every graph has a corresponding equation.)
+\begin{table}[H]
+\centering 
+\begingroup\setlength{\tabcolsep}{40pt}
+\begin{tabular}{cc}
+Equation & Graph \\ \hline
+$r = 1 + 3\cos\theta$ & Lima\c{c}on with indentation \\
+$r = 3 + 3\cos\theta$ & Rose with 3 petals \\
+$r = 5 + 3\cos\theta$ & Lima\c{c}on with inner loop \\
+$r = 7 + 3\cos\theta$ & Convex lima\c{c}on\\
+$r = \cos\theta$ & Rose with 4 petals \\
+$r = \cos(2\theta)$ & Circle \\
+$r = \cos(3\theta)$ & Rose with 2 petals \\
+{} & Rose with 6 petals \\
+{} & Cardioid (lima\c{c}on with cusp)
+\end{tabular}
+\endgroup
+\end{table}
+\item \emph{Arc length parameterization.} An \emph{arc length parameterization} of a curve in the plane is a parameterization $(x(s), y(s))$ with the property that whenever a particle moves along the curve from $s = s_1$ to $s = s_2$, where $s_1 < s_2$, the distance it travels is $s_2 - s_1$.
+\begin{enumerate}
+\item Prove that $x(s) = 1 + \frac{3}{5}s$ and $y(s) = 1 + \frac{4}{5}s$ is an arc length parameterization for the line passing through $(1,1)$ and $(4,5)$.
+\item Find an arc length parameterization for the circle centered at $(1,-1)$ with radius 2 that traverses the circle clockwise starting at $(3,-1)$ when $s = 0$.
+\end{enumerate}
+\item \emph{Roulettes.} Let $P$ be a point on a circle of radius 1. Parameterize the path traced by $P$ as the circle rolls along each of the following, assuming that $P$ is at the point of contact at time $t = 0$. (You are free to choose exactly where the initial point of contact is.)
+\begin{enumerate}
+\item \emph{Cycloid.} Rolling on top of the $x$-axis
+\item \emph{Cardioid.} Rolling on the outside of a circle of radius 1
+\item \emph{Nephroid.} Rolling on the outside of a circle of radius 2
+\item \emph{Deltoid.} Rolling on the inside of a circle of radius 3
+\item \emph{Astroid.} Rolling on the inside of a circle of radius 4
+\end{enumerate}
+\emph{Remark:} The cardioid and nephroid are examples of \emph{epicycloids} while the deltoid and astroid are examples of \emph{hypocycloids}.
+\end{enumerate}
+
+
+\subsection{Challenge problems}
+
+\begin{enumerate}\setcounter{enumi}{7}
+\item Let $e > 0$ and $\ell > 0$ be given. The conic section with eccentricity $e$ whose focus is the point $F = (0,0)$ and whose directrix is the line $x = -\ell$ is the set of all points satisfying
+\begin{equation*}
+\frac{\text{distance from \ensuremath{P} to \ensuremath{F}}}{\text{distance from \ensuremath{P} to the directrix}} = e.
+\end{equation*}
+Note that when $e = 1$, this matches the usual focus-directrix definition of the parabola.
+\begin{enumerate}
+\item Show that the above curve has polar equation
+\begin{equation*}
+r = \frac{e\ell}{1 - e\cos\theta}.
+\end{equation*}
+\item Show that when $0 < e < 1$, the conic is an ellipse. What is the other focus of the ellipse?
+\item Show that when $e > 1$, the conic is a hyperbola. In terms of $e$ and/or $\ell$, what are the slopes of the asymptotes?
+\item Convert the polar equation to cartesian form.
+\item Suppose the conic passes through $(-p,0)$, where $p > 0$. Express $\ell$ in terms of $e$ and $p$.
+\item Holding $p$ fixed, what happens to the conic and the directrix as $e$ approaches $0$?
+\end{enumerate}\newpage
+\item Parameterization works for curves in three dimensions as well.
+\begin{enumerate}
+\item Graph the line $x(t) = t$; $y(t) = 1 + 2t$; $z(t) = 2 + t$.
+\item Graph the \emph{helix} $x(t) = \cos t$; $y(t) = \sin t$; $z(t) = t$.
+\item Find the intersection point (if it exists) of the lines
+\begin{equation*}
+x_1(t) = 2 - t;\quad y_1(t) = 2 + t;\quad z_1(t) = 3t
+\end{equation*}
+and
+\begin{equation*}
+x_2(t) = -1 + t;\quad y_2(t) = 7 - 2t;\quad z_2(t) = 2 + t.
+\end{equation*}
+\end{enumerate}
+\item By using two parameters, we can describe surfaces in three dimensions. For each pair of values $(u,v)$, we get a corresponding point on the surface.
+\begin{enumerate}
+\item Graph the plane $x(u,v) = u + v$, $y(u,v) = u - v$, and $z(u,v) = 1 + 4u + 6v$. Write down an equation for this plane using only $x$, $y$, and $z$.
+\item Graph the (infinite) cylinder $x(u,v) = 2\cos u$, $y(u,v) = 2\sin u$, and $z(u,v) = v$.
+\item Assuming the Earth is a perfect sphere of radius $R$ centered at the origin with the prime meridian and equator intersecting at $(R,0,0)$, let $\phi$ denote latitude, ranging from $-90^{\circ}$ at the south pole to $90^{\circ}$ at the north pole, and let $\theta$ denote longitude, increasing from $-180^{\circ}$ to $180^{\circ}$ moving eastward with the prime meridian at $\theta = 0^{\circ}$. Parameterize points on the surface of the Earth using $\theta$ and $\phi$.
+\end{enumerate}
+\end{enumerate}
