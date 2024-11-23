@@ -74,3 +74,94 @@ These are sometimes used in calculus to change expressions involving trig functi
 \item $\sin(2A) + \sin(2B) + \sin(2C) = 4\sin A\sin B\sin C$
 \end{enumerate}
 \end{enumerate}
+
+
+\newpage
+\subsection{Answers}
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item $\sin\alpha\cos\beta + \cos\alpha\sin\beta$
+\item $\sin\alpha\cos\beta - \cos\alpha\sin\beta$
+\item $\cos\alpha\cos\beta - \sin\alpha\sin\beta$
+\item $\cos\alpha\cos\beta + \sin\alpha\sin\beta$
+\item $\frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}$
+\item $\frac{\tan\alpha - \tan\beta}{1 + \tan\alpha\tan\beta}$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\frac{\sqrt{6} - \sqrt{2}}{4}$
+\item $56/65$
+\end{enumerate}
+\item The answers for (b), (c), and (d) can be rearranged.
+\begin{enumerate}
+\item $2\sin\theta\cos\theta$
+\item $\cos^2\theta - \sin^2\theta$
+\item $2\cos^2\theta - 1$
+\item $1 - 2\sin^2\theta$
+\item $\frac{2\tan\theta}{1 - \tan^2\theta}$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\pm 2/\sqrt{5}$
+\item $\sqrt{2} - 1$
+\end{enumerate}
+\item We have $\sec^2(\theta/2) = 1 + \tan^2(\theta/2) = 1 + t^2$, so $\cos^2(\theta/2) = \frac{1}{1 + t^2}$. Then,
+\begin{equation*}
+\cos\theta = 2\cos^2(\theta/2) - 1 = \frac{1 - t^2}{1 + t^2}.
+\end{equation*}
+To find $\sin\theta$, we compute
+\begin{equation*}
+\tan\theta = \frac{2\tan(\theta/2)}{1 - \tan^2(\theta/2)} = \frac{2t}{1 - t^2}
+\end{equation*}
+and hence $\sin\theta = \cos\theta\tan\theta = \frac{2t}{1 + t^2}$.\par
+\emph{Remark: Another method to solve this is to set up the situation in Section 1 Problem 10(a).}
+\item \begin{enumerate}
+\item $\frac{\cos(\alpha - \beta) + \cos(\alpha + \beta)}{2}$
+\item $\frac{\cos(\alpha - \beta) - \cos(\alpha + \beta)}{2}$
+\item $\frac{\sin(\alpha + \beta) + \sin(\alpha - \beta)}{2}$
+\item $2\sin(\frac{\theta + \phi}{2})\sin(\frac{\theta - \phi}{2})$
+\item $2\cos(\frac{\theta + \phi}{2})\cos(\frac{\theta - \phi}{2})$
+\end{enumerate}
+\item For all of the below, $n$ ranges over all integers.
+\begin{enumerate}
+\item $\alpha = \frac{\pi}{2} + 2\pi n$
+\item By the double-angle identity $\cos(2t) = 2\cos^2 t - 1$,
+\begin{equation*}
+4\cos^2 t + 3 = 8\cos t\quad\iff\quad (2\cos t - 1)(2\cos t - 3) = 0.
+\end{equation*}
+Only $\cos t = 1/2$ is possible, and we get the solutions $t = \pi/3 + 2\pi n$ and $t = -\pi/3 + 2\pi n$.
+\item The right hand side is $\cos(4\pi/9) = \sin(\pi/18)$, so $\sin\theta = \sin(\pi/18)$. Hence $\theta = \pi/18 + 2\pi n$ or $\theta = 17\pi/18 + 2\pi n$.
+\item Dividing both sides by $\sqrt{3^2 + 5^2} = \sqrt{34}$ and setting $\varphi = \arccos(\frac{3}{\sqrt{34}})$ and $C = \frac{23}{4\sqrt{34}}$, we have $\sin x\cos\alpha + \cos x\sin\alpha = C$, so $\sin(x + \alpha) = C$. Hence
+\begin{equation*}
+x = \arcsin C - \alpha + 2\pi n\quad\text{or}\quad x = \pi - \arcsin C - \alpha + 2\pi n.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item $T_2(X) = 2X^2 - 1$\par
+$T_3(X) = 4X^3 - 3X$\par
+$T_4(X) = 8X^4 - 8X^2 + 1$
+\item $T_0(X)$ has no roots\par 
+$T_1(X)$ has one root, $0$\par
+$T_2(X)$ has two roots, $\pm 1/\sqrt{2}$\par
+$T_3(X)$ has three roots, $0$ and $\pm\sqrt{3}/2$\par
+$T_4(X)$ has four roots: letting $Y = X^2$, then $8Y^2 - 8Y + 1 = 0$ when $Y = 4\pm 2\sqrt{2}$, which in turn gives us $X = \pm\sqrt{4\pm 2\sqrt{2}}$
+\item It suffices to show that $\cos((n + 1)\theta) = 2\cos\theta\cos(n\theta) - \cos((n - 1)\theta)$, or equivalently,
+\begin{equation*}
+\cos((n + 1)\theta) + \cos((n - 1)\theta) = 2\cos\theta\cos(n\theta).
+\end{equation*}
+This follows by expanding $\cos(\alpha + \beta)$ and $\cos(\alpha - \beta)$ with $\alpha = n\theta$ and $\beta = \theta$, or (since the work was already done before) using by a sum-to-product or product-to-sum identity.
+\end{enumerate}
+\item Multiplying through by $\sin(\theta/2)$ and expanding the left hand side using product-to-sum,
+\begin{align*}
+&\sin\left(\frac{1}{2}\theta\right)\left[1 + 2\cos\theta + \cdots + 2\cos (n\theta)\right] \\
+&= \sin\left(\frac{1}{2}\theta\right) + \left[\sin\left(\frac{3}{2}\theta\right) - \sin\left(\frac{1}{2}\theta\right)\right] + \cdots + \left[\sin\left(\left(n + \frac{1}{2}\right)\theta\right) - \sin\left(\left(n - \frac{1}{2}\right)\theta\right)\right] \\
+&= \sin\left(\left(n + \frac{1}{2}\right)\theta\right).
+\end{align*}
+\item \begin{enumerate}
+\item We compute
+\begin{equation*}
+\tan C = \tan(\pi - (A + B)) = -\tan(A + B) = \frac{\tan A + \tan B}{\tan A\tan B - 1}.
+\end{equation*}
+With this, both sides can be seen to simplify to $\frac{\tan A\tan B(\tan A + \tan B)}{\tan A\tan B - 1}$.
+\item 
+\end{enumerate}
+\end{enumerate}
