@@ -39,6 +39,7 @@
 \item What are the standard domains and ranges of $\sec^{-1}$, $\csc^{-1}$, and $\cot^{-1}$?
 \end{enumerate}
 
+
 \subsection{Challenge problems}
 
 \begin{enumerate}\setcounter{enumi}{7}
@@ -55,4 +56,55 @@
 \item $\sin(x) + \sin(\sqrt{2}x)$
 \end{enumerate}
 \item A function $f:\mathbb{C}\to\mathbb{C}$ is \emph{doubly-periodic} if there are non-zero constants $u,v\in\mathbb{C}$ such that $u/v$ is non-real and $f(z) = f(z + u) = f(z + v)$ for all complex numbers $z$. Write down an example of a non-constant doubly-periodic function.
+\end{enumerate}
+
+
+\newpage
+\subsection{Answers}
+
+\begin{enumerate}
+\item top left is sine; top right is cosine;\par
+middle left is cosecant; middle right is secant;\par
+bottom left is tangent; bottom right is cotangent
+\item sine, cosine, secant, cosecant have period $2\pi$, natural frequency $\frac{1}{2\pi}$, angular frequency 1;\par 
+theirangent, cotangent have period $\pi$, natural frequency $\frac{1}{\pi}$, angular frequency 2
+\item \begin{enumerate}
+\item period $2\pi$; amplitude $1$; phase shift $0$
+\item period $2\pi$; amplitude $1$; phase shift $-\pi/2$ since $\cos x = \sin\left(x + \frac{\pi}{2}\right)$
+\item period $2\pi/5$; amplitude $3$; phase shift $\pi/35$
+\item period $\pi$; amplitude $2\sqrt{2}$ since $2\sin(2x) - 2\cos(2x) = 2\sqrt{2}\sin\left(2x - \frac{\pi}{4}\right)$; phase shift $\pi/8$
+\end{enumerate}
+\item arcsin has domain $[-1,1]$ and range $[-\pi/2, \pi/2]$;\par
+arccos has domain $[-1,1]$ and range $[0,\pi]$;\par
+arctan has domain $\mathbb{R}$ and range $(-\pi/2, \pi/2)$
+\item \begin{enumerate}
+\item $\pi/6$
+\item $3\pi/4$
+\item $-\pi/3$
+\item $-\pi/4$
+\item $-\pi/6$
+\item $-1/3$
+\item $2/\sqrt{5}$
+\end{enumerate}
+\item \begin{enumerate}
+\item 2
+\item 0
+\item 1
+\item 2
+\item 30
+\item 40
+\end{enumerate}
+\item $\sec^{-1}$ has domain $(-\infty,-1]\cup [1,+\infty)$ and range $[0,\pi/2)\cup (\pi/2,\pi]$;\par 
+$\csc^{-1}$ has domain $(-\infty,-1]\cup [1,+\infty)$ and range $[-\pi/2,0)\cup (0,\pi/2]$;\par
+$\cot^{-1}$ has domain $\mathbb{R}$ and range $(0,\pi)$
+\item First note for any acute angle $\theta$ that $C(\theta) = \arccos(\sin\theta) = \pi/2 - \theta$.
+\begin{enumerate}
+\item Given $x > 0$, the angle $\arctan x$ is acute, so $A(x) = \tan(C(\arctan x)) = 1/x$.
+\item Given $x\geq 0$, we have $\cos(\arctan x) = 1/\sqrt{x^2 + 1}$, so $B(x) = A(\cos(\arctan x)) = \sqrt{x^2 + 1}$.
+\item Let $q = m/n$ where $\gcd(m,n) = 1$. Note that $B^{-1}(\sqrt{q}) = \sqrt{q - 1}$ and $A^{-1}(\sqrt{q}) = \sqrt{1/q}$ correspond to steps of the Euclidean algorithm on $m$ and $n$. Since $\gcd(m,n) = 1$, we can work backwards until we reach $0/1 = 0$. Running our steps in reverse gives us a sequence of button presses that goes from $0$ to $\sqrt{q}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item $2\pi$
+\item $\pi/2$
+\end{enumerate}
 \end{enumerate}
