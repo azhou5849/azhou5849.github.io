@@ -161,7 +161,27 @@ This follows by expanding $\cos(\alpha + \beta)$ and $\cos(\alpha - \beta)$ with
 \begin{equation*}
 \tan C = \tan(\pi - (A + B)) = -\tan(A + B) = \frac{\tan A + \tan B}{\tan A\tan B - 1}.
 \end{equation*}
-With this, both sides can be seen to simplify to $\frac{\tan A\tan B(\tan A + \tan B)}{\tan A\tan B - 1}$.
-\item 
+With this, both sides simplify to $\dfrac{\tan A\tan B(\tan A + \tan B)}{\tan A\tan B - 1}$.
+\item Let $x = A/2$ and $y = B/2$. Then
+\begin{equation*}
+\cot\left(\frac{C}{2}\right) = \cot\left(\frac{\pi}{2} - (x + y)\right) = \tan(x + y) = \frac{\tan x + \tan y}{1 - \tan x\tan y} = \frac{\cot x + \cot y}{\cot x\cot y - 1}.
+\end{equation*}
+With this, both sides simplify to $\dfrac{\cot x\cot y(\cot x + \cot y)}{\cot x\cot y - 1}$.
+\item First, we use the sine double-angle formula and $C = \pi - (A + B)$ to reduce the problem to showing that 
+\begin{equation*}
+\sin A\cos A + \sin B\cos B - \sin(A + B)\cos(A + B)\stackrel{?}{=} 2\sin A\sin B\sin(A + B).
+\end{equation*}
+We compute
+\begin{align*}
+&\sin A\cos A + \sin B\cos B - \sin(A + B)\cos(A + B) \\
+&= \sin A\cos A + \sin B\cos B - (\sin A\cos B + \cos A\sin B)(\cos A\cos B - \sin A\sin B) \\
+&= \sin A\cos A + \sin B\cos B - \sin A\cos A\cos^2 B \\
+&\qquad + \sin^2 A\sin B\cos B - \cos^2 A\sin B\cos B + \sin A\cos A\sin^2 B \\
+&= \sin A\cos A(1 - \cos^2 B + \sin^2 B) + \sin B\cos B(1 + \sin^2 A - \cos^2 A) \\
+&= 2\sin A\cos A\sin^2 B + 2\sin^2 A\sin B\cos B \\
+&= 2\sin A\sin B(\cos A\sin B + \sin A\cos B) \\
+&= 2\sin A\sin B\sin(A + B).
+\end{align*}
+\emph{Remark:} Both sides of the original equation are equal to twice the area of a triangle with circumradius 1.
 \end{enumerate}
 \end{enumerate}
