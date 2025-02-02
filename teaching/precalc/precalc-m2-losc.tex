@@ -48,7 +48,6 @@ Calculators are recommended for this section. Throughout, if $ABC$ is a triangle
 \end{enumerate}
 \item (Heron's formula) Let $ABC$ be a triangle.
 \begin{enumerate}
-\item Show that $\cos C = \dfrac{a^2 + b^2 - c^2}{2ab}$.
 \item Show that
 \begin{equation*}
 [ABC]^2 = \frac{1}{4}a^2b^2(1 - \cos^2 C) = \frac{4a^2b^2 - (a^2 + b^2 - c^2)^2}{16}.
@@ -87,7 +86,110 @@ where $s = (a + b + c)/2$ is the \emph{semiperimeter} of triangle $ABC$.
 \item \begin{enumerate}
 \item $[ABC] = \frac{1}{2}ab\sin C = \frac{5}{2}\sin(104^{\circ})\approx 2.426$
 \item $c = \sqrt{a^2 + b^2 - 2ab\cos C} = \sqrt{26 - 10\cos(104^{\circ})}\approx 5.331$
-\item $A = \arcsin(\frac{a\sin C}{c})\approx 10.49^{\circ}$ and $B = \arcsin(\frac{b\sin C}{c})\approx 65.51^{\circ}$
+\item $\angle A = \arcsin(\frac{a\sin C}{c})\approx 10.49^{\circ}$\par 
+$\angle B = \arcsin(\frac{b\sin C}{c})\approx 65.51^{\circ}$\par
+\emph{These angles can also be found with the law of cosines.}
 \end{enumerate}
-\item 
+\item \begin{enumerate}
+\item $\angle A = \arccos(\frac{b^2 + c^2 - a^2}{2bc}) = \arccos(\frac{3}{5})\approx 53.13^{\circ}$
+\item $\angle B = \arccos(\frac{a^2 + c^2 - b^2}{2ac}) = \arccos(\frac{33}{65})\approx 59.49^{\circ}$\par 
+$\angle C = \arccos(\frac{a^2 + b^2 - c^2}{2ab}) = \arccos(\frac{5}{13})\approx 67.38^{\circ}$\par
+\emph{These angles can also be found with the law of sines.}
+\item $[ABC] = \frac{1}{2}bc\sin A = \frac{14\cdot 15}{2}\sin(\arccos(\frac{3}{5})) = 7\cdot 15\cdot\frac{4}{5} = 84$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\angle C = 91^{\circ}$
+\item $a = \frac{c}{\sin C}\cdot\sin A = \frac{2\sin 12^{\circ}}{\sin 91^{\circ}}\approx 0.416$\par
+$b = \frac{c}{\sin C}\cdot\sin B = \frac{2\sin 77^{\circ}}{\sin 91^{\circ}}\approx 1.949$
+\item $[ABC] = \frac{1}{2}ac\sin B = \frac{2\sin 12^{\circ}\sin 77^{\circ}}{\sin 91^{\circ}}\approx 0.405$
+\end{enumerate}
+\item \begin{enumerate}
+\item By the law of cosines,
+\begin{equation*}
+a^2 = b^2 + c^2 - 2bc\cos A\implies 36 = 81 + c^2 - (18\cos 20^{\circ})c.
+\end{equation*}
+Solving the resulting quadratic yields
+\begin{equation*}
+c = \frac{18\cos 20^{\circ}\pm\sqrt{324\cos^2(20^{\circ}) - 180}}{2} = 9\cos 20^{\circ}\pm 3\sqrt{9\cos^2(20^{\circ}) - 5}.
+\end{equation*}
+One solution is $\approx 3.307$ and the other solution is $\approx 13.607$.
+\item When $c\approx 3.307$, we have $\angle B = \arccos(\frac{a^2 + c^2 - b^2}{2ac})\approx 149.13^{\circ}$.\par 
+When $c\approx 13.607$, we have $\angle B = \arccos(\frac{a^2 + c^2 - b^2}{2ac})\approx 30.87^{\circ}$.
+\item Let $y = XZ$ be the missing side length. By the law of cosines,
+\begin{equation*}
+x^2 = 81 + y^2 - (18\cos 20^{\circ})y\implies y^2 - (18\cos 20^{\circ})y + (81 - x^2) = 0.
+\end{equation*}
+For there to be only one triangle with the given properties, there must be exactly one positive solution for $y$. This can occur in two ways.
+\begin{description}
+\item[Case 1 (exactly one real solution, which is positive).] If there is exactly one real solution, then it must be $y = 9\cos 20^{\circ}$, which is positive as required. This situation occurs when $81 - x^2 = (9\cos 20^{\circ})^2 = 81\cos^2(20^{\circ})$, which holds when $x = 9\sin 20^{\circ}$. (This corresponds to ``HL congruence.'')
+\item[Case 2 (two real solutions, only one of which is positive).] The quadratic has a leading coefficient of 1, so this situation occurs precisely when the constant term is negative. Thus we need $81 - x^2 < 0$, and since $x$ is a side length, we have $x > 9$.
+\end{description}
+\end{enumerate}
+\item \begin{enumerate}
+\item From $[ABC] = \frac{1}{2}ab\sin C$, we have $\sin C = \frac{2[ABC]}{ab}$. Then,
+\begin{equation*}
+R = \frac{c}{2\sin C} = \frac{c}{\frac{4[ABC]}{ab}} = \frac{abc}{4[ABC]}.
+\end{equation*}
+\item $R = 65/8$
+\item See \href{https://artofproblemsolving.com/wiki/index.php/Law_of_Sines}{this link}.
+\end{enumerate}
+\item \begin{enumerate}
+\item We have
+\begin{align*}
+[ABD] &= \frac{1}{2}\cdot AB\cdot AD\cdot\sin(\angle BAD), \\
+[ADC] &= \frac{1}{2}\cdot AC\cdot AD\cdot\sin(\angle DAC),
+\end{align*}
+and dividing the two equations yields
+\begin{equation*}
+\frac{[ABD]}{[ADC]} = \frac{AB}{AC}\cdot\frac{\sin(\angle BAD)}{\sin(\angle DAC)}.
+\end{equation*}
+The conclusion follows from the fact that triangles $ABD$ and $ADC$ share a height from $A$, so that then $\frac{[ABD]}{[ADC]} = \frac{BD}{DC}$.
+\item When $\overline{AD}$ bisects $\angle BAC$, we have $\angle BAD = \angle DAC$, so the sines cancel in part (a).
+\end{enumerate}
+\item \begin{enumerate}
+\item We compute
+\begin{align*}
+[ABC]^2 &= \left(\frac{1}{2}ab\sin C\right)^2 = \frac{1}{4}a^2b^2\sin^2 C \\
+&= \frac{1}{4}a^2b^2(1 - \cos^2 C) \\
+&= \frac{1}{4}a^2b^2\left[1 - \left(\frac{a^2 + b^2 - c^2}{2ab}\right)^2\right] \\
+&= \frac{1}{4}a^2b^2\left[\frac{4a^2b^2 - (a^2 + b^2 - c^2)^2}{4a^2b^2}\right] \\
+&= \frac{4a^2b^2 - (a^2 + b^2 - c^2)^2}{16}.
+\end{align*}
+\item From here, we observe some differences of squares to obtain
+\begin{align*}
+[ABC]^2 &= \frac{[2ab - (a^2 + b^2 - c^2)][2ab + (a^2 + b^2 - c^2)]}{16} \\
+&= \frac{[c^2 - (a^2 - 2ab + b^2)][(a^2 + 2ab + b^2) - c^2]}{16} \\
+&= \frac{[c - (a - b)][c + (a - b)][(a + b) - c][(a + b) + c]}{16} \\
+&= \frac{a + b + c}{2}\cdot\frac{b + c - a}{2}\cdot\frac{a + c - b}{2}\cdot\frac{a + b - c}{2} \\
+&= s(s - a)(s - b)(s - c).
+\end{align*}
+\end{enumerate}
+\item By the law of cosines, we can find
+\begin{equation*}
+\cos(\angle AOB) = \frac{7}{8}\quad\text{and}\quad\cos(\angle AOC) = \frac{31}{32},
+\end{equation*}
+from which we find
+\begin{equation*}
+\sin(\angle AOB) = \frac{\sqrt{15}}{8}\quad\text{and}\quad\sin(\angle AOC) = \frac{3\sqrt{7}}{32}.
+\end{equation*}
+The smallest possible value of $\angle BOC$ is $\angle AOB - \angle AOC$, so the smallest possible $BC$ is
+\begin{align*}
+\min BC &= \sqrt{32 - 32\cos(\angle AOB - \angle AOC)} \\
+&= 4\sqrt{2 - 2\left(\frac{7}{8}\cdot\frac{31}{32} + \frac{\sqrt{15}}{8}\cdot\frac{3\sqrt{7}}{32}\right)} \\
+&= 4\sqrt{2 - \frac{217 + 3\sqrt{105}}{128}}\approx 1.016.
+\end{align*}
+By a similar argument, the largest possible $BC$ is
+\begin{equation*}
+\max BC = 4\sqrt{2 - \frac{217 - 3\sqrt{105}}{128}}\approx 2.953.
+\end{equation*}
+\item Let $CD = 7x$, so that $AC = 8x$ by the angle bisector theorem. From the law of cosines,
+\begin{equation*}
+\cos(\angle BAD) = \frac{8^2 + 5^2 - 7^2}{2\cdot 8\cdot 5} = \frac{1}{2},
+\end{equation*}
+so $\cos(\angle DAC) = 1/2$ as well. Using the law of cosines at $\angle DAC$ gives us
+\begin{equation*}
+(7x)^2 = (8x)^2 + 5^2 - 2\cdot 8x\cdot 5\cdot\frac{1}{2}\implies 15x^2 - 40x + 25 = 0.
+\end{equation*}
+This quadratic factors as $5(3x - 5)(x - 1)$, so there are two solutions, $x = 1$ or $x = 5/3$. When $x = 1$, we end up with $\triangle DAB\cong\triangle DAC$. However, this together with $D$ lying on segment $\overline{BC}$ implies that $\angle ADB = 90^{\circ}$, a contradiction. Hence the only valid solution is that $x = 5/3$, in which case $CD = 35/3$.
+\item to be written
 \end{enumerate}
