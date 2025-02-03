@@ -191,5 +191,57 @@ so $\cos(\angle DAC) = 1/2$ as well. Using the law of cosines at $\angle DAC$ gi
 (7x)^2 = (8x)^2 + 5^2 - 2\cdot 8x\cdot 5\cdot\frac{1}{2}\implies 15x^2 - 40x + 25 = 0.
 \end{equation*}
 This quadratic factors as $5(3x - 5)(x - 1)$, so there are two solutions, $x = 1$ or $x = 5/3$. When $x = 1$, we end up with $\triangle DAB\cong\triangle DAC$. However, this together with $D$ lying on segment $\overline{BC}$ implies that $\angle ADB = 90^{\circ}$, a contradiction. Hence the only valid solution is that $x = 5/3$, in which case $CD = 35/3$.
-\item to be written
+\item Suppose without loss of generality that $c$ is the side opposite the $120^{\circ}$ angle, so that by the law of cosines,
+\begin{equation*}
+c^2 = a^2 + b^2 - 2ab\cos 120^{\circ} = a^2 + ab + b^2.
+\end{equation*}
+Dividing through by $c^2$ and letting $x = a/c$ and $y = b/c$, finding Eisenstein triples is equivalent to finding points with positive rational coordinates on the conic
+\begin{equation*}
+x^2 + xy + y^2 = 1.
+\end{equation*}
+Graphing the conic, we see that it is an ellipse passing through the points $(\pm 1, 0)$ and $(0, \pm 1)$, and that every point with positive rational coordinates can be connected to $(0,-1)$ by a line of rational slope greater than 1.\par
+Let $t = m/n$ be a rational number greater than 1, where $m$ and $n$ are relatively prime positive integers. The line of slope $t$ through $(0,-1)$ is $y = tx - 1$, so to find the other point where the line intersects the conic, we substitute to get the equation
+\begin{align*}
+x^2 + x\cdot (tx - 1) + (tx - 1)^2 &= 1, \\
+(t^2 + t + 1)x^2 - (2t + 1)x &= 0.
+\end{align*}
+One solution is $x = 0$, corresponding to $y = -1$, and the other solution is
+\begin{equation*}
+x = \frac{2t + 1}{t^2 + t + 1},
+\end{equation*}
+corresponding to
+\begin{equation*}
+y = tx - 1 = \frac{t^2 - 1}{t^2 + t + 1}.
+\end{equation*}
+Substituting $t = m/n$ and clearing nested denominators gives us
+\begin{equation*}
+(x,y) = \left(\frac{a}{c},\frac{b}{c}\right) = \left(\frac{2mn + n^2}{m^2 + mn + n^2}, \frac{m^2 - n^2}{m^2 + mn + n^2}\right).
+\end{equation*}
+To finish, we need to check whether the fractions on the right hand side are fully reduced. To start, since $\gcd(m,n) = 1$,
+\begin{align*}
+\gcd(2mn + n^2, m^2 + mn + n^2) &= \gcd(n\cdot (2m + n), m^2 + mn + n^2) \\
+&= \gcd(2m + n, m^2 + mn + n^2) \\
+&= \gcd(2m + n, m^2 + mn + n^2 - n\cdot (2m + n)) \\
+&= \gcd(2m + n, m^2 - mn) = \gcd(2m + n, m\cdot (m - n)) \\
+&= \gcd(2m + n, m - n) = \gcd(3n, m - n).
+\end{align*}
+If $m\equiv n\pmod{3}$, then let $m = n + 3k$. Then $\gcd(n,k) = 1$ and
+\begin{equation*}
+\gcd(3n, m - n) = \gcd(3n,3k) = 3\gcd(n,k) = 3.
+\end{equation*}
+Otherwise,
+\begin{equation*}
+\gcd(3n, m - n) = \gcd(n, m - n) = \gcd(n,m) = 1.
+\end{equation*}
+Thus we are done in the case that $m\neq n\pmod{3}$, while in the case that $m\equiv n\pmod{3}$,
+\begin{equation*}
+a = \frac{2mn + n^2}{3},\quad b = \frac{m^2 - n^2}{3},\quad c = \frac{m^2 + mn + n^2}{3}.
+\end{equation*}
+Let $r = \frac{m + 2n}{3}$ and $s = \frac{m - n}{3}$, so that $n = r - s$ and $m = r + 2s$. Then
+\begin{align*}
+a &= \frac{2(r + 2s)(r - s) + (r - s)^2}{3} = r^2 - s^2, \\
+b &= \frac{(r + 2s)^2 - (r - s)^2}{3} = 2rs + s^2, \\
+c &= \frac{(r + 2s)^2 + (r + 2s)(r - s) + (r - s)^2}{3} = r^2 + rs + s^2,
+\end{align*}
+so the result still holds with $r$ and $s$ in place of $m$ and $n$.
 \end{enumerate}
