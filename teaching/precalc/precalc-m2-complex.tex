@@ -1,16 +1,137 @@
 \section{Complex Numbers}
 
+Throughout, $\mathbb{R}$ denotes the set of all real numbers and $\mathbb{C}$ denotes the set of all complex numbers.
+
 \subsection{Review problems}
 
 \begin{enumerate}
-\item 
+\item Let $z = -3 + 3i$ and $w = -4 - 2i$. Compute each of the following:
+\begin{enumerate}
+\item $z + w$
+\item $z - w$
+\item $zw$
+\item $z/w$
+\item $\lvert z\rvert$
+\item $\bar{w}$
+\end{enumerate}
+\item Find all complex solutions to the equation $z^2 + 5 = 4z$.
+\item Identify each of the following complex numbers.
+\begin{enumerate}
+\item The complex number corresponding to the point $(-5,-1)$.
+\item The two complex numbers of magnitude 2 whose real and imaginary parts are equal.
+\item The three complex numbers $z$ for which $0$, $3 - 2i$, $5 + 2i$, and $z$ are the vertices of a parallelogram (in some order).
+\end{enumerate}
+\item \begin{enumerate}
+\item Find a complex number $w$ for which $w^2 = -16 + 30i$.
+\item Find the two complex numbers $z$ satisfying $2z^2 - (8 + 4i)z + (14 - 7i) = 0$.
+\item Prove that for every complex number $z$, there is a complex number $w$ for which $w^2 = z$.\par
+\emph{Remark:} It follows from this that every quadratic polynomial with complex coefficients has complex roots (with roots given by the familiar quadratic formula).
+\end{enumerate}
+\item \begin{enumerate}
+\item Let $\ell_1$ be the line through $a = -4 - 3i$ and $b = 4 + i$, and let $\ell_2$ be the line through $c = -4i$ and $d = -3 + 2i$.
+\begin{enumerate}
+\item By considering slopes, or otherwise, show that $\ell_1$ and $\ell_2$ are perpendicular.
+\item Compute $\frac{d - c}{b - a}$.
+\end{enumerate}
+\item Show that in general, the line through $p\neq q$ is perpendicular to the line through $r\neq s$ if and only if $\frac{r - s}{p - q}$ is purely imaginary.
+\item Given two distinct complex numbers $a$ and $b$, the \emph{perpendicular bisector} of the line segment connecting $a$ and $b$ is the line perpendicular to this segment passing through the midpoint $m = \frac{a + b}{2}$.\par
+Show that $z$ lies on the perpendicular bisector of the line segment connecting $a$ and $b$ if and only if $\lvert z - a\rvert = \lvert z - b\rvert$.\par
+\emph{Hint:} Consider squared magnitudes and use the fact that a complex number $\alpha$ is purely imaginary if and only if $\alpha = -\bar{\alpha}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item Show that $i^4 = 1$, and that conversely, if $z^4 = 1$, then $z = i^k$ for some positive integer $k$.
+\item Let $z_1, z_2, z_3, \ldots$ be a 4-periodic sequence of complex numbers, meaning that $z_{n + 4} = z_n$ for all positive integers $n$. Show that there exist complex numbers $a,b,c,d$ such that
+\begin{equation*}
+z_n = a + b\cdot i^n + c\cdot i^{2n} + d\cdot i^{3n}
+\end{equation*}
+for all $n$.
+\end{enumerate}
+\item If $\ell$ is a line in the complex plane, then \emph{reflection across $\ell$} is the function $f_{\ell}:\mathbb{C}\to\mathbb{C}$ defined the property that for any complex number $z$, line $\ell$ is the perpendicular bisector of the line segment connecting $z$ and $f_{\ell}(z)$. (When $z$ already lies on $\ell$, then we define $f(z) = z$.)
+\begin{enumerate}
+\item What complex number operation is equivalent to reflection across the $x$-axis?
+\item Let $\ell$ be the line passing through $0$ and $4 + 2i$. Find the reflection of $-3$ across $\ell$.
+\item More generally, let $\ell$ be the line passing through $0$ and $d$, where $d$ is a non-zero complex number. Find the reflection of $z$ across $\ell$, i.e. determine the function $f_{\ell}(z)$.
+\item Even more generally, let $\ell$ be the line passing through $a$ and $b$, where $a$ and $b$ are two distinct complex numbers. Find the reflection of $z$ across $\ell$.
+\end{enumerate}
 \end{enumerate}
 
 
 \subsection{Challenge problems}
 
 \begin{enumerate}\setcounter{enumi}{7}
-\item 
+\item An \emph{isometry} of the complex plane is a function $f:\mathbb{C}\to\mathbb{C}$ satisfying
+\begin{equation*}
+\lvert f(z) - f(w)\rvert = \lvert z - w\rvert
+\end{equation*}
+for all complex numbers $z$ and $w$. In other words, $f$ preserves distances between points.
+\begin{enumerate}
+\item Show that every translation and every reflection is an isometry.
+\item Let $a,b,c$ be distinct complex numbers. Show that there is at most one isometry $f$ satisfying $f(0) = a$, $f(1) = b$, and $f(i) = c$.
+\item Prove that every isometry can be written as a composition of at most three reflections.
+\item Show that the composition of three reflections is equivalent to a reflection followed by a translation. (If the translation is non-zero, then the isometry is a \emph{glide reflection}.)
+\end{enumerate}
+\item In this problem, we work through one formal construction of the complex numbers.\par 
+Let $\mathcal{C}$ be the set of all ordered pairs of real numbers, and define operations $\oplus$ and $\otimes$ on $\mathcal{C}$ by
+\begin{align*}
+(a,b)\oplus (c,d) &= (a + c, b + d), \\
+(a,b)\otimes (c,d) &= (ac - bd, ad + bc).
+\end{align*}
+We call $\oplus$ and $\otimes$ the addition and multiplication on $\mathcal{C}$, respectively.
+\begin{enumerate}
+\item The first task is to show that $\mathcal{C}$, with these operations, satisfies the ``usual rules'' of algebra. In fancy language, we would say that $\mathcal{C}$ is a \emph{field}.
+\begin{enumerate}
+\item (Associative rules) Show that for any $u,v,w\in\mathcal{C}$,
+\begin{equation*}
+u\oplus (v\oplus w) = (u\oplus v)\oplus w\quad\text{and}\quad u\otimes (v\otimes w) = (u\otimes v)\otimes w.
+\end{equation*}
+\item (Commutative rules) Show that for any $z,w\in\mathcal{C}$,
+\begin{equation*}
+z\oplus w = w\oplus z\quad\text{and}\quad z\otimes w = w\otimes z.
+\end{equation*}
+\item (Distributive rule) Show that for any $u,v,w\in\mathcal{C}$,
+\begin{equation*}
+u\otimes (v\oplus w) = (u\otimes v)\oplus (u\otimes w).
+\end{equation*}
+\item (Identity rules) Show that for any $z\in\mathcal{C}$,
+\begin{equation*}
+z\oplus (0,0) = (0,0)\oplus z = z\quad\text{and}\quad z\otimes (1,0) = (1,0)\otimes z = z.
+\end{equation*}
+This makes $(0,0)$ and $(1,0)$ the \emph{additive identity} and \emph{multiplicative identity} in $\mathcal{C}$.
+\item (Additive inverse rule) Show that for any  $z\in\mathcal{C}$, there exists $a_z\in\mathcal{C}$ such that
+\begin{equation*}
+z\oplus a_z = (0,0).
+\end{equation*}
+The element $a_z$ is the \emph{additive inverse} of $z$ in $\mathcal{C}$, and we denote it by $-z$.
+\item (Multiplicative inverse rule) Show that for any $z\in\mathcal{C}$ other than $(0,0)$, there exists $m_z\in\mathcal{C}$ such that
+\begin{equation*}
+z\otimes m_z = (1,0).
+\end{equation*}
+The element $m_z$ is the \emph{multiplicative inverse} of $z$ in $\mathcal{C}$, and we denote it by $z^{-1}$.
+\end{enumerate}
+\end{enumerate}
+From these properties, all of the familiar algebraic rules can be shown to hold, such as the zero product property and certain common factorisations. Next, for this to reasonably be called an extension of the real numbers, we need to show that $\mathcal{C}$, with these operations, ``contains'' $\mathbb{R}$ with its usual addition and multiplication. This is made precise in the next part.
+\begin{enumerate}\setcounter{enumii}{1}
+\item Prove that for any two real numbers $x$ and $y$,
+\begin{equation*}
+(x,0)\oplus (y,0) = (x + y,0)\quad\text{and}\quad (x,0)\otimes (y,0) = (xy,0).
+\end{equation*}
+This shows that the elements $(r,0)$ for $r\in\mathbb{R}$, with operations $\oplus$ and $\otimes$, ``act like'' the real numbers with the usual addition and multiplication operations $+$ and $\times$. 
+\end{enumerate}
+With ``$\mathcal{C}$ extends $\mathbb{R}$'' shown, when $r$ is a real number we simply write $r$ instead of $(r,0)$, and we write $+$ and $\times$ (or $\cdot$) instead of $\oplus$ and $\otimes$. We also introduce the subtraction and division operations as $z - w = z + (-w)$ and $z/w = z\cdot w^{-1}$.\par
+Finally, the complex numbers should have a square root of $-1$.
+\begin{enumerate}\setcounter{enumii}{2}
+\item Show that $(0,1)\times (0,1) = -1$ and $(0,-1)\times (0,-1) = -1$.
+\end{enumerate}
+We can now recover the usual notation, replacing $\mathcal{C}$ with $\mathbb{C}$ and forever forgetting the initial definitions, by defining $i = (0,1)$ and then observing that $(x,y) = x + y\cdot i$.
+\item A function $f:\mathbb{C}\to\mathbb{C}$ is an \emph{$\mathbb{R}$-automorphism of $\mathbb{C}$} if
+\begin{equation*}
+f(z + w) = f(z) + f(w)\quad\text{and}\quad f(zw) = f(z)\cdot f(w)
+\end{equation*}
+for all $z,w\in\mathbb{C}$ and $f(r) = r$ for all $r\in\mathbb{R}$.
+\begin{enumerate}
+\item Show that if $f:\mathbb{C}\to\mathbb{C}$ is an $\mathbb{R}$-automorphism of $\mathbb{C}$, then $f(i) = i$ or $f(i) = -i$.
+\item Show that the only two $\mathbb{R}$-automorphisms of $\mathbb{C}$ are the identity function $f(z) = z$ and the conjugation function $f(z) = \bar{z}$.
+\end{enumerate}
 \end{enumerate}
 
 
