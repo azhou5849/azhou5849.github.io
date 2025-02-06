@@ -1,4 +1,4 @@
-\section{Complex Numbers}
+\section{Complex Numbers I: Without Trig}
 
 Throughout, $\mathbb{R}$ denotes the set of all real numbers and $\mathbb{C}$ denotes the set of all complex numbers.
 
@@ -52,6 +52,7 @@ for all $n$.
 \item Let $\ell$ be the line passing through $0$ and $4 + 2i$. Find the reflection of $-5$ across $\ell$.
 \item More generally, let $\ell$ be the line passing through $0$ and $d$, where $d$ is a non-zero complex number. Find the reflection of $z$ across $\ell$, i.e. determine the function $f_{\ell}(z)$.
 \item Even more generally, let $\ell$ be the line passing through $a$ and $b$, where $a$ and $b$ are two distinct complex numbers. Find the reflection of $z$ across $\ell$.
+\item From the previous two parts, every reflection has the form $f(z) = \alpha\bar{z} + \beta$ where $\lvert\alpha\rvert = 1$. Conversely, show that any such function is a reflection composed with a translation where the translation is parallel to the line of reflection. (When the translation is non-zero, we call the overall transformation a \emph{glide reflection}.)
 \end{enumerate}
 \end{enumerate}
 
@@ -66,9 +67,9 @@ for all $n$.
 for all complex numbers $z$ and $w$. In other words, $f$ preserves distances between points.
 \begin{enumerate}
 \item Show that every translation and every reflection is an isometry.
-\item Let $a,b,c$ be distinct complex numbers. Show that there is at most one isometry $f$ satisfying $f(0) = a$, $f(1) = b$, and $f(i) = c$.
+\item Let $f$ be an isometry satisfying $f(0) = 0$, $f(1) = 1$, and $f(i) = i$. Show that $f$ must be the identity map, i.e. $f(z) = z$ for all $z$.
 \item Prove that every isometry can be written as a composition of at most three reflections.
-\item Show that the composition of three reflections is equivalent to a reflection followed by a translation. (If the translation is non-zero, then the isometry is a \emph{glide reflection}.)
+\item Show that the composition of three reflections is either a reflection or a glide reflection.
 \end{enumerate}
 \item In this problem, we work through one formal construction of the complex numbers.\par 
 Let $\mathcal{C}$ be the set of all ordered pairs of real numbers, and define operations $\oplus$ and $\otimes$ on $\mathcal{C}$ by
@@ -254,6 +255,7 @@ Taking the difference $(1) - (2)$ gives us $f_{\ell}(z) = w = \frac{d}{\bar{d}}\
 \begin{equation*}
 f_{\ell}(z) = f_{\ell - a}(z - a) + a = \frac{b - a}{\bar{b} - \bar{a}}\cdot(\bar{z} - \bar{a}) + a.
 \end{equation*}
+\item 
 \end{enumerate}
 \item \begin{enumerate}
 \item First let $f$ be a translation, $f(z) = z + a$. Then
@@ -264,6 +266,41 @@ Now we consider reflections. The composition of isometries is also an isometry, 
 \begin{equation*}
 \lvert f(z) - f(w)\rvert = \left\lvert\frac{d}{\bar{d}}\bar{z} - \frac{d}{\bar{d}}\bar{w}\right\rvert = \frac{\lvert d\rvert}{\lvert d\rvert}\lvert\bar{z - w}\rvert = \lvert z - w\rvert.
 \end{equation*}
-\item 
+\item Let $z$ be arbitrary and let $w = f(z)$. By the isometry property,
+\begin{align*}
+\lvert f(z) - f(0)\rvert &= \lvert z - 0\rvert & w\bar{w} &= z\bar{z}, \\
+\lvert f(z) - f(1)\rvert &= \lvert z - 1\rvert &= (w - 1)(\bar{w} - 1) &= (z - 1)(\bar{z} - 1), \\
+\lvert f(z) - f(i)\rvert &= \lvert z - i\rvert &= (w - i)(\bar{w} + i) &= (z - i)(\bar{z} + i).
+\end{align*}
+Expanding the latter two equations gives us
+\begin{align*}
+w\bar{w} - w - \bar{w} + 1 &= z\bar{z} - z - \bar{z} + 1, \\
+w\bar{w} + iw - i\bar{w} + 1 &= z\bar{} + iz - i\bar{z} + 1.
+\end{align*}
+Then, substituting $w\bar{w} = z\bar{z}$ and rearranging yields the system of equations
+\begin{align*}
+w + \bar{w} &= z + \bar{z}, \\
+iw - i\bar{w} &= iz - i\bar{z}.
+\end{align*}
+Eliminating $\bar{w}$ gives us $2iw = 2iz$, so $w = z$ as required.
+\item Let $f$ be a given isometry and suppose $a = f(0)$, $b = f(1)$, and $c = f(i)$. We define three reflections and compositions as follows:
+\begin{enumerate}
+\item If $a = 0$, then let $r_1$ be the identity map. Otherwise, let $r_1$ be reflection across the perpendicular bisector of the segment connecting $0$ and $a$. Then $f_1 = r_1\circ f$ is an isometry with $f_1(0) = 0$.
+\item Let $b' = r_1(b) = f_1(1)$ and $c' = r_1(c) = f_1(i)$. If $b' = 1$, then let $r_2$ be the identity map. Otherwise, as $f_1$ is an isometry, $0 = f_1(0)$ lies on the perpendicular bisector of the segment connecting $1$ and $b' = f_1(1)$. As such, we can let $r_2$ be reflection across this perpendicular bisector, so $f_2 = r_2\circ f_1$ satisfies $f_2(0) = 0$ and $f_2(1) = 1$. 
+\item Let $c'' = r_2(c') = f_2(i)$. If $c'' = i$, then let $r_3$ be the identity map. Otherwise, as $f_2$ is an isometry, both $0 = f_2(0)$ and $1 = f_2(1)$ are equidistant from $i$ and $c'' = f_2(i)$, so the reflection across the real axis sends $c''$ to $i$. Let this reflection be $r_3$, so then $f_3 = r_3\circ f_2$ satisfies $f_3(0) = 0$, $f_3(1) = 1$, and $f_3(i) = i$.
+\end{enumerate}
+By part (b), $f_3 = (r_3\circ r_2\circ r_1)\circ f$ must be the identity map. Composing on the left with $r_3$, then $r_2$, then $r_1$, we get $f = r_1\circ r_2\circ r_3\circ f_3 = r_1\circ r_2\circ r_3$ as required.
+\item Note that the formula we found for general reflections takes the form $f(z) = \alpha (\bar{z} - \bar{a}) + a$, where $\lvert\alpha\rvert = 1$. Let our three reflections be
+\begin{align*}
+r_1(z) &= \alpha(\bar{z} - \bar{a}) + a, \\
+r_2(z) &= \beta\bar{z} + b, \\
+r_3(z) &= \gamma\bar{z} + c.
+\end{align*}
+Then
+\begin{align*}
+(r_1\circ r_2\circ r_3)(z) &= \alpha\bar{(\beta\bar{[\gamma\bar{z} + c]} + b)} + a \\
+&= \alpha\bar{(\beta [\bar{\gamma} z + \bar{c}] + b)} + a \\
+&= \alpha
+\end{align*}
 \end{enumerate}
 \end{enumerate}
