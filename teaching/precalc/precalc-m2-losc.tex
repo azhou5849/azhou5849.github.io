@@ -54,7 +54,7 @@ b^2 &= d^2 + y^2 + 2dy\cos\theta,
 \end{align*}
 and conclude that
 \begin{equation*}
-c^2x + b^2y = a(d^2 + xy).
+b^2x + c^2y = a(d^2 + xy).
 \end{equation*}
 \end{enumerate}
 \item \emph{Concurrent cevians.} Let $ABC$ be a triangle and let $D$, $E$, $F$ lie on $\overline{BC}$, $\overline{CA}$, $\overline{AB}$ respectively.
@@ -76,7 +76,7 @@ c^2x + b^2y = a(d^2 + xy).
 \item (Eisenstein triples) An \emph{Eisenstein triple} is a triple of positive integers $(a,b,c)$ for which a triangle with side lengths $a$, $b$, and $c$ has an angle of measure either $60^{\circ}$ or $120^{\circ}$. If the Eisenstein triple $(a,b,c)$ corresponds to a triangle with an angle of measure $60^{\circ}$, we will call it an Eisenstein triple of \emph{acute type}, and otherwise, we call it an Eisenstein triple of \emph{obtuse type}. (The ``acute type'' and ``obtuse type'' names are non-standard.)
 \begin{enumerate}
 \item Let $(a,b,c)$ be an Eisenstein triple of obtuse type with $a < b < c$. Show that $(a, a + b, c)$ and $(a + b, b, c)$ are Eisenstein triples of acute type.
-\item Conversely, show that every Eisenstein triple of acute type arises from an Eisenstein triple of obtuse type in the above manner.
+\item Conversely, show that every Eisenstein triple of acute type either corresponds to an equilateral triangle or arises from an Eisenstein triple of obtuse type in the above manner.
 \item Show that if $(a,b,c)$ is an Eisenstein triple of obtuse type with $\gcd(a,b,c) = 1$, then there are relatively prime positive integers $m$ and $n$ such that
 \begin{equation*}
 \{a,b,c\} = \{m^2 + mn + n^2, 2mn + n^2, m^2 - n^2\}.
@@ -139,9 +139,49 @@ c = \frac{9\sqrt{3}\pm\sqrt{(9\sqrt{3})^2 - 4\cdot 1\cdot 45}}{2} = \frac{9\sqrt
 \end{align*}
 Dividing one equation by the other and using the fact that $\sin(\angle ADB) = \sin(\angle CDA)$ gets us the desired result after rearranging.
 \item When $\overline{AD}$ bisects $\angle BAC$, we have $\angle BAD = \angle DAC$, so the sines cancel in part (b).
-\item asdf
+\item The law of cosines in triangle $ADB$, using $\angle ADB$, gives us
+\begin{equation*}
+(AB)^2 = (AD)^2 + (BD)^2 - 2(AD)(BD)\cos(\angle ADB)\implies c^2 = d^2 + x^2 - 2dx\cos\theta,
+\end{equation*}
+while the law of cosines in triangle $ADC$, using $\angle CDA$, gives us
+\begin{equation*}
+b^2 = d^2 + y^2 - 2dy\cos(180^{\circ} - \theta) = d^2 + y^2 + 2dy\cos\theta.
+\end{equation*}
+Adding $y$ times the first equation to $x$ times the second equation, so as to eliminate $\cos\theta$,
+\begin{align*}
+b^2x + c^2y &= (d^2x + y^2 + 2dy\cos\theta)x + (d^2y + x^2 - 2dx\cos\theta)y \\
+&= d^2(x + y) + xy(x + y) = a(d^2 + xy).
+\end{align*}
 \end{enumerate}
-\item asdf
+\item \begin{enumerate}
+\item By the ratio lemma (problem 6b),
+\begin{align*}
+\frac{AF}{FB} &= \frac{CA}{CB}\cdot\frac{\sin(\angle ACF)}{\sin(\angle FCB)}, \\
+\frac{BD}{DC} &= \frac{AB}{AC}\cdot\frac{\sin(\angle BAD)}{\sin(\angle DAC)}, \\
+\frac{CE}{EA} &= \frac{BC}{BA}\cdot\frac{\sin(\angle CBE)}{\sin(\angle EBA)}.
+\end{align*}
+Multiplying these equations together gives us the desired result.
+\item First suppose $\overline{AD}$, $\overline{BE}$, and $\overline{CF}$ concur at point $P$. Then by the law of sines,
+\begin{align*}
+\frac{\sin(\angle ACF)}{\sin(\angle DAC)} &= \frac{\sin(\angle ACP)}{\sin(\angle PAC)} = \frac{AP}{CP}, \\
+\frac{\sin(\angle BAD)}{\sin(\angle EBA)} &= \frac{\sin(\angle BAP)}{\sin(\angle PBA)} = \frac{BP}{AP}, \\
+\frac{\sin(\angle CBE)}{\sin(\angle FCB)} &= \frac{\sin(\angle CBP)}{\sin(\angle PCB)} = \frac{CP}{BP}.
+\end{align*}
+Multiplying these equations,
+\begin{align*}
+\frac{\sin(\angle ACF)}{\sin(\angle FCB)}\cdot\frac{\sin(\angle BAD)}{\sin(\angle DAC)}\cdot\frac{\sin(\angle CBE)}{\sin(\angle EBA)} &= \frac{\sin(\angle ACF)}{\sin(\angle DAC)}\cdot\frac{\sin(\angle BAD)}{\sin(\angle EBA)}\cdot\frac{\sin(\angle CBE)}{\sin(\angle FCB)} \\
+&= \frac{AP}{CP}\cdot\frac{BP}{AP}\cdot\frac{CP}{BP} = 1.
+\end{align*}
+Conversely, suppose both sides of the equation from part (a) are 1, so in particular
+\begin{equation*}
+\frac{AF}{FB}\cdot\frac{BD}{DC}\cdot\frac{CE}{EA} = 1.
+\end{equation*}
+Let $\overline{AD}$ and $\overline{BE}$ intersect at point $Q$, and let line $\overline{CQ}$ intersect side $\overline{AB}$ at point $F'$. Then using what we just showed,
+\begin{equation*}
+\frac{AF'}{F'B}\cdot\frac{BD}{DC}\cdot\frac{CE}{EA} = 1.
+\end{equation*}
+This means $AF/FB = AF'/F'B$. With $F$ and $F'$ both interior to segment $\overline{AB}$, this can only happen if $F = F'$, which means that $\overline{AD}$, $\overline{BE}$, and $\overline{CF}$ concur (at $Q$) as desired.
+\end{enumerate}
 \item Fix points $A$ and $B$ on a circle of radius $4$ centered at $O$ so that $AB = 2$. By the law of cosines, we can find
 \begin{equation*}
 \cos(\angle AOB) = \frac{7}{8}\quad\text{and}\quad\cos(\angle AOC) = \frac{31}{32},
