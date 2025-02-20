@@ -1,60 +1,84 @@
-\section{Complex Numbers I: Without Trig}
+\section{Complex Numbers I: Algebra}
 
 Throughout, $\mathbb{R}$ denotes the set of all real numbers and $\mathbb{C}$ denotes the set of all complex numbers.
 
 \subsection{Review problems}
 
 \begin{enumerate}
-\item Let $z = -3 + 3i$ and $w = -4 - 2i$. Compute each of the following:
+\item \emph{Arithmetic.} Let $z = -3 + 3i$ and $w = -4 - 2i$. Compute each of the following:
 \begin{enumerate}
+\item $\Re z$
+\item $\Im w$
 \item $z + w$
 \item $z - w$
 \item $zw$
-\item $\bar{w}$
 \item $z/w$
-\item $\lvert z\rvert$
 \end{enumerate}
-\item Find all complex solutions to the equation $z^2 + 5 = 4z$.
-\item Identify each of the following complex numbers.
+\item \emph{A quadratic with real coefficients.} Find all complex solutions to the equation $z^2 + 5 = 4z$.
+\item \emph{Real-valued products.} Find all complex numbers $z$ for which $(-4 + 2i)z$ is real.
+\item \emph{Powers of $i$ and periodic sequences.}
 \begin{enumerate}
-\item The complex number corresponding to the point $(-5,-1)$.
-\item The two complex numbers of magnitude 2 whose real and imaginary parts are equal.
-\item The three complex numbers $z$ for which $0$, $3 - 2i$, $5 + 2i$, and $z$ are the vertices of a parallelogram (in some order).
-\end{enumerate}
-\item \begin{enumerate}
-\item Find a complex number $w$ for which $w^2 = -16 + 30i$.
-\item Find the two complex numbers $z$ satisfying $2z^2 - (8 + 4i)z + (14 - 7i) = 0$.
-\item Prove that for every complex number $z$, there is a complex number $w$ for which $w^2 = z$.\par
-\emph{Remark:} It follows from this that every quadratic polynomial with complex coefficients has complex roots (with roots given by the familiar quadratic formula).
-\end{enumerate}
-\item \begin{enumerate}
-\item Let $\ell_1$ be the line through $a = -4 - 3i$ and $b = 4 + i$, and let $\ell_2$ be the line through $c = -4i$ and $d = -3 + 2i$.
-\begin{enumerate}
-\item By considering slopes, or otherwise, show that $\ell_1$ and $\ell_2$ are perpendicular.
-\item Compute $\frac{d - c}{b - a}$.
-\end{enumerate}
-\item Show that in general, the line through $p\neq q$ is perpendicular to the line through $r\neq s$ if and only if $\frac{r - s}{p - q}$ is purely imaginary.
-\item Given two distinct complex numbers $a$ and $b$, the \emph{perpendicular bisector} of the line segment connecting $a$ and $b$ is the line perpendicular to this segment passing through the midpoint $m = \frac{a + b}{2}$.\par
-Show that $z$ lies on the perpendicular bisector of the line segment connecting $a$ and $b$ if and only if $\lvert z - a\rvert = \lvert z - b\rvert$.\par
-\emph{Hint:} Consider squared magnitudes and use the fact that a complex number $\alpha$ is purely imaginary if and only if $\alpha = -\bar{\alpha}$.
-\end{enumerate}
-\item \begin{enumerate}
-\item Show that $i^4 = 1$, and that conversely, if $z^4 = 1$, then $z = i^k$ for some positive integer $k$.
+\item Show that $i^4 = 1$.
+\item Find all complex solutions to the equation $z^4 = 1$ and write each one as a power of $i$.
 \item Let $z_1, z_2, z_3, \ldots$ be a 4-periodic sequence of complex numbers, meaning that $z_{n + 4} = z_n$ for all positive integers $n$. Show that there exist complex numbers $a,b,c,d$ such that
 \begin{equation*}
 z_n = a + b\cdot i^n + c\cdot i^{2n} + d\cdot i^{3n}
 \end{equation*}
 for all $n$.
 \end{enumerate}
-\item If $\ell$ is a line in the complex plane, then \emph{reflection across $\ell$} is the function $f_{\ell}:\mathbb{C}\to\mathbb{C}$ defined the property that for any complex number $z$, line $\ell$ is the perpendicular bisector of the line segment connecting $z$ and $f_{\ell}(z)$. (When $z$ already lies on $\ell$, then we define $f(z) = z$.)
+\item \emph{Complex conjugation.} Given a complex number $z = x + yi$, the \textbf{complex conjugate} of $z$ is defined to be $\bar{z} = x - yi$.
 \begin{enumerate}
-\item What complex number operation is equivalent to reflection across the $x$-axis?
-\item Let $\ell$ be the line passing through $0$ and $4 + 2i$. Find the reflection of $-5$ across $\ell$.
-\item More generally, let $\ell$ be the line passing through $0$ and $d$, where $d$ is a non-zero complex number. Find the reflection of $z$ across $\ell$, i.e. determine the function $f_{\ell}(z)$.
-\item Even more generally, let $\ell$ be the line passing through $a$ and $b$, where $a$ and $b$ are two distinct complex numbers. Find the reflection of $z$ across $\ell$.
-\item From the previous two parts, every reflection has the form $f(z) = \alpha\bar{z} + \beta$ where $\lvert\alpha\rvert = 1$. Conversely, show that any such function is a reflection composed with a translation where the translation is parallel to the line of reflection. (When the translation is non-zero, we call the overall transformation a \emph{glide reflection}.)
+\item Compute $\overline{943 - 319i}$.
+\item Prove the following properties of complex conjugation:
+\begin{enumerate}
+\item $\bar{(\bar{z})} = z$ for all complex numbers $z$.
+\item $\bar{z + w} = \bar{z} + \bar{w}$ for all complex numbers $z$ and $w$.
+\item $\bar{z\cdot w} = \bar{z}\cdot\bar{w}$ for all complex numbers $z$ and $w$.
+\item $\bar{1/z} = 1/\bar{z}$ for all complex numbers $z\neq 0$.
+\item $\Re z = (z + \bar{z})/2$
+\item $\Im z = (z - \bar{z})/2i$
+\end{enumerate}
+\emph{Remark:} From these, we can show that $\bar{z - w} = \bar{z} - \bar{w}$ for all complex numbers $z$ and $w$, that $\bar{z/w} = \bar{z}/\bar{w}$ for all complex numbers $z$ and $w\neq 0$, and that $\bar{z^n} = \bar{z}^n$ for all complex numbers $z$ and for all integers $n$ (with $z\neq 0$ when $n\leq 0$).
+\end{enumerate}
+\item \emph{Magnitude.}
+\item \emph{Square roots of complex numbers.}
+\begin{enumerate}
+\item Find a complex number $w$ for which $w^2 = -16 + 30i$.
+\item Find the two complex numbers $z$ satisfying $2z^2 - (8 + 4i)z + (14 - 7i) = 0$.
+\item Prove that for every complex number $z$, there is a complex number $w$ for which $w^2 = z$.\par
+\emph{Remark:} It follows from this that every quadratic polynomial with complex coefficients has complex roots (with roots given by the familiar quadratic formula).
 \end{enumerate}
 \end{enumerate}
+
+
+
+
+%\item \begin{enumerate}
+%\item Let $\ell_1$ be the line through $a = -4 - 3i$ and $b = 4 + i$, and let $\ell_2$ be the line through $c = -4i$ and $d = -3 + 2i$.
+%\begin{enumerate}
+%\item By considering slopes, or otherwise, show that $\ell_1$ and $\ell_2$ are perpendicular.
+%\item Compute $\frac{d - c}{b - a}$.
+%\end{enumerate}
+%\item Show that in general, the line through $p\neq q$ is perpendicular to the line through $r\neq s$ if and only if $\frac{r - s}{p - q}$ is purely imaginary.
+%\item Given two distinct complex numbers $a$ and $b$, the \emph{perpendicular bisector} of the line segment connecting $a$ and $b$ is the line perpendicular to this segment passing through the midpoint $m = \frac{a + b}{2}$.\par
+%Show that $z$ lies on the perpendicular bisector of the line segment connecting $a$ and $b$ if and only if $\lvert z - a\rvert = \lvert z - b\rvert$.\par
+%\emph{Hint:} Consider squared magnitudes and use the fact that a complex number $\alpha$ is purely imaginary if and only if $\alpha = -\bar{\alpha}$.
+%\end{enumerate}
+%\item If $\ell$ is a line in the complex plane, then \emph{reflection across $\ell$} is the function $f_{\ell}:\mathbb{C}\to\mathbb{C}$ defined the property that for any complex number $z$, line $\ell$ is the perpendicular bisector of the line segment connecting $z$ and $f_{\ell}(z)$. (When $z$ already lies on $\ell$, then we define $f(z) = z$.)
+%\begin{enumerate}
+%\item What complex number operation is equivalent to reflection across the $x$-axis?
+%\item Let $\ell$ be the line passing through $0$ and $4 + 2i$. Find the reflection of $-5$ across $\ell$.
+%\item More generally, let $\ell$ be the line passing through $0$ and $d$, where $d$ is a non-zero complex number. Find the reflection of $z$ across $\ell$, i.e. determine the function $f_{\ell}(z)$.
+%\item Even more generally, let $\ell$ be the line passing through $a$ and $b$, where $a$ and $b$ are two distinct complex numbers. Find the reflection of $z$ across $\ell$.
+%\item From the previous two parts, every reflection has the form $f(z) = \alpha\bar{z} + \beta$ where $\lvert\alpha\rvert = 1$. Conversely, show that any such function is a reflection composed with a translation where the translation is parallel to the line of reflection. (When the translation is non-zero, we call the overall transformation a \emph{glide reflection}.)
+%\end{enumerate}
+
+%\item Identify each of the following complex numbers.
+%\begin{enumerate}
+%\item The complex number corresponding to the point $(-5,-1)$.
+%\item The two complex numbers of magnitude 2 whose real and imaginary parts are equal.
+%\item The three complex numbers $z$ for which $0$, $3 - 2i$, $5 + 2i$, and $z$ are the vertices of a parallelogram (in some order).
+%\end{enumerate}
 
 
 \subsection{Challenge problems}
