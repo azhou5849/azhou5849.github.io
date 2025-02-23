@@ -40,7 +40,17 @@ for all $n$.
 \end{enumerate}
 \emph{Remark:} From these, we can show that $\bar{z - w} = \bar{z} - \bar{w}$ for all complex numbers $z$ and $w$, that $\bar{z/w} = \bar{z}/\bar{w}$ for all complex numbers $z$ and $w\neq 0$, and that $\bar{z^n} = \bar{z}^n$ for all complex numbers $z$ and for all integers $n$ (with $z\neq 0$ when $n\leq 0$).
 \end{enumerate}
-\item \emph{Magnitude.}
+\item \emph{Magnitude.} Given a complex number $z = x + yi$, the \textbf{magnitude} or \textbf{absolute value} of $z$ is defined to be $\lvert z\rvert = \sqrt{x^2 + y^2}$.
+\begin{enumerate}
+\item Compute $\lvert 21 + 20i\rvert$.
+\item Prove the following properties of the magnitude:
+\begin{enumerate}
+\item $\lvert z\rvert^2 = z\cdot\bar{z}$ for all complex numbers $z$.
+\item $\lvert zw\rvert = \lvert z\rvert\cdot\lvert w\rvert$ for all complex numbers $z$ and $w$.
+\item $\lvert 1/z\rvert = 1/\lvert z\rvert$ for all complex numbers $z\neq 0$.
+\end{enumerate}
+\emph{Remark:} From these, it follows that $\lvert z/w\rvert = \lvert z\rvert / \lvert w\rvert$ for all complex numbers $z$ and $w\neq 0$, and that $\lvert z^n\rvert = \lvert z\rvert^n$ for all integers $n$ (with $z\neq 0$ when $n\leq 0$).
+\end{enumerate}
 \item \emph{Square roots of complex numbers.}
 \begin{enumerate}
 \item Find a complex number $w$ for which $w^2 = -16 + 30i$.
@@ -80,20 +90,29 @@ for all $n$.
 %\item The three complex numbers $z$ for which $0$, $3 - 2i$, $5 + 2i$, and $z$ are the vertices of a parallelogram (in some order).
 %\end{enumerate}
 
+    %\item An \emph{isometry} of the complex plane is a function $f:\mathbb{C}\to\mathbb{C}$ satisfying
+%\begin{equation*}
+%\lvert f(z) - f(w)\rvert = \lvert z - w\rvert
+%\end{equation*}
+%for all complex numbers $z$ and $w$. In other words, $f$ preserves distances between points.
+%\begin{enumerate}
+%\item Show that every translation and every reflection is an isometry.
+%\item Let $f$ be an isometry satisfying $f(0) = 0$, $f(1) = 1$, and $f(i) = i$. Show that $f$ must be the identity map, i.e. $f(z) = z$ for all $z$.
+%\item Prove that every isometry can be written as a composition of at most three reflections.
+%\item Show that the composition of three reflections is either a reflection or a glide reflection.
+%\end{enumerate}
+
 
 \subsection{Challenge problems}
 
 \begin{enumerate}\setcounter{enumi}{7}
-\item An \emph{isometry} of the complex plane is a function $f:\mathbb{C}\to\mathbb{C}$ satisfying
+\item \begin{enumerate}
+\item Show that $\Re z\leq\lvert z\rvert$ for all complex numbers $z$. When does equality occur?
+\item \emph{Triangle inequality.} Using part (a), or otherwise, show that
 \begin{equation*}
-\lvert f(z) - f(w)\rvert = \lvert z - w\rvert
+\lvert z + w\rvert\leq\lvert z\rvert + \lvert w\rvert
 \end{equation*}
-for all complex numbers $z$ and $w$. In other words, $f$ preserves distances between points.
-\begin{enumerate}
-\item Show that every translation and every reflection is an isometry.
-\item Let $f$ be an isometry satisfying $f(0) = 0$, $f(1) = 1$, and $f(i) = i$. Show that $f$ must be the identity map, i.e. $f(z) = z$ for all $z$.
-\item Prove that every isometry can be written as a composition of at most three reflections.
-\item Show that the composition of three reflections is either a reflection or a glide reflection.
+for all complex numbers $z$ and $w$. When does equality occur?
 \end{enumerate}
 \item In this problem, we work through one formal construction of the complex numbers.\par 
 Let $\mathcal{C}$ be the set of all ordered pairs of real numbers, and define operations $\oplus$ and $\otimes$ on $\mathcal{C}$ by
@@ -103,51 +122,31 @@ Let $\mathcal{C}$ be the set of all ordered pairs of real numbers, and define op
 \end{align*}
 We call $\oplus$ and $\otimes$ the addition and multiplication on $\mathcal{C}$, respectively.
 \begin{enumerate}
-\item The first task is to show that $\mathcal{C}$, with these operations, satisfies the ``usual rules'' of algebra. In fancy language, we would say that $\mathcal{C}$ is a \emph{field}.
-\begin{enumerate}
-\item (Associative rules) Show that for any $u,v,w\in\mathcal{C}$,
-\begin{equation*}
-u\oplus (v\oplus w) = (u\oplus v)\oplus w\quad\text{and}\quad u\otimes (v\otimes w) = (u\otimes v)\otimes w.
-\end{equation*}
-\item (Commutative rules) Show that for any $z,w\in\mathcal{C}$,
-\begin{equation*}
-z\oplus w = w\oplus z\quad\text{and}\quad z\otimes w = w\otimes z.
-\end{equation*}
-\item (Distributive rule) Show that for any $u,v,w\in\mathcal{C}$,
-\begin{equation*}
-u\otimes (v\oplus w) = (u\otimes v)\oplus (u\otimes w).
-\end{equation*}
-\item (Identity rules) Show that for any $z\in\mathcal{C}$,
-\begin{equation*}
-z\oplus (0,0) = (0,0)\oplus z = z\quad\text{and}\quad z\otimes (1,0) = (1,0)\otimes z = z.
-\end{equation*}
-This makes $(0,0)$ and $(1,0)$ the \emph{additive identity} and \emph{multiplicative identity} in $\mathcal{C}$.
-\item (Additive inverse rule) Show that for any  $z\in\mathcal{C}$, there exists $a_z\in\mathcal{C}$ such that
-\begin{equation*}
-z\oplus a_z = (0,0).
-\end{equation*}
-The element $a_z$ is the \emph{additive inverse} of $z$ in $\mathcal{C}$, and we denote it by $-z$.
-\item (Multiplicative inverse rule) Show that for any $z\in\mathcal{C}$ other than $(0,0)$, there exists $m_z\in\mathcal{C}$ such that
-\begin{equation*}
-z\otimes m_z = (1,0).
-\end{equation*}
-The element $m_z$ is the \emph{multiplicative inverse} of $z$ in $\mathcal{C}$, and we denote it by $z^{-1}$.
+\item Let $u = (-2,-4)$, $v = (-3,1)$, and $w = (0,4)$. Verify each of the following:
+\begin{align*}
+u\oplus (v\oplus w) &= (u\oplus v)\oplus w, \\
+u\otimes (v\otimes w) &= (u\otimes v)\otimes w, \\
+u\oplus v &= v\oplus u, \\
+u\otimes v &= v\otimes u, \\
+u\otimes (v\oplus w) &= (u\otimes v)\oplus (u\otimes w), \\
+u\oplus (0,0) &= u, \\
+v\otimes (1,0) &= v.
+\end{align*}
+Also find pairs $a_v$ and $m_u$ for which $v\oplus a_v = (0,0)$ and $m_u\otimes u = (1,0)$.
 \end{enumerate}
-\end{enumerate}
-From these properties, all of the familiar algebraic rules can be shown to hold, such as the zero product property and certain common factorisations. Next, for this to reasonably be called an extension of the real numbers, we need to show that $\mathcal{C}$, with these operations, ``contains'' $\mathbb{R}$ with its usual addition and multiplication. This is made precise in the next part.
+One can show that these equalities hold in general and that for any $z\in\mathcal{C}$, we can find a unique $a_z\in\mathcal{C}$ for which $z\oplus a_z = (0,0)$. This $a_z$ is the \textbf{additive inverse} of $z$ and is denoted $-z$. Similarly, for any non-zero $z\in\mathcal{C}$, we can find a unique $m_z\in\mathcal{C}$ for which $z\otimes m_z = (1,0)$. This $m_z$ is the \textbf{multiplicative inverse} of $z$ and is denoted $z^{-1}$.\par
+These properties, collectively called the ``field axioms,'' are enough to derive all of the usual algebraic facts that we are familiar with in the context of real number algebra. What remains is to check that $\mathcal{C}$ ``does what we expect the complex numbers to do.''
 \begin{enumerate}\setcounter{enumii}{1}
 \item Prove that for any two real numbers $x$ and $y$,
 \begin{equation*}
 (x,0)\oplus (y,0) = (x + y,0)\quad\text{and}\quad (x,0)\otimes (y,0) = (xy,0).
 \end{equation*}
-This shows that the elements $(r,0)$ for $r\in\mathbb{R}$, with operations $\oplus$ and $\otimes$, ``act like'' the real numbers with the usual addition and multiplication operations $+$ and $\times$. 
 \end{enumerate}
-With ``$\mathcal{C}$ extends $\mathbb{R}$'' shown, when $r$ is a real number we simply write $r$ instead of $(r,0)$, and we write $+$ and $\times$ (or $\cdot$) instead of $\oplus$ and $\otimes$. We also introduce the subtraction and division operations as $z - w = z + (-w)$ and $z/w = z\cdot w^{-1}$.\par
-Finally, the complex numbers should have a square root of $-1$.
+This shows that the elements $(r,0)$ for $r\in\mathbb{R}$, with operations $\oplus$ and $\otimes$, ``act like'' the real numbers with the usual addition and multiplication operations $+$ and $\times$. As such, we can regard $\mathbb{R}$ as being contained within $\mathcal{C}$ by identifying $r\in\mathbb{R}$ with $(r,0)\in\mathcal{C}$, and then $\otimes$ and $\otimes$ extend $+$ and $\times$ from $\mathbb{R}$ to all of $\mathcal{C}$. As such, when $r$ is a real number we simply write $r$ instead of $(r,0)$. Moreover, from now on, we write $+$ and $\times$ (or $\cdot$) instead of $\oplus$ and $\otimes$. We also introduce the subtraction and division operations as $z - w = z + (-w)$ and $z/w = z\cdot w^{-1}$.
 \begin{enumerate}\setcounter{enumii}{2}
 \item Show that $(0,1)\times (0,1) = -1$ and $(0,-1)\times (0,-1) = -1$.
 \end{enumerate}
-We can now recover the usual notation, replacing $\mathcal{C}$ with $\mathbb{C}$ and forever forgetting the initial definitions, by defining $i = (0,1)$ and then observing that $(x,y) = x + y\cdot i$.
+This shows that $\mathcal{C}$ has square roots of $-1$, as expected. We can now recover the usual notation by defining $i = (0,1)$ and then observing that $(x,y) = x + y\cdot i$. Henceforth, we can forget about the underlying ordered pairs and replace $\mathcal{C}$ with the usual $\mathbb{C}$.
 \item A function $f:\mathbb{C}\to\mathbb{C}$ is an \emph{$\mathbb{R}$-automorphism of $\mathbb{C}$} if
 \begin{equation*}
 f(z + w) = f(z) + f(w)\quad\text{and}\quad f(zw) = f(z)\cdot f(w)
@@ -164,167 +163,5 @@ for all $z,w\in\mathbb{C}$ and $f(r) = r$ for all $r\in\mathbb{R}$.
 \subsection{Answers}
 
 \begin{enumerate}
-\item \begin{enumerate}
-\item $-7 + i$
-\item $1 + 5i$
-\item $18 - 6i$
-\item $-4 + 2i$
-\item $\frac{3}{10} - \frac{9}{10}i$
-\item $3\sqrt{2}$
-\end{enumerate}
-\item $2 + i$ and $2 - i$
-\item \begin{enumerate}
-\item $-5 - i$
-\item $\sqrt{2} + \sqrt{2}i$ and $-\sqrt{2} - \sqrt{2}i$
-\item $8$, $-2 - 4i$, and $2 + 4i$
-\end{enumerate}
-\item \begin{enumerate}
-\item Let $w = a + bi$, so then $w^2 = (a^2 - b^2) + (2ab)i$. This yields the system of equations
-\begin{equation*}
-a^2 - b^2 = -16\quad\text{and}\quad 2ab = 30.
-\end{equation*}
-From the second equation, $b = 15/a$. Substituting into the first equation,
-\begin{align*}
-a^2 - \frac{225}{a^2} &= -16, \\
-a^4 - 225 &= -16a^2, \\
-a^4 + 16a^2 - 225 &= 0, \\
-(a^2 + 25)(a^2 - 9) &= 0.
-\end{align*}
-Since $a$ is real, $a^2\geq 0$, so we must take $a^2 = 9$ and hence $a = \pm 3$. If $a = 3$, then $b = 5$, and if $a = -3$, then $b = -5$, so the two square roots are $\pm (3 + 5i)$.
-\item Applying the quadratic formula and using the result from part (a), the solutions are
-\begin{align*}
-z &= \frac{(8 + 4i)\pm\sqrt{(8 + 4i)^2 - 4\cdot 2\cdot (14 - 7i)}}{2\cdot 2} \\
-&= \frac{(8 + 4i)\pm\sqrt{(64 - 16 + 64i) - (112 - 56i)}}{4} \\
-&= \frac{(8 + 4i)\pm\sqrt{-64 + 120i}}{4} \\
-&= \frac{(8 + 4i)\pm 2\sqrt{-16 + 30i}}{4} \\
-&= \frac{(4 + 2i)\pm (3 + 5i)}{2}.
-\end{align*}
-Simplifying in each case, we get $\frac{7}{2} + \frac{7}{2}i$ and $\frac{1}{2} - \frac{3}{2}i$.
-\item Let $z = x + yi$ and $w = a + bi$. Setting up as in part (a), we get the system
-\begin{equation*}
-a^2 - b^2 = x\quad\text{and}\quad 2ab = y,
-\end{equation*}
-and substituting $b = \frac{y}{2a}$ yields
-\begin{equation*}
-a^2 - \frac{y^2}{4a^2} = x\quad\iff\quad 4a^4 - 4xa^2 - y^2 = 0.
-\end{equation*}
-This is a real quadratic in $a^2$ for which the product of the roots is non-negative, so there is a non-negative solution for $a^2$. Taking either square root of this value gives us a real value of $a$, hence a corresponding real value of $b$, and $w = a + bi$ is the desired solution.
-\end{enumerate}
-\item \begin{enumerate}
-\item \begin{enumerate}
-\item The slope of $\ell_1$ is $\frac{1 - (-3)}{4 - (-4)} = \frac{1}{2}$ and the slope of $\ell_2$ is $\frac{2 - (-4)}{-3 - 0} = -2$. The product of their slopes is $-1$, so the lines are perpendicular.
-\item $\frac{d - c}{b - a} = \frac{-3 + 6i}{8 + 4i} = \frac{3}{4}\cdot\frac{-1 + 2i}{2 + i}\cdot\frac{2 - i}{2 - i} = \frac{3}{4}\cdot\frac{5i}{5} = \frac{3}{4}i$
-\end{enumerate}
-\item Translating each line individually does not impact perpendicularity, so without loss of generality, we can translate so that $q = s = 0$ and show that for any two non-zero complex numbers $r$ and $p$, the line through $0$ and $r = a + bi$ is perpendicular to the line through $0$ and $p = c + di$ if and only if $r/p$ is purely imaginary.\par
-The slope of the line through $0$ and $r$ is $b/a$ and the slope of the line through $0$ and $p$ is $d/c$, so the two lines are perpendicular if and only if $\frac{bd}{ac} = -1$, or $ac + bd = 0$. (The latter condition also detects when one line is horizontal and the other line is vertical.)\par
-The quotient $r/p$ is purely imaginary if and only if it is equal to the negative of its conjugate, so we compute
-\begin{equation*}
-\frac{r}{p} + \frac{\bar{r}}{\bar{p}} = \frac{r\bar{p} + \bar{r}p}{p\bar{p}} = \frac{2\Re(r\bar{p})}{\lvert p\rvert^2} = \frac{2(ac + bd)}{\lvert p\rvert^2}.
-\end{equation*}
-Hence $r/p$ is purely imaginary if and only if $ac + bd = 0$, which is exactly the condition we found for perpendicularity.
-\item From part (b), $z$ lies on the perpendicular bisector of the segment connecting $a$ and $b$ if and only if $\frac{z - m}{a - b}$ is purely imaginary. In terms of conjugates, this is equivalent to
-\begin{align*}
-\frac{z - m}{a - b} + \frac{\bar{z} - \bar{m}}{\bar{a} - \bar{b}} &= 0, \\
-(\bar{a} - \bar{b})(z - m) + (a - b)(\bar{z} - \bar{m}) &= 0, \\
-(\bar{a} - \bar{b})z + (a - b)\bar{z} - [(\bar{a} - \bar{b})m + (a - b)\bar{m}] &= 0, \\
-(\bar{a} - \bar{b})z + (a - b)\bar{z} &= \frac{(\bar{a} - \bar{b})(a + b)}{2} + \frac{(a - b)(\bar{a} + \bar{b})}{2}, \\
-(\bar{a} - \bar{b})z + (a - b)\bar{z} &= a\bar{a} - b\bar{b}.
-\end{align*}
-The condition $\lvert z - a\rvert = \lvert z - b\rvert$ is equivalent to $\lvert z - a\rvert^2 = \lvert z - b\rvert^2$, or
-\begin{align*}
-(z - a)(\bar{z} - \bar{a}) &= (z - b)(\bar{z} - \bar{b}), \\
-z\bar{z} - \bar{a}z - a\bar{z} + a\bar{a} &= z\bar{z} - \bar{b}z - b\bar{z} + b\bar{b}, \\
-a\bar{a} - b\bar{b} &= (\bar{a} - \bar{b})z + (a - b)\bar{z}.
-\end{align*}
-Thus the two statements are equivalent, as desired.
-\end{enumerate}
-\item \begin{enumerate}
-\item For the first statement, $i^2 = -1$ and $i^3 = -i$ and $i^4 = -i^2 = -(-1) = 1$.\par
-For the second statement, $z^4 - 1$ factors as $(z - 1)(z + 1)(z^2 + 1)$. The last factor has roots $i = i^1$ and $-i = i^3$, while $1 = i^4$ and $-1 = i^2$ are the other two roots of $z^4 - 1$.
-\item By part (a), any sequence of the form specified on the right hand side is 4-periodic, so it suffices to show that there exist complex numbers $a, b, c, d$ such that
-\begin{align*}
-z_1 &= a + b\cdot i^1 + c\cdot i^2 + d\cdot i^3 = a + ib - c - id, \\
-z_2 &= a + b\cdot i^2 + c\cdot i^4 + d\cdot i^6 &= a - b + c - d, \\
-z_3 &= a + b\cdot i^3 + c\cdot i^6 + d\cdot i^9 &= a - ib - c + id, \\
-z_4 &= a + b\cdot i^4 + c\cdot i^8 + d\cdot i^{12} &= a + b + c + d.
-\end{align*}
-This amounts to solving a system of linear equations. Adding the first and third equations gives $z_1 + z_3 = 2a - 2c$ while adding the second and fourth gives $z_2 + z_4 = 2a + 2c$. Subtracting the first and third equations gives $z_1 - z_3 = 2ib - 2id$, while subtracting the second and fourth gives $z_4 - z_2 = 2b + 2d$. The new system
-\begin{align*}
-2a - 2c &= z_1 + z_3 & 2ib - 2id &= z_1 - z_3 \\
-2a + 2c &= z_2 + z_4 & 2b + 2d &= -z_2 + z_4
-\end{align*}
-has as a solution for $(a,b,c,d)$ the 4-tuple
-\begin{equation*}
-\left(\frac{z_1 + z_2 + z_3 + z_4}{4}, \frac{z_1 - iz_2 - z_3 + iz_4}{4i}, \frac{-z_1 + z_2 - z_3 + z_4}{4}, \frac{-z_1 - iz_2 + z_3 + iz_4}{4i}\right),
-\end{equation*}
-and it can be checked that this satisfies the original system as well.
-\end{enumerate}
-\item \begin{enumerate}
-\item Complex conjugation
-\item $-3 - 4i$
-\item First, the midpoint of the segment connecting $z$ and $w = f_{\ell}(z)$ has to lie on $\ell$, so $\frac{z + w}{2}$ is a real multiple of $d$. That is, $\frac{z + w}{2d}$ is real, so
-\begin{align*}
-\frac{z + w}{2d} &= \frac{\bar{z} + \bar{w}}{2\bar{d}}, \\
-\bar{d}(z + w) &= d(\bar{z} + \bar{w}), \\
-\bar{d}w - d\bar{w} &= -\bar{d}z + d\bar{z}. \tag{1}
-\end{align*}
-Second, the segment has to be perpendicular to $\ell$, so $\frac{z - w}{d}$ is purely imaginary. Therefore,
-\begin{align*}
-\frac{z - w}{d} &= -\frac{\bar{z} - \bar{w}}{\bar{d}}, \\
-\bar{d}(z - w) &= -d(\bar{z} - \bar{w}), \\
--\bar{d}w - d\bar{w} &= -\bar{d}z - d\bar{z}. \tag{2}
-\end{align*}
-Taking the difference $(1) - (2)$ gives us $f_{\ell}(z) = w = \frac{d}{\bar{d}}\cdot\bar{z}$.
-\item We can translate $a$ to the origin, reflect, then translate back, so 
-\begin{equation*}
-f_{\ell}(z) = f_{\ell - a}(z - a) + a = \frac{b - a}{\bar{b} - \bar{a}}\cdot(\bar{z} - \bar{a}) + a.
-\end{equation*}
 \item 
-\end{enumerate}
-\item \begin{enumerate}
-\item First let $f$ be a translation, $f(z) = z + a$. Then
-\begin{equation*}
-\lvert f(z) - f(w)\rvert = \lvert (z + a) - (w + a)\rvert = \lvert z - w\rvert.
-\end{equation*}
-Now we consider reflections. The composition of isometries is also an isometry, so since general reflections can be obtained by composing reflections across lines through the origin with translations, it suffices to consider reflections across lines through $0$ and another point $d$. Then
-\begin{equation*}
-\lvert f(z) - f(w)\rvert = \left\lvert\frac{d}{\bar{d}}\bar{z} - \frac{d}{\bar{d}}\bar{w}\right\rvert = \frac{\lvert d\rvert}{\lvert d\rvert}\lvert\bar{z - w}\rvert = \lvert z - w\rvert.
-\end{equation*}
-\item Let $z$ be arbitrary and let $w = f(z)$. By the isometry property,
-\begin{align*}
-\lvert f(z) - f(0)\rvert &= \lvert z - 0\rvert & w\bar{w} &= z\bar{z}, \\
-\lvert f(z) - f(1)\rvert &= \lvert z - 1\rvert &= (w - 1)(\bar{w} - 1) &= (z - 1)(\bar{z} - 1), \\
-\lvert f(z) - f(i)\rvert &= \lvert z - i\rvert &= (w - i)(\bar{w} + i) &= (z - i)(\bar{z} + i).
-\end{align*}
-Expanding the latter two equations gives us
-\begin{align*}
-w\bar{w} - w - \bar{w} + 1 &= z\bar{z} - z - \bar{z} + 1, \\
-w\bar{w} + iw - i\bar{w} + 1 &= z\bar{} + iz - i\bar{z} + 1.
-\end{align*}
-Then, substituting $w\bar{w} = z\bar{z}$ and rearranging yields the system of equations
-\begin{align*}
-w + \bar{w} &= z + \bar{z}, \\
-iw - i\bar{w} &= iz - i\bar{z}.
-\end{align*}
-Eliminating $\bar{w}$ gives us $2iw = 2iz$, so $w = z$ as required.
-\item Let $f$ be a given isometry and suppose $a = f(0)$, $b = f(1)$, and $c = f(i)$. We define three reflections and compositions as follows:
-\begin{enumerate}
-\item If $a = 0$, then let $r_1$ be the identity map. Otherwise, let $r_1$ be reflection across the perpendicular bisector of the segment connecting $0$ and $a$. Then $f_1 = r_1\circ f$ is an isometry with $f_1(0) = 0$.
-\item Let $b' = r_1(b) = f_1(1)$ and $c' = r_1(c) = f_1(i)$. If $b' = 1$, then let $r_2$ be the identity map. Otherwise, as $f_1$ is an isometry, $0 = f_1(0)$ lies on the perpendicular bisector of the segment connecting $1$ and $b' = f_1(1)$. As such, we can let $r_2$ be reflection across this perpendicular bisector, so $f_2 = r_2\circ f_1$ satisfies $f_2(0) = 0$ and $f_2(1) = 1$. 
-\item Let $c'' = r_2(c') = f_2(i)$. If $c'' = i$, then let $r_3$ be the identity map. Otherwise, as $f_2$ is an isometry, both $0 = f_2(0)$ and $1 = f_2(1)$ are equidistant from $i$ and $c'' = f_2(i)$, so the reflection across the real axis sends $c''$ to $i$. Let this reflection be $r_3$, so then $f_3 = r_3\circ f_2$ satisfies $f_3(0) = 0$, $f_3(1) = 1$, and $f_3(i) = i$.
-\end{enumerate}
-By part (b), $f_3 = (r_3\circ r_2\circ r_1)\circ f$ must be the identity map. Composing on the left with $r_3$, then $r_2$, then $r_1$, we get $f = r_1\circ r_2\circ r_3\circ f_3 = r_1\circ r_2\circ r_3$ as required.
-\item Note that the formula we found for general reflections takes the form $f(z) = \alpha (\bar{z} - \bar{a}) + a$, where $\lvert\alpha\rvert = 1$. Let our three reflections be
-\begin{align*}
-r_1(z) &= \alpha(\bar{z} - \bar{a}) + a, \\
-r_2(z) &= \beta\bar{z} + b, \\
-r_3(z) &= \gamma\bar{z} + c.
-\end{align*}
-Then
-\begin{align*}
-(r_1\circ r_2\circ r_3)(z) &= \alpha\bar{(\beta\bar{[\gamma\bar{z} + c]} + b)} + a \\
-&= \alpha\bar{(\beta [\bar{\gamma} z + \bar{c}] + b)} + a \\
-&= \alpha
-\end{align*}
-\end{enumerate}
 \end{enumerate}
