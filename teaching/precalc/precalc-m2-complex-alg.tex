@@ -34,7 +34,6 @@ for all $n$.
 \item $\bar{(\bar{z})} = z$ for all complex numbers $z$.
 \item $\bar{z + w} = \bar{z} + \bar{w}$ for all complex numbers $z$ and $w$.
 \item $\bar{z\cdot w} = \bar{z}\cdot\bar{w}$ for all complex numbers $z$ and $w$.
-\item $\bar{1/z} = 1/\bar{z}$ for all complex numbers $z\neq 0$.
 \item $\Re z = (z + \bar{z})/2$
 \item $\Im z = (z - \bar{z})/2i$
 \end{enumerate}
@@ -47,7 +46,6 @@ for all $n$.
 \begin{enumerate}
 \item $\lvert z\rvert^2 = z\cdot\bar{z}$ for all complex numbers $z$.
 \item $\lvert zw\rvert = \lvert z\rvert\cdot\lvert w\rvert$ for all complex numbers $z$ and $w$.
-\item $\lvert 1/z\rvert = 1/\lvert z\rvert$ for all complex numbers $z\neq 0$.
 \end{enumerate}
 \emph{Remark:} From these, it follows that $\lvert z/w\rvert = \lvert z\rvert / \lvert w\rvert$ for all complex numbers $z$ and $w\neq 0$, and that $\lvert z^n\rvert = \lvert z\rvert^n$ for all integers $n$ (with $z\neq 0$ when $n\leq 0$).
 \end{enumerate}
@@ -163,5 +161,124 @@ for all $z,w\in\mathbb{C}$ and $f(r) = r$ for all $r\in\mathbb{R}$.
 \subsection{Answers}
 
 \begin{enumerate}
-\item 
+\item \begin{enumerate}
+\item $-3$
+\item $-2$
+\item $-7 + i$
+\item $1 + 5i$
+\item $18 - 6i$
+\item $\frac{3}{10} - \frac{9}{10}i$
+\end{enumerate}
+\item $2 + i$ and $2 - i$
+\item Let $z = a + bi$. Then $(-4 + 2i)(a + bi) = (-4a - 2b) + (2a - 4b)i$. For this product to be real, we need $2a - 4b = 0$, so $a = 2b$. Hence $z = 2b + bi = b(2 + i)$, so $\boxed{\text{any real multiple of }2 + i}$ would do the job.
+\item \begin{enumerate}
+\item We have $i^2 = -1$, so then $i^3 = -i$, so then $i^4 = -i^2 = -(-1) = 1$.
+\item $1 = i^0$, $i = i^1$, $-1 = i^2$, and $-i = i^3$.
+\item The right hand side is also 4-periodic, so it suffices to show that there exist $a,b,c,d$ with
+\begin{equation*}
+z_n = a + b\cdot i^n + c\cdot i^{2n} + d\cdot i^{3n}
+\end{equation*}
+for $n = 1, 2, 3, 4$. This gives us the system of linear equations
+\begin{align*}
+a + ib - c - id &= z_1, \\
+a - b + c - d &= z_2, \\
+a - ib - c + id &= z_3, \\
+a + b + c + d &= z_4.
+\end{align*}
+This system does indeed have a solution, namely
+\begin{align*}
+a &= \frac{z_1 + z_2 + z_3 + z_4}{4}, \\
+b &= \frac{-iz_1 - z_2 + iz_3 + z_4}{4}, \\
+c &= \frac{-z_1 + z_2 - z_3 + z_4}{4}, \\
+d &= \frac{iz_1 - z_2 - iz_3 + z_4}{4}.
+\end{align*}
+\end{enumerate}
+\item \begin{enumerate}
+\item $943 + 319i$
+\item Let $z = x + yi$ and $w = a + bi$ throughout.
+\begin{enumerate}
+\item $\bar{(\bar{z})} = \bar{x - yi} = x + yi = z$
+\item $\bar{z + w} = \bar{(x + a) + (y + b)i} = (x + a) - (y + b)i$\par
+$\bar{z} + \bar{w} = (x - yi) + (a - bi) = (x + a) - (y + b)i$
+\item $\bar{z\cdot w} = \bar{(xa - yb) + (xb + ya)i} = (xa - yb) - (xb + ya)i$\par
+$\bar{z}\cdot\bar{w} = (x - yi)(a - bi) = (xa - yb) - (xb + ya)i$
+\item $\frac{z + \bar{z}}{2} = \frac{(x + yi) + (x - yi)}{2} = x = \Re z$
+\item $\frac{z - \bar{z}}{2i} = \frac{(x + yi) - (x - yi)}{2i} = y = \Im z$
+\end{enumerate}
+\end{enumerate}
+\item \begin{enumerate}
+\item 29
+\item Let $z = x + yi$ and $w = a + bi$ throughout.
+\begin{enumerate}
+\item $z\cdot\bar{z} = (x + yi)(x - yi) = x^2 - (yi)^2 = x^2 + y^2 = \lvert z\rvert^2$
+\item $\lvert zw\rvert = \sqrt{\lvert zw\rvert^2} = \sqrt{zw\cdot\bar{zw}} = \sqrt{z\bar{z}\cdot w\bar{w}} = \sqrt{\lvert z\rvert^2\cdot\lvert w\rvert^2} = \lvert z\rvert\cdot\lvert w\rvert$
+\end{enumerate}
+\end{enumerate}
+\item \begin{enumerate}
+\item Let $w = a + bi$, so then $w^2 = (a^2 - b^2) + 2abi$. Therefore, we need $a^2 - b^2 = -16$ and $ab = 15$. Substituting $b = 15/a$,
+\begin{equation*}
+a^2 - \frac{225}{a^2} = -16\iff a^4 + 16a^2 - 225 = 0.
+\end{equation*}
+Since $a$ is real, $a^2 > 0$, so the only viable solution to the quadratic in $a^2$ is
+\begin{equation*}
+a^2 = \frac{-16 + \sqrt{16^2 - 4(1)(-225)}}{2} = \frac{-16 + \sqrt{1156}}{2} = \frac{-16 + 34}{2} = 9.
+\end{equation*}
+Therefore, $a = 3$, in which case $b = 5$, or $a = -3$, in which case $b = -5$. Hence the two square roots of $-16 + 30i$ are $\pm (3 + 5i)$.
+\item By the quadratic formula,
+\begin{align*}
+z &= \frac{(8 + 4i)\pm\sqrt{(8 + 4i)^2 - 4(2)(14 - 7i)}}{2(2)} \\
+&= \frac{(8 + 4i)\pm\sqrt{(64 + 64i - 16) - (112 - 56i)}}{4} \\
+&= \frac{(8 + 4i)\pm\sqrt{-64 + 120i}}{4} \\
+&= \frac{(8 + 4i)\pm 2\sqrt{-16 + 30i}}{4} \\
+&= \frac{(4 + 2i)\pm (3 + 5i)}{2} \\
+&= \frac{7 + 7i}{2}\text{ or }\frac{1 - 3i}{2}.
+\end{align*}
+\item If $z = x + yi$ and $w = a + bi$ satisfies $w^2 = z$, then following the same procedure as in part (a) yields, when $y\neq 0$,
+\begin{equation*}
+a^4 - xa^2 - \frac{y^2}{4} = 0.
+\end{equation*}
+The product of the roots of the quadratic $T^2 - xT - y^2/4$ is $-y^2/4 < 0$, so there is a positive root $\alpha$ and a negative root $\beta$. Taking $a^2 = \alpha$, so then $a = \sqrt{\alpha}$ and $b = y/2a$, gives us a square root of $z$.\par 
+In the case $y = 0$, either $a = 0$ or $b = 0$. If $x\geq 0$, then take $a = \sqrt{x}$ and $b = 0$, and if $x < 0$, then take $a = 0$ and $b = \sqrt{-x}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item For the inequality,
+\begin{equation*}
+\lvert z\rvert = \sqrt{(\Re z)^2 + (\Im z)^2}\geq\sqrt{(\Re z)^2} = \lvert\Re z\rvert\geq\Re z.
+\end{equation*}
+For the first inequality step, we have equality if and only if $\Im z = 0$. For the second inequality step, we have equality if and only if $\Re z\geq 0$. Putting these together, equality holds in the overall inequality if and only if $z$ is a non-negative real number.
+\item As both sides are non-negative, it suffices to prove the squared inequality. We have
+\begin{align*}
+\lvert z + w\rvert^2 &= (z + w)\cdot\bar{(z + w)} \\
+&= z\bar{z} + z\bar{w} + w\bar{z} + w\bar{w} \\
+&= \lvert z\rvert^2 + 2\Re(z\bar{w}) + \lvert w\rvert^2 \\
+&\leq\lvert z\rvert^2 + 2\lvert z\rvert\cdot\lvert w\rvert + \lvert w\rvert^2 \\
+&= (\lvert z\rvert + \lvert w\rvert)^2,
+\end{align*}
+as required. Equality holds when we have equality in $\Re (z\bar{w}) = \lvert z\bar{w}\rvert$, and by part (a), we know that this requires $z\bar{w}\geq 0$. If $w = 0$, this condition holds. Otherwise, $w\bar{w} > 0$ and $z\bar{w}\geq 0$, so $z/w\geq 0$. That is, $z = \lambda w$ for a non-negative real number $\lambda$.
+\end{enumerate}
+\item \begin{enumerate}
+\item $u\oplus (v\oplus w) = (u\oplus v)\oplus w = (-5,1)$\par
+$u\otimes (v\otimes w) = (u\otimes v)\otimes w = (-40,40)$\par
+$u\oplus v = v\oplus u = (-5,-3)$\par
+$u\otimes v = v\otimes u = (10,10)$\par
+$u\otimes (v\oplus w) = (u\otimes v)\oplus (u\otimes w) = (26,2)$\par
+$a_v = (3,-1)$\par
+$m_u = (-1/10, /5)$
+\item $(x,0)\oplus (y,0) = (x + y, 0 + 0) = (x + y, 0)$\par
+$(x,0)\otimes (y,0) = (x\cdot y - 0\cdot 0, x\cdot 0 + 0\cdot y) = (xy,0)$
+\item $(0,1)\times (0,1) = (0\cdot 0 - 1\cdot 1, 0\cdot 1 + 1\cdot 0) = (-1,0) = -1$\par
+$(0,-1)\times (0,-1) = (0\cdot 0 - (-1)\cdot (-1), 0\cdot (-1) + (-1)\cdot 0) = (-1,0) = -1$
+\end{enumerate}
+\item \begin{enumerate}
+\item We have
+\begin{equation*}
+f(i)^2 = f(i)\cdot f(i) = f(i\cdot i) = f(-1) = -1,
+\end{equation*}
+so either $f(i) = i$ or $f(i) = -i$.
+\item Let $z = x + yi$. Then
+\begin{equation*}
+f(z) = f(x + yi) = f(x) + f(yi) = x + f(y)\cdot f(i) = x + y\cdot f(i).
+\end{equation*}
+If $f(i) = i$, then $f(z) = x + yi = z$. If $f(i) = -i$, then $f(z) = x - yi = \bar{z}$.
+\end{enumerate}
 \end{enumerate}
