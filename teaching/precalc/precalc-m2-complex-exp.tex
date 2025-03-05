@@ -1,0 +1,94 @@
+\section{Complex Numbers II: Exponentials}
+
+For real numbers $\theta$, we define $e^{i\theta} = \cos\theta + i\sin\theta$, with this expression also sometimes denoted $\cis\theta$. For complex numbers $z = x + yi$, we define $e^z = e^x\cdot e^{iy}$.
+
+\subsection{Review problems}
+
+\begin{enumerate}
+\item \emph{Magnitude and argument.} For each of the following complex numbers $z$, find the magnitude $\lvert z\rvert$ and all possible values of the argument $\arg z$ (if defined).
+\begin{enumerate}
+\item 1
+\item $2 + 2i$
+\item $-3i$
+\item $-4 + 2\sqrt{3}i$
+\item 0
+\end{enumerate}
+\item \emph{More on arguments.} For any non-zero real number $z$, we define the \textbf{principal value} of the argument to be the value of $\arg z$ in the interval\footnote{Some authors may opt for another interval like $[0,2\pi)$, but $(-\pi,\pi]$ is the most common.} $(-\pi,\pi]$ and denote this by $\Arg z$.
+\begin{enumerate}
+\item Let $z$ and $w$ be complex numbers with arguments $2\pi/3$ and $3\pi/4$, respectively. What is (a possible value of) the argument of $z^2/w$?
+\item In general, $\arg(zw) = \arg z + \arg w$ is true when interpreted to mean that if $\theta$ is a possible value for the argument of $z$ and $\phi$ is a possible value for the argument of $w$, then $\theta + \phi$ is a possible value for the argument of $zw$.\par
+In general, does $\Arg(zw) = \Arg z + \Arg w$ hold?
+\end{enumerate}
+\item \emph{Exponential form.} Fill in the table below.
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|} \hline
+Standard form & Exponential form \\ \hline
+$2i$ & $2e^{i\pi/2}$ \\ \hline
+{} & $e^{\pi i}$ \\ \hline
+$1 + i$ & {} \\ \hline
+$3 - 3\sqrt{3}i$ & {} \\ \hline
+{} & $4e^{-2i\pi/3}$ \\ \hline
+\end{tabular}
+\endgroup
+\end{center}
+\item \emph{Exact values of roots of unity.} For any positive integer $n$, an $\boldsymbol n$\textbf{-th root of unity} is a solution to the equation $z^n = 1$. Compute the $n$-th roots of unity for $n = 1, 2, 3, 4, 6, 8$.
+\item \emph{Fifth roots of unity.} In this problem, we (essentially) compute the fifth roots of unity.
+\begin{enumerate}
+\item Suppose $z^5 = 1$ but $z\neq 1$. Show that $z^4 + z^3 + z^2 + z + 1 = 0$.
+\item Let $w = z + 1/z$. Show that $w^2 + w - 1 = 0$.
+\item Find all possible values of $w$.
+\item Find all possible values of $z$ in terms of $w$.
+\end{enumerate}
+\item \emph{Roots of unity applications.}
+\begin{enumerate}
+\item Let $\omega = e^{2\pi i/7}$. Express all solutions to $z^7 = 128$ in terms of $\omega$.
+\item Let $n$ be a positive integer and let $\omega$ be a \textbf{primitive} $n$-th root of unity, meaning that $\omega^n = 1$ but $\omega^k\neq 1$ for all integers $0 < k < n$. Show that for any integer $k$,
+\begin{equation*}
+1 + \omega^k + \omega^{2k} + \cdots + \omega^{(n - 1)k} = \begin{cases} n & k\mid n, \\ 0 & \text{otherwise}. \end{cases}
+\end{equation*}
+\item \textit{Roots of unity filter.} Let
+\begin{equation*}
+f(z) = a_0 + a_1z + a_2z^2 + \cdots + a_{mn}z^{mn}
+\end{equation*}
+be a polynomial and let $\zeta_n = e^{2\pi i/n}$. Show that
+\begin{equation*}
+a_0 + a_n + a_{2n} + \cdots + a_{mn} = \frac{f(1) + f(\zeta_n) + f(\zeta_n^2) + \cdots + f(\zeta_n^{n - 1})}{n}.
+\end{equation*}
+\item Compute $\binom{2025}{0} + \binom{2025}{3} + \binom{2025}{6} + \cdots + \binom{2025}{2025}$.
+\end{enumerate}
+\item \emph{Sine and cosine as exponentials.} 
+\begin{enumerate}
+\item Let $\theta$ be a real number. Show that
+\begin{equation*}
+\cos\theta = \frac{e^{i\theta} + e^{-i\theta}}{2}\quad\text{and}\quad\sin\theta = \frac{e^{i\theta} - e^{-i\theta}}{2i}.
+\end{equation*}
+\item For any complex number $z$, we define
+\begin{equation*}
+\cos z = \frac{e^{iz} + e^{-iz}}{2}\quad\text{and}\quad\sin z = \frac{e^{iz} - e^{-iz}}{2i}.
+\end{equation*}
+Other trig functions of $z$ are defined in terms of sine and cosine as usual, e.g. $\tan z = \frac{\sin z}{\cos z}$.\par
+Calculate $\cos(i)$ and $\sin(i)$.
+\item Prove that $\cos^2 z + \sin^2 z = 1$ for all complex numbers $z$.
+\item Prove that $2\sin z\cos z = \sin(2z)$ for all complex numbers $z$.
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Challenge problems}
+
+\begin{enumerate}\setcounter{enumi}{7}
+\item %\emph{Complex logarithm and inverse tangent function.}
+\item %\emph{Fundamental theorem of algebra.}
+\item %\emph{Cyclotomic polynomials.}
+\end{enumerate}
+
+
+\newpage
+\subsection{Answers}
+
+\begin{enumerate}
+\item 
+\end{enumerate}
