@@ -1,6 +1,6 @@
 \section{Complex Numbers II: Exponentials}
 
-For real numbers $\theta$, we define $e^{i\theta} = \cos\theta + i\sin\theta$, with this expression also sometimes denoted $\cis\theta$. For complex numbers $z = x + yi$, we define $e^z = e^x\cdot e^{iy}$.
+For real numbers $\theta$, we define $e^{i\theta} = \cos\theta + i\sin\theta$, with this expression also sometimes denoted $\cis\theta$. For complex numbers $z = x + yi$, we define $e^z = e^x\cdot e^{iy}$, where $e^x$ is the real exponential function with base $e\approx 2.718$ evaluated at $x$.
 
 \subsection{Review problems}
 
@@ -10,14 +10,14 @@ For real numbers $\theta$, we define $e^{i\theta} = \cos\theta + i\sin\theta$, w
 \item 1
 \item $2 + 2i$
 \item $-3i$
-\item $-4 + 2\sqrt{3}i$
+\item $-2 + 2\sqrt{3}i$
 \item 0
 \end{enumerate}
 \item \emph{More on arguments.} For any non-zero real number $z$, we define the \textbf{principal value} of the argument to be the value of $\arg z$ in the interval\footnote{Some authors may opt for another interval like $[0,2\pi)$, but $(-\pi,\pi]$ is the most common.} $(-\pi,\pi]$ and denote this by $\Arg z$.
 \begin{enumerate}
 \item Let $z$ and $w$ be complex numbers with arguments $2\pi/3$ and $3\pi/4$, respectively. What is (a possible value of) the argument of $z^2/w$?
 \item In general, $\arg(zw) = \arg z + \arg w$ is true when interpreted to mean that if $\theta$ is a possible value for the argument of $z$ and $\phi$ is a possible value for the argument of $w$, then $\theta + \phi$ is a possible value for the argument of $zw$.\par
-In general, does $\Arg(zw) = \Arg z + \Arg w$ hold?
+Does $\Arg(zw) = \Arg z + \Arg w$ hold?
 \end{enumerate}
 \item \emph{Exponential form.} Fill in the table below.
 \begin{center}
@@ -26,36 +26,38 @@ In general, does $\Arg(zw) = \Arg z + \Arg w$ hold?
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{|c|c|} \hline
 Standard form & Exponential form \\ \hline
-$2i$ & $2e^{i\pi/2}$ \\ \hline
+$7i$ & $7e^{i\pi/2}$ \\ \hline
 {} & $e^{\pi i}$ \\ \hline
 $1 + i$ & {} \\ \hline
 $3 - 3\sqrt{3}i$ & {} \\ \hline
-{} & $4e^{-2i\pi/3}$ \\ \hline
+{} & $2e^{-2i\pi/3}$ \\ \hline
+{} & $4e^{5i\pi/12}$ \\ \hline
 \end{tabular}
 \endgroup
 \end{center}
 \item \emph{Exact values of roots of unity.} For any positive integer $n$, an $\boldsymbol n$\textbf{-th root of unity} is a solution to the equation $z^n = 1$. Compute the $n$-th roots of unity for $n = 1, 2, 3, 4, 6, 8$.
-\item \emph{Fifth roots of unity.} In this problem, we (essentially) compute the fifth roots of unity.
+\item \emph{Roots of other complex numbers.} Let $n$ be a positive integer and let $z$ be any complex number. Writing $z$ in exponential form, let real numbers $r\geq 0$ and $\theta$ be such that $z = re^{i\theta}$.
 \begin{enumerate}
-\item Suppose $z^5 = 1$ but $z\neq 1$. Show that $z^4 + z^3 + z^2 + z + 1 = 0$.
-\item Let $w = z + 1/z$. Show that $w^2 + w - 1 = 0$.
-\item Find all possible values of $w$.
-\item Find all possible values of $z$ in terms of $w$.
+\item In terms of $r$, $\theta$, and $n$, write down an $n$-th root of $z$.
+\item Show that if $w$ is an $n$-th root of $z$ and $\zeta$ is an $n$-th root of unity, then $\zeta w$ is also an $n$-th root of $z$.
+\item Conversely, show that if $w_1$ and $w_2$ are two $n$-th roots of $z$, then there is an $n$-th root of unity $\zeta$ for which $w_2 = \zeta w_1$.
+\item Let $\zeta = e^{2\pi i/7}$. Express all solutions to $z^7 = 128$ in terms of $\zeta$.
 \end{enumerate}
-\item \emph{Roots of unity applications.}
+\item \emph{Primitive $n$-th roots of unity.} Let $n$ be a positive integer. A \textbf{primitive $\boldsymbol n$-th root of unity} is an $n$-th root of unity which is not a $k$-th root of unity for any positive integer $k < n$.
 \begin{enumerate}
-\item Let $\omega = e^{2\pi i/7}$. Express all solutions to $z^7 = 128$ in terms of $\omega$.
-\item Let $n$ be a positive integer and let $\omega$ be a \textbf{primitive} $n$-th root of unity, meaning that $\omega^n = 1$ but $\omega^k\neq 1$ for all integers $0 < k < n$. Show that for any integer $k$,
+\item For $n = 1, 2, 3, 4, 6, 8$, what are the primitive $n$-th roots of unity?
+\item Any $n$-th root of unity can be written in the form $e^{2\pi ik/n}$ for an integer $k$. Show that this is a primitive $n$-th root of unity if and only if $\gcd(k,n) = 1$.
+\item Let $\zeta$ be a primitive $n$-th root of unity. Show that for any integer $k$,
 \begin{equation*}
-1 + \omega^k + \omega^{2k} + \cdots + \omega^{(n - 1)k} = \begin{cases} n & k\mid n, \\ 0 & \text{otherwise}. \end{cases}
+1 + \zeta^k + \zeta^{2k} + \cdots + \zeta^{(n - 1)k} = \begin{cases} n & n\mid k, \\ 0 & \text{otherwise}. \end{cases}
 \end{equation*}
 \item \textit{Roots of unity filter.} Let
 \begin{equation*}
 f(z) = a_0 + a_1z + a_2z^2 + \cdots + a_{mn}z^{mn}
 \end{equation*}
-be a polynomial and let $\zeta_n = e^{2\pi i/n}$. Show that
+be a polynomial and let $\zeta = e^{2\pi i/n}$. Show that
 \begin{equation*}
-a_0 + a_n + a_{2n} + \cdots + a_{mn} = \frac{f(1) + f(\zeta_n) + f(\zeta_n^2) + \cdots + f(\zeta_n^{n - 1})}{n}.
+a_0 + a_n + a_{2n} + \cdots + a_{mn} = \frac{f(1) + f(\zeta) + f(\zeta^2) + \cdots + f(\zeta^{n - 1})}{n}.
 \end{equation*}
 \item Compute $\binom{2025}{0} + \binom{2025}{3} + \binom{2025}{6} + \cdots + \binom{2025}{2025}$.
 \end{enumerate}
@@ -80,9 +82,58 @@ Calculate $\cos(i)$ and $\sin(i)$.
 \subsection{Challenge problems}
 
 \begin{enumerate}\setcounter{enumi}{7}
-\item %\emph{Complex logarithm and inverse tangent function.}
-\item %\emph{Fundamental theorem of algebra.}
-\item %\emph{Cyclotomic polynomials.}
+\item Let $\ln:(0,\infty)\to\mathbb{R}$ (temporarily) denote the natural logarithm function, i.e. the inverse of the real exponential function $x\mapsto e^x$. Define $L:\mathbb{C}\backslash\{0\}\to\mathbb{C}$ by
+\begin{equation*}
+L(z) = \ln\lvert z\rvert + i\arg z.
+\end{equation*}
+Since $\arg$ is multi-valued, $L$ is also multi-valued, with its possible output values differing by integer multiples of $2\pi i$.
+\begin{enumerate}
+\item Show that $e^{L(z)} = z$ (no matter what value of $\arg z$ we take). As such, $L$ acts as an ``inverse'' to the complex exponential, so we call it the \textbf{complex logarithm} and denote it by $\log z$ instead of $L(z)$. We define the \textbf{principal value of the logarithm} to be
+\begin{equation*}
+\Log z = \ln\lvert z\rvert + i\Arg z.
+\end{equation*}
+\item Compute the following:
+\begin{enumerate}
+\item $\Log 1$
+\item $\Log i$
+\item $\Log (-3 - 3i)$
+\end{enumerate}
+\item Prove that $\log(zw) = \log z + \log w$ for all $z,w\in\mathbb{C}\backslash\{0\}$.\par
+Is it true that $\Log(zw) = \Log z + \Log w$ for all $z,w\in\mathbb{C}\backslash\{0\}$?
+\item Show that the solutions to $\tan w = z$ are
+\begin{equation*}
+w = \frac{1}{2i}\log\left(\frac{1 + iz}{1 - iz}\right).
+\end{equation*}
+This makes the expression on the right hand side the (multi-valued) \textbf{inverse tangent function} for complex numbers.
+\end{enumerate}
+\item The \textbf{fundamental theorem of algebra} states that for every non-constant one-variable polynomial function $p(z) = a_0 + a_1z + \cdots + a_nz^n$, where $n\geq 1$ and the $a_i$ are complex numbers with $a_n\neq 0$, there exists $r\in\mathbb{C}$ with $p(r) = 0$. In this problem, we provide one proof of this theorem. Note that without loss of generality, we can suppose $a_n = 1$, and since $p(0) = 0$ when $a_0 = 0$, we only need to address the case that $a_0\neq 0$.
+\begin{enumerate}
+\item Let $R = 2(\lvert a_0\rvert + \lvert a_1\rvert + \cdots + \lvert a_{n - 1}\rvert + 1)$. Show that if $\lvert z\rvert\geq R$, then 
+\begin{equation*}
+\left\lvert\frac{p(z)}{z^n}\right\rvert\geq\frac{1}{2}.
+\end{equation*}
+\item A theorem of mathematical analysis tells us that since $\lvert p(z)\rvert$ is a continuous function of $z$, there is a point $z_0$ with $\lvert z_0\rvert\leq R$ for which $m = \lvert p(z_0)\rvert$ is the minimum value of $\lvert p(z)\rvert$ as $z$ ranges over all complex numbers with magnitude at most $R$. Show that in fact, $m$ is the minimum value of $\lvert p(z)\rvert$ as $z$ ranges over all complex numbers.
+\item Suppose for the sake of contradiction that $m > 0$. By translating, we can suppose that $z_0 = 0$, so that $m = \lvert a_0\rvert$. Let $0 < k\leq n$ be the smallest positive integer with $a_k\neq 0$, let $\omega$ be any complex number satisfying $\omega^k = -a_0/a_k$, and let 
+\begin{equation*}
+\epsilon = \frac{1}{2}\min\left(1, \lvert a_0\rvert\cdot\left[\lvert a_{k + 1}\omega^{k + 1}\rvert + \lvert a_{k + 2}\omega^{k + 2}\rvert + \cdots + \lvert a_n\omega^n\rvert\right]^{-1}\right).
+\end{equation*}
+Show that
+\begin{equation*}
+\lvert p(\epsilon\cdot\omega) - (a_0 - a_0\epsilon^k)\rvert\leq\frac{\lvert a_0\rvert}{2}\epsilon^k,
+\end{equation*}
+and hence deduce that $\lvert p(\epsilon\cdot\omega)\rvert < m$, contradicting minimality of $m$.
+\end{enumerate}
+\item Let $\zeta_1, \ldots, \zeta_{\varphi(n)}$ be all the primitive $n$-th roots of unity (where $\varphi(n)$ is the number of positive integers $k\leq n$ satisfying $\gcd(k,n) = 1$). We define the $\boldsymbol n$\textbf{-th cyclotomic polynomial} to be
+\begin{equation*}
+\Phi_n(X) = (X - \zeta_1)(X - \zeta_2)\cdots (X - \zeta_{\varphi(n)}).
+\end{equation*}
+\begin{enumerate}
+\item Compute $\Phi_n(X)$ for $n = 1, 2, 3, 4, 6, 8$.
+\item Show that $X^n - 1 = \prod_{d\mid n}\Phi_d(X)$.
+\item Show that $\Phi_p(X) = X^{p - 1} + X^{p - 2} + \cdots + X + 1$ whenever $p$ is prime.
+\item An important fact for number theory is that the cyclotomic polynomials are \textbf{irreducible} (over the integers), meaning that they cannot be written as products of polynomials of lower degree with integer coefficients. We will not go through a general proof here, but some special cases are easier to tackle.\par
+Let $p$ be a prime. By considering a shifted cyclotomic polynomial $f(X) = \Phi_p(X + 1)$, or otherwise, show that $\Phi_p(X)$ is irreducible.
+\end{enumerate}
 \end{enumerate}
 
 
@@ -90,5 +141,104 @@ Calculate $\cos(i)$ and $\sin(i)$.
 \subsection{Answers}
 
 \begin{enumerate}
+\item In all of the below, $k$ can be any integer.
+\begin{enumerate}
+\item $\lvert 1\rvert = 1$ and $\arg 1 = 2\pi ik$
+\item $\lvert 2 + 2i\rvert = 2\sqrt{2}$ and $\arg(2 + 2i) = \pi/4 + 2\pi ik$
+\item $\lvert -3i\rvert = 3$ and $\arg(-3i) = -\pi/2 + 2\pi ik$
+\item $\lvert -2 + 2\sqrt{3}i\rvert = 4$ and $\arg(-2 + 2\sqrt{3}i) = 2\pi/3 + 2\pi ik$
+\item $\lvert 0\rvert = 0$ and $\arg 0$ is undefined
+\end{enumerate}
+\item \begin{enumerate}
+\item $2\cdot\frac{2\pi}{3} - \frac{3\pi}{4} = \frac{7\pi}{12}$ (any integer multiple of $2\pi$ can be added to this)
+\item Let $z = w = -i$. Then $\Arg z = \Arg w = -\pi/2$, but
+\begin{equation*}
+\Arg(zw) = \Arg(-1) = \pi\neq\Arg z + \Arg w.
+\end{equation*}
+\end{enumerate}
+\item When converting from standard form to exponential form, we can add any integer multiple of $2\pi i$ to the exponent to get another valid exponential form expression.
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|} \hline
+Standard form & Exponential form \\ \hline
+$7i$ & $7e^{i\pi/2}$ \\ \hline
+\color{red} $-1$ & $e^{\pi i}$ \\ \hline
+$1 + i$ & \color{red} $\sqrt{2}e^{i\pi/4}$ \\ \hline
+$3 - 3\sqrt{3}i$ & \color{red} $6e^{-i\pi/3}$ \\ \hline
+\color{red} $-1 - \sqrt{3}i$ & $2e^{-2i\pi/3}$ \\ \hline
+\color{red} $(\sqrt{6} - \sqrt{2}) + (\sqrt{6} + \sqrt{2})i$ & $4e^{5i\pi/12}$ \\ \hline
+\end{tabular}
+\endgroup
+\end{center}
+\item See the table below.
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|} \hline
+$n$ & $n$-th roots of unity \\ \hline
+1 & 1 \\ \hline
+2 & 1, $-1$ \\ \hline
+3 & 1, $\frac{-1 + \sqrt{3}i}{2}$, $\frac{-1 - \sqrt{3}i}{2}$ \\ \hline
+4 & 1, $i$, $-1$, $-i$ \\ \hline
+6 & 1, $\frac{1 + \sqrt{3}i}{2}$, $\frac{-1 + \sqrt{3}i}{2}$, $-1$, $\frac{-1 - \sqrt{3}i}{2}$, $\frac{1 - \sqrt{3}i}{2}$ \\ \hline
+8 & 1, $\frac{1 + i}{\sqrt{2}}$, $i$, $\frac{1 - i}{\sqrt{2}}$, $-1$, $\frac{-1 - i}{\sqrt{2}}$, $-i$, $\frac{1 - i}{\sqrt{2}}$ \\ \hline
+\end{tabular}
+\endgroup
+\end{center}
+\item \begin{enumerate}
+\item $r^{1/n}e^{i(\theta/n)}$
+\item If $w^n = z$ and $\zeta^n = 1$, then $(\zeta w)^n = \zeta^nw^n = 1\cdot z = z$.
+\item If $w_1^n = w_2^n = z$, then $(w_1/w_2)^n = 1$, so $w_1/w_2 = \zeta$ for some $n$-th root of unity $\zeta$.
+\item $z = 2\zeta^k$ for $k = 0, 1, \ldots, 6$.
+\end{enumerate}
+\item \begin{enumerate}
+\item See the table below.
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|} \hline
+$n$ & primitive $n$-th roots of unity \\ \hline
+1 & 1 \\ \hline
+2 & $-1$ \\ \hline
+3 & $\frac{-1 + \sqrt{3}i}{2}$, $\frac{-1 - \sqrt{3}i}{2}$ \\ \hline
+4 & $i$, $-i$ \\ \hline
+6 & $\frac{1 + \sqrt{3}i}{2}$, $\frac{1 - \sqrt{3}i}{2}$ \\ \hline
+8 & $\frac{1 + i}{\sqrt{2}}$, $\frac{1 - i}{\sqrt{2}}$, $\frac{-1 - i}{\sqrt{2}}$, $\frac{1 - i}{\sqrt{2}}$ \\ \hline
+\end{tabular}
+\endgroup
+\end{center}
+\item Suppose that $\gcd(k,n) = 1$ and $(e^{2\pi ik/n})^m = e^{2\pi ikm/n} = 1$ for some positive integer $m$. Then $km/n$ must be an integer, and with $\gcd(k,n) = 1$, this forces $m$ to be divisible by $n$. Hence $e^{2\pi ik/n}$ is not an $m$-th root of unity for any $m < n$.\par
+Inversely, suppose $\gcd(k,n) = d > 1$. Then $(e^{2\pi ik/n})^{n/d} = e^{2\pi i(k/d)} = 1$, so $e^{2\pi ik/n}$ is an $(n/d)$-th root of unity and hence not a primitive $n$-th root of unity.
+\item If $n$ divides $k$, then $\zeta^k = 1$ so the sum evaluates to $n$. If $n$ does not divide $k$, then since $\zeta$ is a primitive $n$-th root of unity, $\zeta^k\neq 1$. Therefore,
+\begin{equation*}
+1 + \zeta^k + \cdots + \zeta^{(n - 1)k} = \frac{1 - \zeta^{nk}}{1 - \zeta^k} = \frac{1 - 1}{1 - \zeta^k} = 0.
+\end{equation*}
+\item We start by writing the right hand side as
+\begin{equation*}
+\frac{1}{n}\sum_{k = 0}^{n - 1}f(\zeta^k) = \frac{1}{n}\sum_{k = 0}^{n - 1}\sum_{j = 0}^{mn} a_j(\zeta^k)^j = \frac{1}{n}\sum_{j = 0}^{mn}\left(a_j\sum_{k = 0}^{n - 1}(\zeta^k)^j\right).
+\end{equation*}
+The inner sum, by part (c), is $n$ whenever $n\mid j$ and $0$ otherwise, so the sum becomes
+\begin{equation*}
+\frac{1}{n}(na_0 + na_n + na_{2n} + \cdots + na_{mn}) = a_0 + a_n + \cdots + a_{mn}.
+\end{equation*}
+\item Let $\zeta = e^{2\pi i/3}$ and let $f(z) = (1 + z)^{2025}$, so that $a_j = \binom{2025}{j}$. Then
+\begin{equation*}
+\binom{2025}{0} + \binom{2025}{3} + \cdots + \binom{2025}{2025} = \frac{f(1) + f(\zeta) + f(\zeta^2)}{3} = \frac{2^{2025} - 2}{3}.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item We have $e^{i\theta} = \cos\theta + i\sin\theta$ and
+\begin{equation*}
+e^{-i\theta} = \cos(-\theta) + i\sin(-\theta) = \cos\theta - i\sin\theta.
+\end{equation*}
+Adding the equations and dividing by 2 gives us the cosine formula, while subtracting the equations and dividing by $2i$ gives us the sine formula.
+\item $\cos i = \frac{e + e^{-1}}{2}$ and $\sin i = \frac{e^{-1} - e}{2i} = \frac{(e - e^{-1})i}{2}$
+\item $\cos^2 z + \sin^2 z = \left(\frac{e^{iz} + e^{-iz}}{2}\right)^2 + \left(\frac{e^{iz} - e^{-iz}}{2i}\right)^2 = \frac{e^{2iz} + 2 + e^{-2iz}}{4} - \frac{e^{2iz} - 2 + e^{-2iz}}{4} = 1$
+\item $2\sin z\cos z = 2\left(\frac{e^{iz} - e^{-iz}}{2i}\right)\left(\frac{e^{iz} + e^{-iz}}{2}\right) = \frac{e^{2iz} - e^{-2iz}}{2i} = \sin(2z)$
+\end{enumerate}
 \item 
 \end{enumerate}
