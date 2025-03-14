@@ -240,5 +240,84 @@ Adding the equations and dividing by 2 gives us the cosine formula, while subtra
 \item $\cos^2 z + \sin^2 z = \left(\frac{e^{iz} + e^{-iz}}{2}\right)^2 + \left(\frac{e^{iz} - e^{-iz}}{2i}\right)^2 = \frac{e^{2iz} + 2 + e^{-2iz}}{4} - \frac{e^{2iz} - 2 + e^{-2iz}}{4} = 1$
 \item $2\sin z\cos z = 2\left(\frac{e^{iz} - e^{-iz}}{2i}\right)\left(\frac{e^{iz} + e^{-iz}}{2}\right) = \frac{e^{2iz} - e^{-2iz}}{2i} = \sin(2z)$
 \end{enumerate}
-\item 
+\item \begin{enumerate}
+\item $e^{L(z)} = e^{\ln\lvert z\rvert}e^{i\arg z} = \lvert z\rvert e^{i\arg z} = z$
+\item \begin{enumerate}
+\item 0
+\item $\pi i/2$
+\item $\ln(3\sqrt{2}) - 3\pi i/4$
+\end{enumerate}
+\item $\log(zw) = \ln\lvert zw\rvert + i\arg(zw) = (\ln\lvert z\rvert + \ln\lvert w\rvert) + i(\arg z + \arg w) = \log z + \log w$\par
+The statement $\Log(zw)\stackrel{?!}{=} \Log z + \Log w$ fails for the same reason that $\Arg(zw)\stackrel{?!}{=}\Arg z + \Arg w$ fails. In particular, when $\lvert z\rvert = 1$, we have $\Log z = i\Arg z$, so we can just take $z = w = -i$ as in our counterexample for problem 2(b).
+\item We have
+\begin{equation*}
+\tan w = \frac{\sin w}{\cos w} = \frac{1}{i}\frac{e^{iw} - e^{-iw}}{e^{iw} + e^{-iw}} = \frac{1}{i}\frac{e^{2iw} - 1}{e^{2iw} + 1}.
+\end{equation*}
+If $\tan w = z$, then
+\begin{align*}
+\frac{1}{i}\frac{e^{2iw} - 1}{e^{2iw} + 1} &= z, \\
+e^{2iw} - 1 &= iz(e^{2iw} + 1), \\
+(1 - iz)e^{2iw} &= 1 + iz, \\
+e^{2iw} &= \frac{1 + iz}{1 - iz}, \\
+w &= \frac{1}{2i}\log\left(\frac{1 + iz}{1 - iz}\right).
+\end{align*}
+\end{enumerate}
+\item \begin{enumerate}
+\item By the triangle inequality,
+\begin{equation*}
+\left\lvert\frac{p(z)}{z^n}\right\rvert = \left\lvert 1 + \sum_{j = 0}^{n - 1}\frac{a_j}{z^{n - j}}\right\rvert\geq 1 - \left\lvert\sum_{j = 0}^{n - 1}\frac{a_j}{z^{n - j}}\right\rvert,
+\end{equation*}
+so it suffices to show the last term is at most $1/2$. Since $\lvert z\rvert\geq 1$,
+\begin{equation*}
+\left\lvert\sum_{j = 0}^{n - 1}\frac{a_j}{z^{n - j}}\right\rvert\leq\sum_{j = 0}^{n - 1}\frac{\lvert a_j\rvert}{\lvert z\rvert^{n - j}}\leq\frac{1}{\lvert z\rvert}\sum_{j = 0}^{n - 1}\lvert a_j\rvert.
+\end{equation*}
+That this is at most $1/2$ then follows from $\lvert z\rvert\geq R > 2\sum_{j = 0}^{n - 1}\lvert a_j\rvert$.
+\item We have $m\leq\lvert p(z)\rvert$ whenever $\lvert z\rvert\leq R$, so in particular $m\leq\lvert p(0)\rvert = \lvert a_0\rvert$. When $\lvert z\rvert\geq R$, part (a) gives us $\lvert p(z)\rvert\geq R^n/2$. If $m\leq 1$, then $R^n/2\geq 2^{n - 1}\geq m$, and if $m > 1$, then $R^n/2\geq\lvert a_0\rvert^n > \lvert a_0\rvert\geq m$ as well. Hence $m$ is indeed the minimum of $\lvert p(z)\rvert$ over all $z$.
+\item We start by writing
+\begin{equation*}
+p(\epsilon\cdot\omega) = a_0 + a_k\epsilon^k\omega^k + \sum_{j = k + 1}^n a_j\epsilon^j\omega^j = a_0 - a_0\epsilon^k + \epsilon^k\sum_{j = k + 1}^n a_j\epsilon^{j - k}\omega^j.
+\end{equation*}
+Since $\epsilon\leq 1/2 < 1$, the sum can be bounded by
+\begin{equation*}
+\left\lvert\sum_{j = k + 1}^n a_j\epsilon^{j - k}\omega^j\right\rvert\leq\sum_{j = k + 1}^n \lvert a_j\omega^j\rvert\cdot\epsilon^{j - k}\leq\epsilon\sum_{j = k + 1}^n\lvert a_j\omega^j\rvert.
+\end{equation*}
+This last expression is bounded above by $\lvert a_0\rvert/2$, as required. To finish,
+\begin{equation*}
+\lvert p(\epsilon\cdot\omega)\rvert\leq\lvert a_0\rvert - \lvert a_0\rvert\epsilon^k + \frac{\lvert a_0\rvert}{2}\epsilon^k = m\left(1 - \frac{\epsilon^k}{2}\right) < m.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item See the table below.
+\begin{center}
+\begingroup
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|} \hline
+$n$ & $\Phi_n(X)$ \\ \hline
+1 & $X - 1$ \\ \hline
+2 & $X + 1$ \\ \hline
+3 & $X^2 + X + 1$ \\ \hline
+4 & $X^2 + 1$ \\ \hline
+6 & $X^2 - X + 1$ \\ \hline
+8 & $X^4 + 1$ \\ \hline
+\end{tabular}
+\endgroup
+\end{center}
+\item First, note that when $d\neq d'$, the polynomials $\Phi_d(X)$ and $\Phi_{d'}(X)$ share no roots because a primitive $d$-th root of unity cannot also be a $(d')$-th root of unity or vice versa. Therefore, all roots of the right hand side occur with multiplicity 1, as is the case on the left hand side. As such, it suffices to show that the left and right hand sides have the same roots.\par
+If $\zeta$ is a root of the right hand side, then $\zeta$ is a root of $\Phi_d(X)$ for some $d\mid n$. Since $\zeta^d = 1$ and $d\mid n$, we also have $\zeta^n = 1$, so $\zeta$ is a root of the left hand side.\par
+Conversely, let $\zeta$ be a root of $X^n - 1$ and suppose $\zeta$ is a primitive $d$-th root of unity. Let $n = qd + r$, where $0\leq r < d$ is the remainder when $n$ is divided by $d$. Then $\zeta^(n - qd) = \zeta^r = 1$. Since $\zeta$ is a primitive $d$-th root of unity, we must have $r = 0$, so $d\mid n$. This means $\zeta$ is a root of $\Phi_d(X)$ and hence a root of the right hand side.
+\item When $p$ is prime, $X^p - 1 = \Phi_1(X)\Phi_p(X)$, so
+\begin{equation*}
+\Phi_p(X) = \frac{X^p - 1}{X - 1} = X^{p - 1} + \cdots + X + 1.
+\end{equation*}
+\item For $p = 2$, we saw that $\Phi_2(X) = X + 1$, which cannot be factored, so for the rest of the argument, we can suppose $p > 2$. Any factorisation of $f(X) = \Phi_p(X + 1)$ yields a factorisation of $\Phi_p(X)$, so it suffices to show that $f(X)$ is irreducible. We calculate
+\begin{equation*}
+f(X) = \frac{(X + 1)^p - 1}{(X + 1) - 1} = X^{p - 1} + pX^{p - 2} + \binom{p}{2}X^{p - 3} + \cdots + \binom{p}{p - 2}X + p.
+\end{equation*}
+Suppose for the sake of contradiction that we have a (non-trivial) factorisation
+\begin{equation*}
+f(X) = (X^k + a_{k - 1}X^{k - 1} + \cdots + a_0)(X^{p - 1 - k} + b_{p - 2 - k}X^{p - 2 - k} + \cdots + b_0),
+\end{equation*}
+where $0 < k < p - 1$. Expanding, $a_0b_0 = p$, so we can suppose without loss of generality that $a_0 = \pm p$ and $b_0 = \pm 1$; whatever the signs are, $p\mid a_0$ but $p\nmid b_0$. Looking at the linear term, $a_0b_1 + a_1b_0 = \binom{p}{p - 2}$, which is divisible by $p$. Since $p\mid a_0$ but $p\nmid b_0$, we must have $p\mid a_1$. Looking at the quadratic term, $a_0b_2 + a_1b_1 + a_2b_0 = \binom{p}{p - 3}$, which is divisible by $p$. Since $p\mid a_0, a_1$ but $p\nmid b_0$, we must have $p\mid a_2$. Continuing in this way, $p\mid a_j$ for all $0\leq j\leq k - 1$. (If $k\geq p - 1 - k$, then we take $b_{p - 1 - k} = 1$ and $b_j = 0$ for all $j\geq p - k$.) The coefficient of $X^k$ is then $a_0b_k + a_1b_{k - 1} + \cdots + a_{k - 1}b_1 + b_0$, which is not divisible by $p$. However, the coefficient of $X^k$ should also be $\binom{p}{p - 1 - k}$, which is divisible by $p$ since $0 < k < p - 1$. This is a contradiction, so $f(X)$ cannot factor non-trivially over the integers.
+\end{enumerate}
 \end{enumerate}
