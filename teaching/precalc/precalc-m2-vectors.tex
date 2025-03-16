@@ -1,0 +1,220 @@
+\section{Vectors in 2D}
+
+Throughout, $\mathbb{R}^2$ denotes the set of (column) vectors with two components. The standard basis vectors in $\mathbb{R}^2$ are $\hat{\vec{i}} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ and $\hat{\vec{j}} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}$.
+
+\subsection{Review Problems}
+
+\begin{enumerate}
+\item \emph{Vector operations.} Let $\vec{u} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ and $\vec{v} = \begin{pmatrix} 4 \\ -1 \end{pmatrix}$. Compute each of the following.
+\begin{enumerate}
+\item $\vec{u} + \vec{v}$
+\item $2\vec{v}$
+\end{enumerate}
+\item \emph{Parametric equations.}
+\begin{enumerate}
+\item Find a vector parametric equation for the line through $(2,1)$ and $(4,-8)$.
+\item Lines $\ell_1$ and $\ell_2$ are described by the parametric equations
+\begin{equation*}
+\vec{x}_1(t) = \begin{pmatrix} 0 \\ 3 \end{pmatrix} + t\begin{pmatrix} 1 \\ -1 \end{pmatrix}\quad\text{and}\quad\vec{x}_2(t) = \begin{pmatrix} -4 \\ 2 \end{pmatrix} + t\begin{pmatrix} 2 \\ 3 \end{pmatrix}.
+\end{equation*}
+Find the point of intersection of $\ell_1$ and $\ell_2$.
+\end{enumerate}
+\item \emph{Lengths and angles.} Let $\vec{u} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ and $\vec{v} = \begin{pmatrix} 4 \\ -1 \end{pmatrix}$.
+\begin{enumerate}
+\item Find $\|\vec{u}\|$ and $\vec{u}\cdot\vec{v}$.
+\item Find $\hat{\vec{v}}$, the unit vector in the direction of $\vec{v}$.
+\item Let $\theta$ be the angle between $\vec{u}$ and $\vec{v}$. Find $\cos\theta$.
+\item Find the two unit vectors orthogonal to $\vec{u}$.
+\end{enumerate}
+\item \emph{Linear dependence.} Let $\vec{u} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ and $\vec{v} = \begin{pmatrix} 4 \\ -1 \end{pmatrix}$.
+\begin{enumerate}
+\item Show that $\vec{u}$ and $\vec{v}$ are linearly independent.
+\item Find the (unique) real numbers $a,b,c,d$ for which $a\vec{u} + b\vec{v} = \hat{\vec{i}}$ and $c\vec{u} + d\vec{v} = \hat{\vec{j}}$.
+\item Show that a list of two vectors in $\mathbb{R}^2$ is linearly independent if and only if it spans $\mathbb{R}^2$.
+\item Show that any list of three vectors in $\mathbb{R}^2$ is linearly dependent.
+\end{enumerate}
+\item \emph{Projections.} Let $\vec{u} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ and $\vec{v} = \begin{pmatrix} 4 \\ -1 \end{pmatrix}$.
+\begin{enumerate}
+\item Compute $\proj_{\vec{u}}(\vec{v})$ and $\proj_{\vec{v}}(\vec{u})$.
+\item Suppose $\vec{x},\vec{y}\in\mathbb{R}^2$ are orthogonal unit vectors. Show that $\vec{x}$ and $\vec{y}$ span $\mathbb{R}^2$.
+\item Find the distance between the point $(4,5)$ and the line $y = 2x - 1$.
+\end{enumerate}
+\item \emph{Lines via dot products.} 
+\begin{enumerate}
+\item Find the slope-intercept form of the line $\begin{pmatrix} 2 \\ 3 \end{pmatrix}\cdot\vec{x} = 4$.
+\item Find a vector $\vec{n}$ and constant $d$ for which the cartesian equation $y = -3x + 5$ is equivalent to the vector equation $\vec{n}\cdot\vec{x} = d$.
+\item Suppose $\hat{\vec{n}}$ is a unit vector and $d\geq 0$. Show that $\hat{\vec{n}}$ is perpendicular to the line $\hat{\vec{n}}\cdot\vec{x} = d$ and $d$ is the distance from the origin to the line.
+\end{enumerate}
+\item \emph{Angle bisectors.} Let $ABC$ be a triangle with $AB = 3$, $BC = 5$, and $CA = 6$, and let $\vec{A}$, $\vec{B}$, and $\vec{C}$ be the position vectors of the respective vertices.
+\begin{enumerate}
+\item Let $D$ be the point on $\overline{BC}$ for which $\overline{AD}$ bisects $\angle BAC$, and let $\vec{D}$ be its position vector. Using the angle bisector theorem, or otherwise, express $\vec{D}$ in terms of $\vec{B}$ and $\vec{C}$.
+\item Show that $\overline{AD}$ passes through the point $I$ with position vector
+\begin{equation*}
+\vec{I} = \frac{5}{14}\vec{A} + \frac{6}{14}\vec{B} + \frac{3}{14}\vec{C}.
+\end{equation*}
+(Similar calculations show that $I$ lies on all three angle bisectors.)
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Challenge Problems}
+
+\begin{enumerate}\setcounter{enumi}{7}
+\item Given a non-zero vector $\vec{v}$, the \textbf{reflection across $\vec{v}$}, denoted $\refl_{\vec{v}}:\mathbb{R}^2\to\mathbb{R}^2$, is the reflection across the line in the direction of $\vec{v}$ passing through the origin.
+\begin{enumerate}
+\item Show that $\refl_{\vec{v}}(\vec{x}) = 2\proj_{\vec{v}}(\vec{x}) - \vec{x}$.
+\item A \textbf{linear operator} on $\mathbb{R}^2$ is a function $f:\mathbb{R}^2\to\mathbb{R}^2$ where $f(a\vec{x} + b\vec{y}) = af(\vec{x}) + bf(\vec{y})$ for all $\vec{x},\vec{y}\in\mathbb{R}^2$ and $a,b\in\mathbb{R}$. Using the fact that projection is a linear operator, or otherwise, show that reflection is also a linear operator.
+\end{enumerate}
+\item In general, a \textbf{projection} $\mathbb{R}^2\to\mathbb{R}^2$ is a linear operator $P:\mathbb{R}^2\to\mathbb{R}^2$ satisfying $P\circ P = P$. A projection is an \textbf{orthogonal projection} if $\vec{x} - P(\vec{x})$ is orthogonal to $P(\vec{x})$ for all $\vec{x}$.
+\begin{enumerate}
+\item Show for any non-zero vector $\vec{v}$ that $\proj_{\vec{v}}$ is an orthogonal projection.
+\item Let $P$ be a projection other than the zero and identity operators. (That is, $P(\vec{x})$ is not always $\vec{0}$ and not always $\vec{x}$.) Show that there exist non-zero linearly independent vectors $\vec{u}$ and $\vec{v}$ for which $P(\vec{u}) = \vec{u}$ and $P(\vec{v}) = \vec{0}$.
+\item With notation as in part (b), what is the range of $P$?
+\end{enumerate}
+\item Given any vector $\vec{x} = \begin{pmatrix} a \\ b \end{pmatrix}$, there is a corresponding sequence $(x_n) = x_0, x_1, x_2, \ldots$ defined by $x_0 = a$, $x_1 = b$, and $x_{n + 2} = x_{n + 1} + 2x_n$ for all $n\geq 0$.
+\begin{enumerate}
+\item Let $(x_n)$ and $(y_n)$ be the sequences corresponding to vectors $\vec{x}$ and $\vec{y}$. If $(s_n)$ is the sequence corresponding to $a\vec{x} + b\vec{y}$, show that $s_n = ax_n + by_n$ for all $n\geq 0$.
+\item Find all $\lambda\in\mathbb{C}$ for which the sequence $e_n = \lambda^n$ satisfies $e_{n + 2} = e_{n + 1} + 2e_n$ for all $n\geq 0$.
+\item Let $(x_n)$ be the sequence corresponding to $\begin{pmatrix} 4 \\ 7 \end{pmatrix}$. Find a non-recursive formula for $x_n$.
+\end{enumerate}
+\end{enumerate}
+
+
+\newpage
+\subsection{Answers}
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item $\begin{pmatrix} 6 \\ 2 \end{pmatrix}$
+\item $\begin{pmatrix} 8 \\ -2 \end{pmatrix}$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\vec{x}(t) = \begin{pmatrix} 2 \\ 1 \end{pmatrix} + t\begin{pmatrix} 2 \\ -9 \end{pmatrix}$ (there are many other options)
+\item Let $p$ and $q$ be the value of the parameters for $\vec{x}_1$ and $\vec{x}_2$ at the point of intersection, so $\vec{x}_1(p) = \vec{x}_2(q)$. Then
+\begin{equation*}
+\begin{pmatrix} 0 \\ 3 \end{pmatrix} + p\begin{pmatrix} 1 \\ -1 \end{pmatrix} = \begin{pmatrix} -4 \\ 2 \end{pmatrix} + q\begin{pmatrix} 2 \\ 3 \end{pmatrix},
+\end{equation*}
+which means $p = -4 + 2q$ and $3 - p = 2 + 3q$. Solving the system, $q = 1$ and $p = -2$, and the point of intersection is $(-2,5)$.
+\end{enumerate}
+\item \begin{enumerate}
+\item $\|\vec{u}\| = \sqrt{13}$\par
+$\vec{u}\cdot\vec{v} = 5$
+\item $\hat{\vec{v}} = \dfrac{1}{\sqrt{17}}\begin{pmatrix} 4 \\ -1 \end{pmatrix} = \begin{pmatrix} 4/\sqrt{17} \\ -1/\sqrt{17} \end{pmatrix}$
+\item $\cos\theta = \frac{5}{\sqrt{221}}$
+\item $\pm\dfrac{1}{\sqrt{13}}\begin{pmatrix} 3 \\ -2 \end{pmatrix}$
+\end{enumerate}
+\item \begin{enumerate}
+\item If $a\vec{u} + b\vec{v} = 0$, then $2a + 4b = 0$ and $3a - b = 0$. Adding 4 times the second equation to the first, $14a = 0$, so $a = 0$ and hence $b = 0$ as well.
+\item $(a,b,c,d) = (1/14, 3/14, 2/7, -1/7)$
+\item Let $\vec{x} = \begin{pmatrix} x_1 \\ x_2 \end{pmatrix}$ and $\vec{y} = \begin{pmatrix} y_1 \\ y_2 \end{pmatrix}$. If $a\vec{x} + b\vec{y} = \vec{0}$, then
+\begin{align}
+x_1a + y_1b &= 0, \\
+x_2a + y_2b &= 0.
+\end{align}
+Taking the combination $y_2\cdot (1) - y_1\cdot (2)$,
+\begin{equation*}
+(x_1y_2 - x_2y_1)a = 0.
+\end{equation*}
+If $x_1y_2 - x_2y_1 = 0$, then we consider further subcases.
+\begin{itemize}
+\item If $\vec{x} = \vec{0}$, then taking $(a,b) = (1,0)$ gives a non-zero solution, so $\vec{x}$ and $\vec{y}$ are linearly dependent. Moreover, linear combinations $c\vec{x} + d\vec{y} = d\vec{y}$ can only produce multiples of $\vec{y}$, hence will not span all of $\mathbb{R}^2$.
+\item If $\vec{x}\neq\vec{0}$, either $x_1\neq 0$ or $x_2\neq 0$. If $x_1\neq 0$, then let $\lambda = y_1/x_1$, so $y_1 = \lambda x_1$. Substituting, we find $y_2 = \lambda x_2$, so $\vec{y} = \lambda\vec{x}$. This means that $\vec{x}$ and $\vec{y}$ are linearly dependent. Also, any linear combination $c\vec{x} + d\vec{y} = (c + d\lambda)\vec{x}$ will be a multiple of $\vec{x}$, hence will not span all of $\mathbb{R}^2$.
+\end{itemize}
+If $x_1y_2 - x_2y_1\neq 0$, then $a = 0$. At least one of $y_1$ and $y_2$ is non-zero in this case, and substituting into the relevant equation gives $b = 0$ as well. Therefore, $\vec{x}$ and $\vec{y}$ are linearly independent. To see that they span $\mathbb{R}^2$, let $\begin{pmatrix} p \\ q \end{pmatrix}$ be arbitrary. We look for coefficients $c,d$ such that $c\vec{x} + d\vec{y} = \begin{pmatrix} p \\ q \end{pmatrix}$, or
+\begin{align*}
+x_1c + y_1d &= p, \\
+x_2c + y_2d &= q.
+\end{align*}
+This has a solution, namely $(c,d) = \left(\dfrac{py_2 - qy_1}{x_1y_2 - x_2y_1}, \dfrac{qx_1 - px_2}{x_1y_2 - x_2y_1}\right)$.
+\item Let $\vec{x},\vec{y},\vec{z}$ be given. If $\vec{x}$ and $\vec{y}$ are linearly dependent, then $\vec{x}$, $\vec{y}$, and $\vec{z}$ are as well. Otherwise, by part (c), there exist $a,b$ for which $\vec{z} = a\vec{x} + b\vec{y}$. Then $a\vec{x} + b\vec{y} - \vec{z}$ is a non-trivial linear combination of the three which equals $\vec{0}$, so they are linearly dependent.
+\end{enumerate}
+\item \begin{enumerate}
+\item $\proj_{\vec{u}}(\vec{v}) = \begin{pmatrix} 10/13 \\ 15/13 \end{pmatrix}$\par
+$\proj_{\vec{v}}(\vec{u}) = \begin{pmatrix} 20/17 \\ -5/17 \end{pmatrix}$
+\item It suffices to show $\vec{x}$ and $\vec{y}$ are linearly independent. Suppose $a\vec{x} + b\vec{y} = \vec{0}$. Then
+\begin{equation*}
+0 = \vec{x}\cdot (a\vec{x} + b\vec{y}) = a(\vec{x}\cdot\vec{x}) + b(\vec{x}\cdot\vec{y}) = a(1) + b(0) = a.
+\end{equation*}
+By a similar argument, $b = 0$.
+\item Translating up by 1 unit, it suffices to find the distance between the head of $\vec{u} = \begin{pmatrix} 4 \\ 6 \end{pmatrix}$ and the line $y = 2x$, which is spanned by the vector $\vec{v} = \begin{pmatrix} 1 \\ 2 \end{pmatrix}$. We compute
+\begin{equation*}
+\|\proj_{\vec{v}}(\vec{u})\| = \frac{\lvert\vec{u}\cdot\vec{v}\rvert}{\|\vec{v}\|} = \frac{16}{\sqrt{5}}.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item $y = (-2/3)x + (4/3)$
+\item $\vec{n} = \begin{pmatrix} 3 \\ 1 \end{pmatrix}$ and $d = 5$ (there are many choices that work)
+\item If $\vec{x}_1,\vec{x}_2$ are two position vectors for points on the line, then $\vec{v} = \vec{x}_2 - \vec{x}_1$ points along the line. Since
+\begin{equation*}
+\hat{\vec{n}}\cdot\vec{v} = \hat{\vec{n}}\cdot (\vec{x}_2 - \vec{x}-1) = \hat{\vec{n}}\cdot\vec{x}_2 - \hat{\vec{n}}\cdot\vec{x}_1 = d - d = 0,
+\end{equation*}
+$\hat{\vec{n}}$ is perpendicular to the line. Then, for any position vector $\vec{x}$ on the line, we compute the distance from the origin to the line as
+\begin{equation*}
+\|\proj_{\hat{\vec{n}}}(\vec{x})\| = \frac{\lvert\hat{\vec{n}}\cdot\vec{x}\rvert}{\|\hat{\vec{n}}\|} = d.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item By the angle bisector theorem, $BD/DC = AB/AC = 1/2$. Therefore, $\vec{D} = \frac{2}{3}\vec{B} + \frac{1}{3}\vec{C}$.
+\item The points on line $\overline{AD}$ are those with position vector of the form
+\begin{equation*}
+t\vec{A} + (1 - t)\vec{D} = t\vec{A} + (1 - t)\left(\frac{2}{3}\vec{B} + \frac{1}{3}\vec{C}\right)
+\end{equation*}
+for a real number $t$. Setting $t = 5/14$ gives us $\vec{I}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item We show that $\vec{y} = 2\proj_{\vec{v}}(\vec{x}) - \vec{x}$ has the defining properties of reflection, namely that the line $\ell$ spanned by $\vec{v}$ is orthogonal to $\vec{x} - \vec{y}$ and passes through the midpoint of the segment connecting $\vec{x}$ and $\vec{y}$. First, $(\vec{x} + \vec{y})/2 = \proj_{\vec{v}}(\vec{x})$, so $\ell$ passes through the midpoint. For orthogonality,
+\begin{equation*}
+\vec{v}\cdot (\vec{x} - \vec{y}) = 2\vec{v}\cdot (\vec{x} - \proj_{\vec{v}}(\vec{x})) = 0.
+\end{equation*}
+\item We compute
+\begin{align*}
+\refl_{\vec{v}}(a\vec{x} + b\vec{y}) &= 2\proj_{\vec{v}}(a\vec{x} + b\vec{y}) - (a\vec{x} + b\vec{y}) \\
+&= 2(a\proj_{\vec{v}}(\vec{x}) + b\proj_{\vec{v}}(\vec{y})) - (a\vec{x} + b\vec{y}) \\
+&= a(2\proj_{\vec{v}}(\vec{x}) - \vec{x}) + b(2\proj_{\vec{v}}(\vec{y}) - \vec{y}) \\
+&= a\refl_{\vec{v}}(\vec{x}) + b\refl_{\vec{v}}(\vec{y}).
+\end{align*}
+\end{enumerate}
+\item \begin{enumerate}
+\item Linearity of $\proj_{\vec{v}}$ follows from (bi)linearity of the dot product.\par
+To see that $\proj_{\vec{v}}\circ\proj_{\vec{v}} = \proj_{\vec{v}}$, we compute
+\begin{align*}
+(\proj_{\vec{v}}\circ\proj_{\vec{v}})(\vec{x}) &= \proj_{\vec{v}}\left(\left[\vec{x}\cdot\frac{\vec{v}}{\|\vec{v}\|^2}\right]\vec{v}\right) \\
+&= \left(\left[\vec{x}\cdot\frac{\vec{v}}{\|\vec{v}\|^2}\right]\vec{v}\cdot\frac{\vec{v}}{\|\vec{v}\|^2}\right)\vec{v} \\
+&= \left[\vec{x}\cdot\frac{\vec{v}}{\|\vec{v}\|^2}\right]\vec{v} = \proj_{\vec{v}}(\vec{x}).
+\end{align*}
+Finally, orthogonality is part of how $\proj_{\vec{v}}$ was defined.
+\item Let $\vec{x}$ be a vector for which $P(\vec{x})\neq\vec{0}$ and let $\vec{y}$ be a vector for which $P(\vec{y})\neq\vec{y}$. (These conditions imply $\vec{x},\vec{y}\neq\vec{0}$.) Let $\vec{u} = P(\vec{x})$ and $\vec{v} = \vec{y} - P(\vec{y})$. These are non-zero, and
+\begin{align*}
+P(\vec{u}) &= P(P(\vec{x})) = P(\vec{x}) = \vec{u}, \\
+P(\vec{v}) &= P(\vec{y} - P(\vec{y})) = P(\vec{y}) - P(P(\vec{y})) = P(\vec{y}) - P(\vec{y}) = \vec{0}.
+\end{align*}
+For linear independence, suppose $a\vec{u} + b\vec{v} = \vec{0}$. Applying $P$,
+\begin{equation*}
+\vec{0} = P(\vec{0}) = P(a\vec{u} + b\vec{v}) = aP(\vec{u}) + bP(\vec{v}) = a\vec{u},
+\end{equation*}
+so $a = 0$. Then, $b\vec{v} = \vec{0}$, so $b = 0$ as well.
+\item Since $\vec{u},\vec{v}$ are linearly independent in $\mathbb{R}^2$, they also span $\mathbb{R}^2$. Given any vector $\vec{x}\in\mathbb{R}^2$, let $\vec{x} = a\vec{u} + b\vec{v}$. Then
+\begin{equation*}
+P(\vec{x}) = P(a\vec{u} + b\vec{v}) = aP(\vec{u}) + bP(\vec{v}) = a\vec{u}.
+\end{equation*}
+As $a$ and $b$ range over all real numbers, we find the range of $P$ is the span of $\vec{u}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item We proceed by induction. By definition, $s_0 = ax_0 + by_0$ and $s_1 = ax_1 + by_1$. Then, if $s_n = ax_n + by_n$ and $s_{n + 1} = ax_{n + 1} + by_{n + 1}$,
+\begin{align*}
+s_{n + 2} &= s_{n + 1} + 2s_n \\
+&= (ax_{n + 1} + by_{n + 1}) + 2(ax_n + by_n) \\
+&= a(x_{n + 1} + 2x_n) + b(y_{n + 1} + 2y_n) \\
+&= ax_{n + 2} + by_{n + 2}.
+\end{align*}
+\item We need $\lambda^n(\lambda^2 - \lambda - 2) = 0$ for all $n\geq 0$. This holds when $\lambda = -1$ and when $\lambda = 2$.
+\item The sequence $e_n = (-1)^n$ corresponds to $\begin{pmatrix} 1 \\ -1 \end{pmatrix}$, while the sequence $f_n = 2^n$ corresponds to $\begin{pmatrix} 1 \\ 2 \end{pmatrix}$. We can find
+\begin{equation*}
+\begin{pmatrix} 4 \\ 7 \end{pmatrix} = \frac{1}{3}\begin{pmatrix} 1 \\ -1 \end{pmatrix} + \frac{11}{3}\begin{pmatrix} 1 \\ 2 \end{pmatrix},
+\end{equation*}
+so
+\begin{equation*}
+x_n = \frac{1}{3}e_n + \frac{11}{3}f_n = \frac{1}{3}\cdot (-1)^n + \frac{11}{3}\cdot 2^n.
+\end{equation*}
+\end{enumerate}
+\end{enumerate}
