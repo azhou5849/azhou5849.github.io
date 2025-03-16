@@ -1,0 +1,228 @@
+\section{Complex Numbers III: Geometry}
+
+\subsection{Review Problems}
+
+\begin{enumerate}
+\item \emph{Geometric interpretations.} Let points $Z$ and $W$ in the plane be represented by complex numbers $z$ and $w$, respectively. Let $O$ be the origin and let $A$ be the point represented by 1. For each of the following points or quantities described, write down an expression producing that point or quantity.
+\begin{enumerate}
+\item The distance from $Z$ to $O$
+\item The reflection of $Z$ across the real axis
+\item The distance between $Z$ and $W$
+\item The angle $\angle AOW$, measured counterclockwise from ray $\overrightarrow{OA}$
+\item The point $P$ which makes $OZPW$ a parallelogram
+\end{enumerate}
+\item \emph{Distances.}
+\begin{enumerate}
+\item Compute the distance between $2 + 4i$ and $-5 - i$.
+\item Show that if $z$ lies on the circle centered at $3 + i$ with radius 2, then 
+\begin{equation*}
+z\bar{z} - (3 - i)z - (3 + i)\bar{z} = -6.
+\end{equation*}
+\item Find all complex numbers $z$ for which $\lvert z\rvert = 10$ and $\lvert z - 21\rvert = 17$.
+\end{enumerate}
+\item \emph{Angles.} Let $A,B,C$ be distinct points in the plane represented by $a,b,c$, respectively.
+\begin{enumerate}
+\item Explain why (up to sign) $\angle BAC = \arg(\frac{c - a}{b - a})$.
+\item Calculate $\angle BAC$ when $a = 3 - 2i$, $b = -1 + i$, and $c = 2 + 5i$.
+\end{enumerate}
+\item \emph{Perpendicular bisectors.} Let $A$ and $B$ be represented by $a = 2i$ and $b = 6 - 2i$, respectively.
+\begin{enumerate}
+\item Let $M$ be the midpoint of $\overline{AB}$, represented by $m$. Compute $m$.
+\item Find the point $Z$ on the imaginary axis for which $ZA = ZB$.
+\end{enumerate}
+\item \emph{Altitudes.} Let $A,B,C$ be distinct points on the unit circle represented by $a,b,c$, respectively.
+\begin{enumerate}
+\item Show that for any point $z$ on the unit circle, $\bar{z} = 1/z$.
+\item Show that the altitudes of triangle $ABC$ all pass through the point $H$ represented by $a + b + c$. This point $H$ is the \textbf{orthocenter} of $ABC$.
+\end{enumerate}
+\item \emph{Transformation calculations.} For the next few problems,
+\begin{itemize}
+\item $\tau_a:\mathbb{C}\to\mathbb{C}$ denotes translation by $a$;
+\item $\delta_{c,r}:\mathbb{C}\to\mathbb{C}$ denotes dilation by factor $r$ centered at $c$;
+\item $\rho_{c,\theta}:\mathbb{C}\to\mathbb{C}$ denotes (CCW) rotation by angle $\theta$ centered at $c$;
+\item $\sigma_{\ell}:\mathbb{C}\to\mathbb{C}$ denotes reflection across line $\ell$.
+\end{itemize}
+Compute each of the following.
+\begin{enumerate}
+\item $\tau_{7 + 9i}(12 - 24i)$
+\item $\delta_{1 + i, 3}(-4 + 3i)$
+\item $\rho_{0,\pi/7}(e^{i\pi/11})$
+\item $\rho_{2 - i,\pi/4}(6 + i)$
+\item $\sigma_{\ell}(2 + 5i)$ when $\ell$ passes through 1 and has slope $1/\sqrt{3}$
+\end{enumerate}
+\item \emph{Isometries.} An \textbf{isometry} of $\mathbb{C}$ is a function $f:\mathbb{C}\to\mathbb{C}$ that preserves distances, i.e. 
+\begin{equation*}
+\lvert f(z) - f(w)\rvert = \lvert z - w\rvert
+\end{equation*}
+for all $z,w\in\mathbb{C}$.
+\begin{enumerate}
+\item Verify that translations, rotations centered at 0, and reflection across the real axis are all isometries of $\mathbb{C}$.
+\item Show that the composition of two isometries is an isometry.
+\item By SSS congruence, isometries must also preserve (unsigned) angles. If $f$ is an isometry and $\arg(\frac{f(c) - f(a)}{f(b) - f(a)}) = \arg(\frac{c - a}{b - a})$, then we say that $f$ is \textbf{orientation-preserving}, but if we have $\arg(\frac{f(c) - f(a)}{f(b) - f(a)}) = -\arg(\frac{c - a}{b - a})$ instead, then we say that $f$ is \textbf{orientation-reversing}.\par
+Of the isometries mentioned in part (a), which are orientation-preserving and which are orientation-reversing?
+\end{enumerate}
+\end{enumerate}
+
+
+\subsection{Challenge Problems}
+
+These problems feature the \textbf{extended complex plane} $\mathbb{C}_{\infty} = \mathbb{C}\cup\{\infty\}$. Definitions involving $\infty$ will be provided as needed; they can be justified using limits for those who are familiar.
+
+\begin{enumerate}\setcounter{enumi}{7}
+\item A \textbf{M\"{o}bius transformation} is a function of the form
+\begin{equation*}
+f(z) = \frac{az + b}{cz + d}
+\end{equation*}
+where $a,b,c,d\in\mathbb{C}$ and $ad - bc\neq 0$. If $c = 0$, then $f$ is initially defined as a function $\mathbb{C}\to\mathbb{C}$, and we extend it to $\mathbb{C}_{\infty}$ by setting $f(\infty) = \infty$. If $c\neq 0$, then $f$ is initially defined as a function $\mathbb{C}\backslash\{-d/c\}\to\mathbb{C}$, and we extend it to $\mathbb{C}_{\infty}$ by setting $f(-d/c) = \infty$ and $f(\infty) = a/c$.
+\begin{enumerate}
+\item Show that every M\"{o}bius transformation can be written as a composition of translations $z\mapsto z + \alpha$, spiral similarities $z\mapsto\beta z$, and (conformal) inversions $z\mapsto 1/z$.
+\item Show that every M\"{o}bius transformation is a bijection $\mathbb{C}_{\infty}\to\mathbb{C}_{\infty}$ and the inverse of a M\"{o}bius transformation is also a M\"{o}bius transformation.
+\item Let $f:\mathbb{C}_{\infty}\to\mathbb{C}_{\infty}$ be a M\"{o}bius transformation. Show that either $f(z) = z$ for all $z\in\mathbb{C}_{\infty}$ or $f(z) = z$ for at most two $z\in\mathbb{C}_{\infty}$.
+\item A \textbf{circline} is any curve which is either a circle or a line, and the lines are precisely the circlines that contain the point $\infty$.\par
+Show that M\"{o}bius transformations map circlines to circlines.
+\end{enumerate}
+\item For distinct $z_1,z_2,z_3,z_4\in\mathbb{C}$, the \textbf{cross ratio} is defined as
+\begin{equation*}
+[z_1,z_2;z_3,z_4] = \frac{(z_1 - z_3)(z_2 - z_4)}{(z_2 - z_3)(z_1 - z_4)}.
+\end{equation*}
+(The variables may be permuted in other sources, but the theory is the same as long as one is consistent.) When one of the variables is $\infty$, we ``cancel out'' the two factors in which the variable appears and evaluate with the rest. For example, $[z_1,z_2;z_3,\infty] = \frac{z_1 - z_3}{z_2 - z_3}$.
+\begin{enumerate}
+\item Show that if $f$ is a M\"{o}bius transformation, then $f$ preserves cross ratios.
+\item Show that for any distinct $z_1,z_2,z_3\in\mathbb{C}_{\infty}$, there is a M\"{o}bius transformation $f$ for which $f(z_1) = 1$, $f(z_2) = 0$, and $f(z_3) = \infty$. (In fact, it is unique.)
+\item Show that if $z_1,z_2,z_3,z_4\in\mathbb{C}_{\infty}$ are distinct, then they lie on a single circline if and only if their cross ratio $[z_1,z_2;z_3,z_4]$ is real.
+\item \emph{Ptolemy's theorem.} Using the computation
+\begin{equation*}
+[z_1,z_2;z_3,z_4] + [z_1,z_3;z_2,z_4] = 1,
+\end{equation*}
+or otherwise, prove that if $A,B,C,D$ are distinct points in the plane, then
+\begin{equation*}
+(AB)(CD) + (AD)(BC)\geq (AC)(BD),
+\end{equation*}
+with equality if and only if the points lie on a circline in (cyclic) order.
+\end{enumerate}
+\item Let $D = \{z\in\mathbb{C}\mid\lvert z\rvert < 1\}$ be the open unit disc, i.e. the points within the unit circle, and let $\mathcal{H} = \{z\in\mathbb{C}\mid\Im z > 0\}$ be the open upper half plane, i.e. the points above the real axis.
+\begin{enumerate}
+\item Show that if $\lvert a\rvert < 1$, the \textbf{Blaschke factor}
+\begin{equation*}
+f(z) = \frac{z - a}{1 - \bar{a}z}
+\end{equation*}
+is a bijection from the unit circle to the unit circle and from $D$ to $D$.
+\item Show that if $a,b,c,d\in\mathbb{R}$ and $ad - bc\neq 0$,
+\begin{equation*}
+f(z) = \frac{az + b}{cz + d}
+\end{equation*}
+is a bijection from $\mathbb{R}\cup\{\infty\}$ to $\mathbb{R}\cup\{\infty\}$. When is $f$ a bijection from $\mathcal{H}$ to $\mathcal{H}$?
+\item Write down a M\"{o}bius transformation which is a bijection $\mathcal{H}\to D$.
+\end{enumerate}
+\end{enumerate}
+
+
+\newpage
+\subsection{Answers}
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item $\lvert z\rvert$
+\item $\bar{z}$
+\item $\lvert z - w\rvert$
+\item $\arg w$
+\item $z + w$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\sqrt{74}$
+\item From $\lvert z - c\rvert = 2$, where $c = 3 + i$, we square both sides to get
+\begin{align*}
+\lvert z - c\rvert^2 &= 4, \\
+(z - c)(\bar{z} - \bar{c}) &= 4, \\
+z\bar{z} - \bar{c}z - c\bar{z} + c\bar{c} &= 4.
+\end{align*}
+The result follows by substituting $c = 3 + i$ back in and computing $c\bar{c} = 10$.
+\item Squaring the given equations and using $\lvert a\rvert^2 = a\bar{a}$ gives us
+\begin{equation*}
+z\bar{z} = 100\quad\text{and}\quad z\bar{z} - 21z - 21\bar{z} + 441 = 289.
+\end{equation*}
+Substituting the first equation into the second and simplifying,
+\begin{equation*}
+z + \bar{z} = 12.
+\end{equation*}
+This means $\Re z = 6$, so from $\lvert z\rvert = 10$, we must have $\Im z = \pm 8$. Both solutions $z = 6\pm 8i$ work.
+\end{enumerate}
+\item \begin{enumerate}
+\item Let $\arg(c - a) = \theta$ and $\arg(b - a) = \phi$. Then $\angle BAC$ is $\theta - \phi = \arg(\frac{c - a}{b - a})$.
+\item $-\pi/4$ (As phrased, $\pi/4$ would also be acceptable.)
+\end{enumerate}
+\item \begin{enumerate}
+\item $m = 3$
+\item If $ZA = ZB$, then $\overline{ZM}\perp\overline{AB}$, so $\frac{z - 3}{6 - 4i}$ should be purely imaginary, i.e.
+\begin{equation*}
+\frac{z - 3}{6 - 4i} = -\frac{\bar{z} - 3}{6 + 4i}.
+\end{equation*}
+If $Z$ is on the imaginary axis, then $\bar{z} = -z$, so
+\begin{equation*}
+\frac{z - 3}{6 - 4i} = \frac{z + 3}{6 + 4i}.
+\end{equation*}
+The solution is $z = -\frac{9}{2}i$.
+\end{enumerate}
+\item \begin{enumerate}
+\item If $z$ is on the unit circle, $\lvert z\rvert = 1$, so $z\bar{z} = \lvert z\rvert^2 = 1$.
+\item We show that $\overline{AH}\perp\overline{BC}$; the other altitudes proceed similarly. For this, we must show that $\frac{(a + b + c) - a}{b - c} = \frac{b + c}{b - c}$ is purely imaginary. Indeed,
+\begin{equation*}
+\bar{\left(\frac{b + c}{b - c}\right)} = \frac{\bar{b} + \bar{c}}{\bar{b} - \bar{c}} = \frac{1/b + 1/c}{1/b - 1/c} = \frac{c + b}{c - b} = -\frac{b + c}{b - c}.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item $19 - 15i$
+\item $-14 + 7i$
+\item $e^{8i\pi/77}$
+\item $(2 + \sqrt{2}) + (3\sqrt{2} - 1)i$
+\item $\frac{3 + 5\sqrt{3}}{2} + \frac{-5 + \sqrt{3}}{2}i$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\lvert\tau_a(z) - \tau_a(w)\rvert = \lvert (z + a) - (w + a)\rvert = \lvert z - w\rvert$\par
+$\lvert\rho_{0,\theta}(z) - \rho_{0,\theta}(w)\rvert = \lvert e^{i\theta}z - e^{i\theta}w\rvert = \lvert e^{i\theta}\rvert\lvert z - w\rvert = \lvert z - w\rvert$\par
+$\lvert\bar{z} - \bar{w}\rvert = \lvert\bar{z - w}\rvert = \lvert z - w\rvert$
+\item If $f,g:\mathbb{C}\to\mathbb{C}$ are isometries, then
+\begin{equation*}
+\lvert (f\circ g)(z) - (f\circ g)(w)\rvert = \lvert f(g(z)) - f(g(w))\rvert = \lvert g(z) - g(w)\rvert = \lvert z - w\rvert.
+\end{equation*}
+\item Translations and rotations are orientation-preserving\par
+Reflections are orientation-reversing
+\end{enumerate}
+\item \begin{enumerate}
+\item If $c = 0$, then we take $z\mapsto\frac{a}{d}z\mapsto\frac{a}{d}z + \frac{b}{d} = \frac{az + b}{d}$.\par
+If $c\neq 0$, then we take $z\mapsto cz\mapsto cz + d\mapsto\frac{1}{cz + d}\mapsto\frac{b - ad/c}{cz + d}\mapsto\frac{b - ad/c}{cz + d} + \frac{a}{c} = \frac{az + b}{cz + d}$.
+\item The inverse of $z\mapsto\frac{az + b}{cz + d}$ is $w\mapsto\frac{dw - b}{-cw + a}$.
+\item If $c = 0$, then $(a/d)z + (b/d) = z$ has exactly one solution in $\mathbb{C}$ unless $a/d = 1$, in which case either there is no solution ($b\neq 0$) or every $z$ is a solution. For the $c = 0$ case, $z = \infty$ is also a solution, giving us at most two solutions in $\mathbb{C}_{\infty}$.\par
+If $c\neq 0$, then $\frac{az + b}{cz + d} = z$ rearranges to a quadratic in $z$, so there are at most two solutions in $\mathbb{C}\backslash\{-d/c\}$. As $-d/c$ is mapped to $\infty$ and $\infty$ is mapped to $a/c$, there are at most two solutions in $\mathbb{C}_{\infty}$.
+\item It suffices to show that translations $z\mapsto z + \alpha$, spiral similarities $z\mapsto\beta z$, and inversion $z\mapsto 1/z$ send circlines to circlines. The first two are straightforward, so it remains to check inversion.\par
+Circlines are precisely the curves specified by equations of the form $az\bar{z} + \bar{b}z + b\bar{z} + c = 0$ with $a,c\in\mathbb{R}$. When we substitute $1/z$ for $z$ and clear denominators, we get another equation of this form, so circlines go to circlines.
+\end{enumerate}
+\item \begin{enumerate}
+\item It suffices to show that translations $z\mapsto z + \alpha$, spiral similarities $z\mapsto\beta z$, and inversion $z\mapsto 1/z$ preserve cross ratios. These are all straightforward calculation.
+\item The required M\"{o}bius transformation is $f(z) = \frac{z_1 - z_3}{z_1 - z_2}\frac{z - z_2}{z - z_3} = [z,z_1;z_2,z_3]$.
+\item By applying a M\"{o}bius transformation, which preserves cross ratios and circlines, we can suppose without loss of generality that $z_2 = 1$, $z_3 = 0$, and $z_4 = \infty$. The cross ratio is then just $z_1$, which is real if and only if $z_1$ also lies on the real axis.
+\item Let $A,B,C,D$ be represented by $a,b,c,d$. By the triangle inequality,
+\begin{equation*}
+1 = \lvert [a,b;d,c] + [a,d;b,c]\rvert\leq\lvert [a,b;d,c]\rvert + \lvert [a,d;b,c]\rvert,
+\end{equation*}
+and clearing denominators from the cross ratios gives us the desired inequality. Equality holds if and only if $[a,b;d,c]$ and $[a,d;b,c]$ are positive real numbers, so the four points must lie on a circline. Mapping them to the real axis with a M\"{o}bius transformation, which preserves (cyclic) order, we can suppose without loss of generality that $b,c,d$ are $1,0,\infty$, respectively. Then $[a,b;d,c] = 1/a$ and $[a,d;b,c] = (a - 1)/a$, so for these to be positive, we need $a > 1$. This means that $A,B,C,D$ are in the correct order along the real axis, hence on the original circline as well.
+\end{enumerate}
+\item \begin{enumerate}
+\item To see it is a bijection from the unit circle to the unit circle,
+\begin{align*}
+\lvert f(z)\rvert = 1 &\iff \frac{z - a}{1 - \bar{a}z}\frac{\bar{z} - \bar{a}}{1 - a\bar{z}} = 1 \\
+&\iff z\bar{z} - \bar{a}z - a\bar{z} + a\bar{a} = 1 - \bar{a}z - a\bar{z} + a\bar{a}z\bar{z} \\
+&\iff \lvert z\rvert^2(1 - \lvert a\rvert^2) = 1 - \lvert a\rvert^2.
+\end{align*}
+Since $\lvert a\rvert < 1$, this occurs if and only if $\lvert z\rvert = 1$.\par
+Since $f$ is a M\"{o}bius transformation, it is a bijection $\mathbb{C}_{\infty}\to\mathbb{C}_{\infty}$, so we only need to show that $f(z)\in D$ if and only if $z\in D$. If $z\in D$, then let $\ell$ be the line segment connecting $z$ with $a$. Since $\ell$ does not intersect the unit circle, neither does $f(\ell)$. Since $f(a) = 0\in D$, this means $f(z)\in D$ as well, as otherwise $f(\ell)$ would have to cross the unit circle to go from $f(a)$ to $f(z)$. Conversely, if $f(z)\in D$, then let $\ell$ be the line segment connecting $f(z)$ with $0$. Then $f^{-1}(\ell)$ does not intersect the unit circle, and since $f^{-1}(0) = a\in D$, this means $z = f^{-1}(f(z))\in D$ as well.
+\item As in part (a), we just need to check that $f(z)\in\mathbb{R}\cup\{\infty\}$ if and only if $z\in\mathbb{R}\cup\{\infty\}$. Since $a,b,c,d\in\mathbb{R}$, we have $f(\bar{z}) = \bar{f(z)}$ for all $z\in\mathbb{C}_{\infty}$, where $\bar{\infty} = \infty$. Then $f(z)$ is real or $\infty$ if and only if $f(z) = \bar{f(z)} = f(\bar{z})$. Since $f$ is bijective, this happens if and only if $z = \bar{z}$, i.e. $z$ is real or $\infty$.\par
+By a similar ``path crossing'' argument to part (a), $f$ bijectively maps $\mathcal{H}$ to either $\mathcal{H}$ or $-\mathcal{H}$, the open lower half plane. The former occurs when $\Im f(i) > 0$, so we compute
+\begin{equation*}
+f(i) = \frac{ai + b}{ci + d} = \frac{(ai + b)(-ci + d)}{c^2 + d^2}.
+\end{equation*}
+The imaginary part is $\frac{ad - bc}{c^2 + d^2}$, so $f$ is a bijection $\mathcal{H}\to\mathcal{H}$ precisely when $ad - bc > 0$.
+\item We can take $z\mapsto\frac{z - i}{z + i}$, as $\lvert\frac{z - i}{z + i}\rvert < 1$ precisely when $z$ is closer to $i$ than $-i$, i.e. $z\in\mathcal{H}$.
+\end{enumerate}
+\end{enumerate}
+
