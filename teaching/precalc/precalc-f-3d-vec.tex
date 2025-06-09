@@ -63,10 +63,44 @@ Then find a parametric form for the intersection of this plane and the plane $x 
 \newpage
 \subsection{Challenge Problems}
 
+Suppose we sample $n$ members of a population and measure quantities $X$ and $Y$ for each of the $n$ observations. (For example, perhaps $X$ and $Y$ denote height and wingspan that we measure for several people.) The observed values of $X$ and $Y$ are stored in vectors
+\begin{equation*}
+\vec{x} = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}\quad\text{and}\quad\vec{y} = \begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix}.
+\end{equation*}
+
 \begin{enumerate}\setcounter{enumi}{7}
-\item % projections onto planes in 4D
-\item % covariance and correlation
-\item % simple linear regression with intercept
+\item In statistics, often more useful than the ordinary dot product is a rescaled version,
+\begin{equation*}
+\langle\vec{x},\vec{y}\rangle = \frac{1}{n}(\vec{x}\cdot\vec{y}) = \frac{x_1y_1 + x_2y_2 + \cdots + x_ny_n}{n}.
+\end{equation*}
+\begin{enumerate}
+\item Let $\vec{1}$ (or $\vec{1}_n$) denote the vector with components that are all equal to 1. Express the sample mean $\bar{x}$ of the observed values of $X$ in terms of $\vec{x}$, $\vec{1}$, and $\langle\phantom{x},\phantom{x}\rangle$.
+\item Let $\mathcal{H}$ be the ``hyperplane'' of all points in $n$-dimensional space with the property that the sum of the coordinates is 0. Show that the projection of $\vec{x}$ onto $\mathcal{H}$ is $\vec{x} - \bar{x}\vec{1}$.
+\item The \emph{(uncorrected) sample variance} of the observed values of $X$ is
+\begin{equation*}
+s_x^2 = \langle\vec{x} - \bar{x}\vec{1}, \vec{x} - \bar{x}\vec{1}\rangle,
+\end{equation*}
+while the \emph{sample standard deviation} $s_x$ is the square root of the sample variance.\par
+Show that $s_x^2 = \langle\vec{x},\vec{x}\rangle - (\bar{x})^2$.
+\end{enumerate}
+\item The \emph{sample covariance} of the observed values of $X$ and $Y$ is
+\begin{equation*}
+s_{xy} = \langle\vec{x} - \bar{x}\vec{1}, \vec{y} - \bar{y}\vec{1}\rangle = \langle\vec{x},\vec{y}\rangle - \bar{x}\cdot\bar{y},
+\end{equation*}
+and the \emph{sample correlation} is $r_{xy} = \frac{s_{xy}}{s_x\cdot s_y}$ (when $s_x,s_y\neq 0$).
+\begin{enumerate}
+\item Show that $-1\leq r\leq 1$.
+\item When does $r = 1$? When does $r = -1$?
+\item Given three quantities $A,B,C$, is it possible that $r_{ab} > 0$, $r_{bc} > 0$, but $r_{ac} < 0$?
+\end{enumerate}
+\item In \emph{simple linear regression}, we seek values $\beta_0,\beta_1$ so that the linear model $Y = \beta_0 + \beta_1X$ is ``best possible.'' This is usually taken to mean that the \emph{mean squared error}
+\begin{equation*}
+MSE = \langle\vec{y} - \unit{y}, \vec{y} - \unit{y}\rangle
+\end{equation*}
+should be as small as possible, where $\unit{y} = \beta_0\vec{1} + \beta_1\vec{x}$. Show, using projection or otherwise, that this is achieved when
+\begin{equation*}
+\beta_1 = r_{xy}\cdot\frac{s_y}{s_x}\quad\text{and}\quad\beta_0 = \bar{y} - \beta_1\bar{x}.
+\end{equation*}
 \end{enumerate}
 
 
