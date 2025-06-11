@@ -25,12 +25,38 @@ Throughout this section, let
 \end{enumerate}
 \item \emph{Matrix products.}
 \begin{enumerate}
-\item 
+\item Compute $\mathsf{AB}$, $\mathsf{BA}$, and $\mathsf{AU}$.
+\item Compute $\mathsf{AB} + \mathsf{AU}$ and $\mathsf{A}(\mathsf{B} + \mathsf{U})$.
+\item Compute $(\mathsf{AB})\mathsf{U}$ and $\mathsf{A}(\mathsf{BU})$.
 \end{enumerate}
-\item % cross product as matrix
-\item % transformations
-\item % determinant
-\item % inverses
+\item \emph{Geometric transformations.}
+\begin{enumerate}
+\item Compute the matrix for scaling the $x$ and $y$ coordinates by $3/2$.
+\item Compute the matrix for projecting onto $\vec{w}$.
+\item Compute the matrix for reflecting across the plane $2x + 2y + 3z = 0$.
+\item Compute the matrix for rotating around the $z$-axis with the property that $(-3,4,-12)$ is rotated to $(5,0,-12)$.
+\item ($*$) Compute the matrix for rotating by an angle of $\pi$ around the axis passing through the origin and the point $(-3,4,-12)$.
+\end{enumerate}
+\newpage
+\item \emph{Determinants.}
+\begin{enumerate}
+\item Compute $\det\mathsf{A}$, $\det\mathsf{B}$, and $\det\mathsf{U}$.
+\item Compute $\det(\mathsf{AB})$.
+\end{enumerate}
+\item \emph{Inverses.}
+\begin{enumerate}
+\item Compute the inverses of $\mathsf{A}$ and $\mathsf{U}$.
+\item Show that $\mathsf{B} - 4\mathsf{I}$ is not invertible.
+\item Identify a non-zero vector $\vec{x}$ with the property that $(\mathsf{B} - 4\mathsf{I})\vec{x} = \vec{0}$.
+\end{enumerate}
+\item \emph{Cross products and matrices.} Given a matrix $\mathsf{M}$, let $[\mathsf{M}]_{ij}$ denote the entry in the $i$-th row and $j$-th column. Recall that the \textbf{transpose} of $\mathsf{M}$ is the matrix $\mathsf{M}^T$ with the property that $[\mathsf{M}^T]_{ij} = [\mathsf{M}]_{ji}$, i.e. the rows of $\mathsf{M}^T$ are the columns of $\mathsf{M}$ and vice-versa.
+\begin{enumerate}
+\item A square matrix $\mathsf{M}$ is called \textbf{symmetric} if $\mathsf{M}^T = \mathsf{M}$ and \textbf{skew-symmetric} if $\mathsf{M}^T = -\mathsf{M}$.\par
+Show that every square matrix $\mathsf{M}$ can be written as the sum of a symmetric matrix and a skew-symmetric matrix.
+\item Show that for every vector $\vec{a}$, there is a corresponding skew-symmetric matrix $\mathsf{R}_{\vec{a}}$ such that $\mathsf{R}_{\vec{a}}\vec{x} = \vec{a}\times\vec{x}$ for all vectors $\vec{x}$.
+\item Conversely, show that for every skew-symmetric matrix $\mathsf{M}$, there is a corresponding vector $\vec{a}_{\mathsf{M}}$ for which $\mathsf{M}\vec{x} = \vec{a}_{\mathsf{M}}\times\vec{x}$ for all vectors $\vec{x}$.
+\item Show that $\mathsf{R}_{\vec{a}\times\vec{b}} = \mathsf{R}_{\vec{a}}\mathsf{R}_{\vec{b}} - \mathsf{R}_{\vec{b}}\mathsf{R}_{\vec{a}}$.
+\end{enumerate}
 \end{enumerate}
 
 
