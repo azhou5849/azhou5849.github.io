@@ -1,7 +1,5 @@
 \section{Matrices in 3D}
 
-\emph{Problems and solutions can be found at \url{https://azhou5849.github.io/teaching/}}
-
 \subsection{Review Problems}
 
 Throughout this section, let
@@ -35,7 +33,7 @@ Throughout this section, let
 \item Compute the matrix for projecting onto $\vec{w}$.
 \item Compute the matrix for reflecting across the plane $2x + 2y + 3z = 0$.
 \item Compute the matrix for rotating around the $z$-axis with the property that $(-3,4,-12)$ is rotated to $(0,5,-12)$.
-\item ($*$) Compute the matrix for rotating by an angle of $\pi$ around the axis passing through the origin and the point $(-3,4,-12)$.
+\item (Calculator permitted, $*$) Compute the matrix for rotating by an angle of $\pi$ around the axis passing through the origin and the point $(-3,4,-12)$.
 \end{enumerate}
 \newpage
 \item \emph{Determinants.}
@@ -136,10 +134,132 @@ so then
 \end{equation*}
 \item The upper right entry of $\mathsf{M} = r\mathsf{A} + s\mathsf{B} + t\mathsf{U} = \mathsf{0}$ is $-s$, so we need $s = 0$. Then, the lower left entry of $\mathsf{M} = r\mathsf{A} + t\mathsf{U} = \mathsf{0}$ is $3r$, so we need $r = 0$. Finally, $\mathsf{M} = t\mathsf{U} = \mathsf{0}$ forces $t = 0$, so the only solution is $(r,s,t) = (0,0,0)$.
 \end{enumerate}
+\newpage
 \item \begin{enumerate}
-\item $\mathsf{AB} = \begin{pmatrix} -3 & 15 & -12 \\ 1 & -1 & 3 \\ -9 & 9 & -6 \end{pmatrix}$\par
+\item \begin{multicols}{2}
+$\mathsf{AB} = \begin{pmatrix} -3 & 15 & -12 \\ 1 & -1 & 3 \\ -9 & 9 & -6 \end{pmatrix}$\par
 $\mathsf{BA} = \begin{pmatrix} 7 & 2 & 1 \\ -12 & -18 & -3 \\ -8 & -6 & 1 \end{pmatrix}$\par
 $\mathsf{AU} = \begin{pmatrix} -9 & -9 & -3 \\ -6 & -3 & 5 \\ -9 & -8 & 4 \end{pmatrix}$
+\end{multicols}
+\item $\mathsf{A}(\mathsf{B} + \mathsf{U}) = \mathsf{AB} + \mathsf{AU} = \begin{pmatrix} -12 & 6 & -15 \\ -5 & -4 & 8 \\ -18 & 1 & -2 \end{pmatrix}$
+\item $\mathsf{A}(\mathsf{BU}) = (\mathsf{AB})\mathsf{U} = \begin{pmatrix} -3 & 15 & -12 \\ 1 & -1 & 3 \\ -9 & 9 & -6 \end{pmatrix}\begin{pmatrix} -3 & -2 & 0 \\ 0 & -1 & -1 \\ 0 & 0 & 2 \end{pmatrix} = \begin{pmatrix} 9 & -9 & -39 \\ -3 & -1 & 7 \\ 27 & 9 & -21 \end{pmatrix}$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\begin{pmatrix} 3/2 & 0 & 0 \\ 0 & 3/2 & 0 \\ 0 & 0 & 1 \end{pmatrix}$
+\item We compute
+\begin{equation*}
+\proj_{\vec{w}}(x,y,z) = \frac{(x,y,z)\cdot\vec{w}}{\|\vec{w}\|^2}\vec{w} = \frac{-7x - 3y + 8z}{122}\vec{w} = \frac{-7}{122}x\vec{w} + \frac{-3}{122}y\vec{w} + \frac{4}{61}z\vec{w}.
+\end{equation*}
+Therefore, the matrix of this projection is
+\begin{equation*}
+\begin{pmatrix} {} & {} & {} \\ \frac{-7}{122}\vec{w} & \frac{-3}{122}\vec{w} & \frac{4}{61}\vec{w} \\ {} & {} & {} \end{pmatrix} = \begin{pmatrix} 49/122 & 21/122 & -28/61 \\ 21/122 & 9/122 & -12/61 \\ -28/61 & -12/61 & 32/61 \end{pmatrix}.
+\end{equation*}
+\item If $\mathsf{R}\vec{x}$ is the reflection of vector $\vec{x}$ across the plane, then $\vec{x} - \mathsf{R}\vec{x} = 2\proj_{\vec{n}}(\vec{x})$, where $\vec{n} = (2,2,3)$ is a normal vector to the plane. We compute
+\begin{equation*}
+\proj_{\vec{n}}(x,y,z) = \frac{(x,y,z)\cdot\vec{n}}{\|\vec{n}\|^2}\vec{n} = \frac{2x + 2y + 3z}{17}\vec{n} = \frac{2}{17}x\vec{n} + \frac{2}{17}y\vec{n} + \frac{3}{17}z\vec{n},
+\end{equation*}
+so the matrix of the projection onto $\vec{n}$ is
+\begin{equation*}
+\mathsf{P}_{\vec{n}} = \begin{pmatrix} {} & {} & {} \\ \frac{2}{17}\vec{n} & \frac{2}{17}\vec{n} & \frac{3}{17}\vec{n} \\ {} & {} & {} \end{pmatrix} = \begin{pmatrix} 4/17 & 4/17 & 6/17 \\ 4/17 & 4/17 & 6/17 \\ 6/17 & 6/17 & 9/17 \end{pmatrix}.
+\end{equation*}
+The matrix of the reflection is then
+\begin{equation*}
+\mathsf{R} = \mathsf{I} - 2\mathsf{P}_{\vec{n}} = \begin{pmatrix} 9/17 & -8/17 & -12/17 \\ -8/17 & 9/17 & -12/17 \\ -12/17 & -12/17 & -1/17 \end{pmatrix}.
+\end{equation*}
+\emph{Remark:} We can also compute the matrix $\mathsf{P}$ for projection onto the plane, then compute $\mathsf{R} = 2\mathsf{P} - \mathsf{I}$ to get the reflection across the plane.
+\newpage
+\item Since this rotation is around the $z$-axis, it takes the form $\mathsf{A} = \begin{pmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}$, where $\theta$ is chosen so that $(-3,4)$ rotates to $(0,5)$. We compute
+\begin{equation*}
+\begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}\begin{pmatrix} -3 \\ 4 \end{pmatrix} = \begin{pmatrix} -3\cos\theta - 4\sin\theta \\ -3\sin\theta + 4\cos\theta \end{pmatrix},
+\end{equation*}
+so we require
+\begin{equation*}
+-3\cos\theta - 4\sin\theta = 0\quad\text{and}\quad -3\sin\theta + 4\cos\theta = 5.
+\end{equation*}
+Solving gives $\sin\theta = -3/5$ and $\cos\theta = 4/5$, so $\mathsf{A} = \begin{pmatrix} 4/5 & 3/5 & 0 \\ -3/5 & 4/5 & 0 \\ 0 & 0 & 1 \end{pmatrix}$.
+\item We start by rotating the given axis to the $z$-axis. The rotation from part (d) sends the $(-3,4,-12)$-axis to the $(0,5,-12)$-axis, and then by similar reasoning to part (d), the rotation given by $\mathsf{B} = \begin{pmatrix} 1 & 0 & 0 \\ 0 & -12/13 & -5/13 \\ 0 & 5/13 & -12/13 \end{pmatrix}$ sends the $(0,5,-12)$-axis to the $z$-axis. Rotation by $\pi$ around the $z$-axis is given by the matrix $\mathsf{R} = \begin{pmatrix} -1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & 1 \end{pmatrix}$. Finally, we undo the transformation of the axis. Therefore, the overall rotation matrix is
+\begin{equation*}
+\mathsf{A}^{-1}\mathsf{B}^{-1}\mathsf{RBA} = \frac{1}{169}\begin{pmatrix} -151 & -24 & 72 \\ -24 & -137 & -96 \\ 72 & -96 & 119 \end{pmatrix}.
+\end{equation*}
+\end{enumerate}
+\item \begin{enumerate}
+\item For $\mathsf{A}$, expanding along the first row gives
+\begin{equation*}
+\det\mathsf{A} = 3\cdot\det\begin{pmatrix} -1 & 2 \\ 2 & 3 \end{pmatrix} - 3\cdot\begin{pmatrix} 2 & 2 \\ 3 & 3 \end{pmatrix} = 3\cdot [(-1)\cdot 3 - 2\cdot 2] - 3\cdot [2\cdot 3 - 2\cdot 3] = -21.
+\end{equation*}
+For $\mathsf{B}$, we can add the third row to the first row and add $3$ times the third row to the second row to produce the matrix $\mathsf{B}' = \begin{pmatrix} -1 & 1 & 0 \\ -12 & 0 & 0 \\ -3 & -1 & 1 \end{pmatrix}$ with $\det\mathsf{B}' = \det\mathsf{B}$. We can now expand down the third column to get
+\begin{equation*}
+\det\mathsf{B} = \det\mathsf{B}' = 1\cdot\begin{pmatrix} -1 & 1 \\ -12 & 0 \end{pmatrix} = 1\cdot [(-1)\cdot 0 - 1\cdot (-12)] = 12.
+\end{equation*}
+Alternatively, we can expand along the second row to get
+\begin{equation*}
+\det\mathsf{B} = \det\mathsf{B}' = -(-12)\cdot\begin{pmatrix} 1 & 0 \\ -1 & 1 \end{pmatrix} = 12.
+\end{equation*}
+Finally, $\mathsf{U}$ is upper triangular, so $\det\mathsf{U} = (-3)\cdot (-1)\cdot 2 = 6$.
+\item $\det(\mathsf{AB}) = (\det\mathsf{A})(\det\mathsf{B}) = (-21)\cdot 12 = -252$
+\end{enumerate}
+\newpage
+\item \begin{enumerate}
+\item We proceed by \href{https://en.wikipedia.org/wiki/Gaussian_elimination#Finding_the_inverse_of_a_matrix}{row reduction}. For $\mathsf{A}$, one possible sequence of row operations is
+\begin{align*}
+\begin{pmatrix} 3 & 3 & 0 & \bigm| & 1 & 0 & 0 \\ 2 & -1 & 2 & \bigm| & 0 & 1 & 0 \\ 3 & 2 & 3 & \bigm| & 0 & 0 & 1 \end{pmatrix} &\rightarrow \begin{pmatrix} 1 & 1 & 0 & \bigm| & 1/3 & 0 & 0 \\ 2 & -1 & 2 & \bigm| & 0 & 1 & 0 \\ 3 & 2 & 3 & \bigm| & 0 & 0 & 1 \end{pmatrix} \\
+&\rightarrow \begin{pmatrix} 1 & 1 & 0 & \bigm| & 1/3 & 0 & 0 \\ 0 & -3 & 2 & \bigm| & -2/3 & 1 & 0 \\ 0 & -1 & 3 & \bigm| & -1 & 0 & 1 \end{pmatrix} \\
+&\rightarrow \begin{pmatrix} 1 & 1 & 0 & \bigm| & 1/3 & 0 & 0 \\ 0 & 1 & -3 & \bigm| & 1 & 0 & -1 \\ 0 & -3 & 2 & \bigm| & -2/3 & 1 & 0 \end{pmatrix} \\
+&\rightarrow \begin{pmatrix} 1 & 1 & 0 & \bigm| & 1/3 & 0 & 0 \\ 0 & 1 & -3 & \bigm| & 1 & 0 & -1 \\ 0 & 0 & -7 & \bigm| & 7/3 & 1 & -3 \end{pmatrix} \\
+&\rightarrow \begin{pmatrix} 1 & 1 & 0 & \bigm| & 1/3 & 0 & 0 \\ 0 & 1 & -3 & \bigm| & 1 & 0 & -1 \\ 0 & 0 & 1 & \bigm| & -1/3 & -1/7 & 3/7 \end{pmatrix} \\
+&\rightarrow \begin{pmatrix} 1 & 1 & 0 & \bigm| & 1/3 & 0 & 0 \\ 0 & 1 & 0 & \bigm| & 0 & -3/7 & 2/7 \\ 0 & 0 & 1 & \bigm| & -1/3 & -1/7 & 3/7 \end{pmatrix} \\
+&\rightarrow \begin{pmatrix} 1 & 0 & 0 & \bigm| & 1/3 & 3/7 & -2/7 \\ 0 & 1 & 0 & \bigm| & 0 & -3/7 & 2/7 \\ 0 & 0 & 1 & \bigm| & -1/3 & -1/7 & 3/7 \end{pmatrix},
+\end{align*}
+so $\mathsf{A}^{-1} = \begin{pmatrix} 1/3 & 3/7 & -2/7 \\ 0 & -3/7 & 2/7 \\ -1/3 & -1/7 & 3/7 \end{pmatrix}$. For $\mathsf{U}$, one possible sequence of row operations is
+\begin{align*}
+\begin{pmatrix} -3 & -2 & 0 & \bigm| & 1 & 0 & 0 \\ 0 & -1 & -1 & \bigm| & 0 & 1 & 0 \\ 0 & 0 & 2 & \bigm| & 0 & 0 & 1 \end{pmatrix} &\rightarrow \begin{pmatrix} 1 & 2/3 & 0 & \bigm| & -1/3 & 0 & 0 \\ 0 & 1 & 1 & \bigm| & 0 & -1 & 0 \\ 0 & 0 & 1 & \bigm| & 0 & 0 & 1/2 \end{pmatrix} \\
+&\rightarrow \begin{pmatrix} 1 & 2/3 & 0 & \bigm| & -1/3 & 0 & 0 \\ 0 & 1 & 0 & \bigm| & 0 & -1 & -1/2 \\ 0 & 0 & 1 & \bigm| & 0 & 0 & 1/2 \end{pmatrix} \\
+&\rightarrow \begin{pmatrix} 1 & 0 & 0 & \bigm| & -1/3 & 2/3 & 1/3 \\ 0 & 1 & 0 & \bigm| & 0 & -1 & -1/2 \\ 0 & 0 & 1 & \bigm| & 0 & 0 & 1/2 \end{pmatrix},
+\end{align*}
+so $\mathsf{U}^{-1} = \begin{pmatrix} -1/3 & 2/3 & 1/3 \\ 0 & -1 & -1/2 \\ 0 & 0 & 1/2 \end{pmatrix}$.
+\newpage
+\item We start by computing
+\begin{equation*}
+\mathsf{B} - 4\mathsf{I} = \begin{pmatrix} -2 & 2 & -1 \\ -3 & -1 & -3 \\ -3 & -1 & -3 \end{pmatrix}.
+\end{equation*}
+The last two rows are equal, so $\det(\mathsf{B} - 4\mathsf{I}) = 0$ and hence $\mathsf{B} - 4\mathsf{I}$ is not invertible.
+\item In Problem 1, we observed that $\mathsf{B}\vec{w} = 4\vec{w}$, so $(\mathsf{B} - 4\mathsf{I})\vec{w} = \vec{0}$.
+\end{enumerate}
+\item \begin{enumerate}
+\item If $\vec{a} = (a_1,a_2,a_3)$ and $\vec{x} = (x_1,x_2,x_3)$, then
+\begin{equation*}
+\vec{a}\times\vec{x} = \begin{pmatrix} a_2x_3 - a_3x_2 \\ a_3x_1 - a_1x_3 \\ a_1x_2 - a_2x_1 \end{pmatrix} = \begin{pmatrix} 0 & -a_3 & a_2 \\ a_3 & 0 & -a_1 \\ -a_2 & a_1 & 0\end{pmatrix}\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix},
+\end{equation*}
+so we take $\mathsf{R}_{\vec{a}} = \begin{pmatrix} 0 & -a_3 & a_2 \\ a_3 & 0 & -a_1 \\ -a_2 & a_1 & 0\end{pmatrix}$.
+\item If $\mathsf{M} = \begin{pmatrix} 0 & m_{12} & m_{13} \\ -m_{12} & 0 & m_{23} \\ -m_{13} & -m_{23} & 0 \end{pmatrix}$, then reversing the computations of part (a) shows that we can take $\vec{a}_{\mathsf{M}} = (-m_{23}, m_{13}, -m_{12})$.
+\item We use Problem 5a from Week 31 extensions. For any $\vec{x}$,
+\begin{align*}
+(\mathsf{R}_{\vec{a}}\mathsf{R}_{\vec{b}} - \mathsf{R}_{\vec{b}}\mathsf{R}_{\vec{a}})\vec{x} &= \vec{a}\times(\vec{b}\times\vec{x}) - \vec{b}\times(\vec{a}\times\vec{x}) \\
+&= [\vec{b}(\vec{a}\cdot\vec{x}) - \vec{x}(\vec{a}\cdot\vec{b})] - [\vec{a}(\vec{b}\cdot\vec{x}) - \vec{x}(\vec{a}\cdot\vec{b})] \\
+&= \vec{b}(\vec{x}\cdot\vec{a}) - \vec{a}(\vec{x}\cdot\vec{b}) = \vec{x}\times(\vec{b}\times\vec{a}) \\
+&= -(\vec{b}\times\vec{a})\times\vec{x} = (\vec{a}\times\vec{b})\times\vec{x} \\
+&= \mathsf{R}_{\vec{a}\times\vec{b}}\vec{x}.
+\end{align*}
+Therefore, $\mathsf{R}_{\vec{a}\times\vec{b}} = \mathsf{R}_{\vec{a}}\mathsf{R}_{\vec{b}} - \mathsf{R}_{\vec{b}}\mathsf{R}_{\vec{a}}$.
+\item We wish to find $\mathsf{A}$ symmetric and $\mathsf{B}$ skew-symmetric so that $\mathsf{M} = \mathsf{A} + \mathsf{B}$. Taking the transpose on both sides,
+\begin{equation*}
+\mathsf{M}^T = \mathsf{A}^T + \mathsf{B}^T = \mathsf{A} - \mathsf{B}.
+\end{equation*}
+Solving the system of equations
+\begin{align*}
+\mathsf{A} + \mathsf{B} &= \mathsf{M} \\
+\mathsf{A} - \mathsf{B} &= \mathsf{M}^T
+\end{align*}
+gives us the required symmetric and skew-symmetric matrices, namely
+\begin{equation*}
+\mathsf{A} = \frac{1}{2}(\mathsf{M} + \mathsf{M}^T)\quad\text{and}\quad\mathsf{B} = \frac{1}{2}(\mathsf{M} - \mathsf{M}^T).
+\end{equation*}
+\end{enumerate}
+\newpage 
+\item \begin{enumerate}
+\item The matrix $\begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \end{pmatrix}$ turns 3D vectors into 2D vectors by projecting them onto the $xy$-plane (i.e. throwing out the third component). The matrix $\begin{pmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{pmatrix}$ takes 2D vectors and turns them into 3D vectors by treating them as lying in the $xy$-plane (i.e. introducing a third component and setting it equal to 0).
+\item Note that for any vectors $\vec{a}$ and $\vec{b}$, we have $\vec{a}\cdot\vec{b} = \vec{a}^T\vec{b} = \vec{b}^T\vec{a}$.\par
+If $\vec{u}$ is a unit vector, $\proj_{\vec{u}}(\vec{x}) = (\vec{x}\cdot\vec{u})\vec{u} = \vec{u}(\vec{u}^T\vec{x}) = (\vec{uu}^T)\vec{x}$.
 \item 
 \end{enumerate}
 \end{enumerate}
